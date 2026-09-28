@@ -1,0 +1,1286 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mahogany Travel Expeditions - Tanzania Destinations</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+            display: flex;
+            gap: 30px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            width: 100%;
+        }
+        
+        header h1 {
+            color:#4A2810;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #666;
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .main-content {
+            flex: 1;
+        }
+        
+        /* Sidebar Styles */
+        .sidebar {
+            width: 250px;
+            background-color: white;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            height: fit-content;
+        }
+        
+        .sidebar h2 {
+            color: #4A2810;
+            font-size: 20px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        .filter-list {
+            list-style: none;
+        }
+        
+        .filter-item {
+            margin-bottom: 10px;
+        }
+        
+        .filter-link {
+            display: flex;
+            align-items: center;
+            padding: 12px 15px;
+            background-color: #f8f9fa;
+            color: #333;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+            font-weight: 600;
+        }
+        
+        .filter-link:hover {
+            background-color: #e8f5e9;
+            color: #4A2810;
+            transform: translateX(5px);
+        }
+        
+        .filter-link.active {
+            background-color: #4A2810;
+            color: white;
+        }
+        
+        .filter-link i {
+            margin-right: 10px;
+            font-size: 14px;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .package-image-container {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .package-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+        }
+        
+        .package-content {
+            padding: 20px;
+        }
+        
+        .package-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .destination-description {
+            font-size: 14px;
+            color: #666;
+            margin-bottom: 15px;
+            line-height: 1.5;
+            min-height: 60px;
+        }
+        
+        .read-more-btn {
+            display: inline-block;
+            background-color: #4A2810;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .read-more-btn:hover {
+            background-color: #5C6B3E;
+        }
+        
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .pagination {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .page-item {
+            display: inline-block;
+        }
+        
+        .page-link {
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .page-link:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .page-link.active {
+            background-color: #4A2810;
+            color: white;
+            border-color: #4A2810;
+        }
+        
+        .page-link.next-page {
+            background-color: #4A2810;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+        }
+        
+        .page-link.next-page:hover {
+            background-color: #5C6B3E;
+        }
+        
+        .ellipsis {
+            padding: 8px 5px;
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .pages-info {
+            margin-left: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 992px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .sidebar {
+                width: 100%;
+                order: 2;
+            }
+            
+            .main-content {
+                order: 1;
+            }
+            
+            .filter-list {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 10px;
+            }
+            
+            .filter-item {
+                flex: 1;
+                min-width: 150px;
+                margin-bottom: 0;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .packages-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .pagination-container {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .pages-info {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+            
+            .filter-list {
+                flex-direction: column;
+            }
+            
+            .filter-item {
+                min-width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pagination {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        /* Page header styles */
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4A2810;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        /* Destination type badges */
+        .destination-type {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #e3f2fd;
+            color: #1565c0;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 10px;
+        }
+        
+        /* Destination specific badges */
+        .national-park-badge {
+            background-color: #e8f5e9;
+            color: #4A2810;
+        }
+        
+        .mountain-badge {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        
+        .city-badge {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .cultural-badge {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .lake-badge {
+            background-color: #e0f7fa;
+            color: #006064;
+        }
+        
+        .waterfall-badge {
+            background-color: #fce4ec;
+            color: #880e4f;
+        }
+        
+        .beach-badge {
+            background-color: #e1f5fe;
+            color: #0277bd;
+        }
+        
+        .wildlife-badge {
+            background-color: #e8f5e9;
+            color: #5C6B3E;
+        }
+        
+        .island-badge {
+            background-color: #e0f2f1;
+            color: #004d40;
+        }
+    </style>
+<link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0"><i class=""></i></h1>
+                <img src="img/BRIGHT LOGO.jpg" alt="Logo"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">Safaris</a>
+                        <div class="dropdown-menu m-0">
+                             <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                                <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                                <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                                <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                                <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                                <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                                
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Destinations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                            <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                            <a href="Tanzania.html" class="dropdown-item active">Tanzania</a>
+                            <a href="DRC.html" class="dropdown-item">DRC</a>
+                            <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                            <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="services.html" class="dropdown-item">Services</a>
+                      
+                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                            <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="reviews.html" class="dropdown-item">Reviews</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+            </div>
+        </nav>
+
+        <!-- Carousel Start -->
+        <div class="carousel-header">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/serengeti.jpeg" class="img-fluid" alt="Serengeti National Park">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore Tanzania</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Wildlife Wonderland!</h1>
+                                <p class="mb-5 fs-5">Discover Tanzania's incredible destinations from world-famous national parks to pristine islands, majestic mountains to cultural heritage sites.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#destinations">View Destinations</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/tanzania.webp" alt="Mount Kilimanjaro">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Tanzania Destinations</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Africa's Roof & Wildlife</h1>
+                                <p class="mb-5 fs-5">Explore Tanzania's diverse wildlife parks, Africa's highest mountain, beautiful coastlines, and rich cultural heritage.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#destinations">Explore Destinations</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/tanzania.jpeg" class="img-fluid" alt="Zanzibar Beach">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Island Destinations</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Spice Islands Paradise</h1>
+                                <p class="mb-5 fs-5">Discover Tanzania's beautiful Zanzibar archipelago with pristine beaches, coral reefs, and rich Swahili culture.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#destinations">View Island Destinations</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Carousel End -->
+    </div>
+
+    <div class="container" id="destinations">
+        <!-- Sidebar with Filter -->
+        <aside class="sidebar">
+            <h2>Filter Destinations</h2>
+            <ul class="filter-list">
+                <li class="filter-item">
+                    <a href="Uganda.html" class="filter-link" data-country="uganda">
+                        <i class="fas fa-map-marker-alt"></i> UGANDA
+                    </a>
+                </li>
+                <li class="filter-item">
+                    <a href="Rwanda.html" class="filter-link" data-country="rwanda">
+                        <i class="fas fa-map-marker-alt"></i> RWANDA
+                    </a>
+                </li>
+                <li class="filter-item">
+                    <a href="DRC.html" class="filter-link" data-country="congo">
+                        <i class="fas fa-map-marker-alt"></i> CONGO
+                    </a>
+                </li>
+                <li class="filter-item">
+                    <a href="Kenya.html" class="filter-link" data-country="kenya">
+                        <i class="fas fa-map-marker-alt"></i> KENYA
+                    </a>
+                </li>
+                <li class="filter-item">
+                    <a href="Tanzania.html" class="filter-link active" data-country="tanzania">
+                        <i class="fas fa-map-marker-alt"></i> TANZANIA
+                    </a>
+                </li>
+                <li class="filter-item">
+                    <a href="East Africa.html" class="filter-link" data-country="east-africa">
+                        <i class="fas fa-map-marker-alt"></i> EAST AFRICA
+                    </a>
+                </li>
+            </ul>
+        </aside>
+
+        <div class="main-content">
+            <header>
+                <h1>Tanzania Destinations</h1>
+                 <h2 class="country-name mb-3">Tanzania - The Ultimate Safari Destination</h2>
+                    <p class="country-description">
+                        Tanzania is East Africa's largest country and arguably its greatest safari destination. It's home to the legendary Serengeti National Park, where the Great Migration of over two million wildebeest, zebra, and gazelle occurs annually. Tanzania offers unparalleled wildlife viewing with the Big Five readily seen in multiple parks. The Ngorongoro Crater, a UNESCO World Heritage Site, is the world's largest intact volcanic caldera and hosts incredible wildlife densities.
+                    </p>
+                    <p class="country-description">
+                        Beyond the northern safari circuit, Tanzania offers chimpanzee tracking in Mahale Mountains and Gombe Stream National Parks, the Selous Game Reserve (Africa's largest), and the stunning beaches of Zanzibar. Mount Kilimanjaro, Africa's highest peak, attracts climbers from around the world. Tanzania's cultural diversity is equally impressive, with over 120 ethnic groups including the famous Maasai warriors. The country's commitment to conservation is evident in its extensive network of national parks and game reserves.
+                    </p>
+                <p>Explore Tanzania's incredible destinations from world-famous national parks and wildlife reserves to pristine islands, Africa's highest mountain, vibrant cities, and rich cultural heritage sites. Discover Africa's Wildlife Wonderland.</p>
+            </header>
+            
+            <!-- Page 1 Content - National Parks & Reserves -->
+            <div id="page-1" class="page-content active">
+                <h2 class="page-header">National Parks & Coastal Destinations</h2>
+                <div class="packages-grid">
+                    <!-- Destination 1 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/serengeti.jpeg" alt="Serengeti National Park" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Serengeti National Park</h3>
+                            <div>
+                                <span class="destination-type national-park-badge">UNESCO Site</span>
+                                <span class="destination-type">Great Migration</span>
+                                <span class="destination-type">Big Five</span>
+                            </div>
+                            <p class="destination-description">World-famous UNESCO World Heritage Site known for the Great Wildebeest Migration, vast savannahs, and abundant wildlife including the Big Five.</p>
+                            <a href="serengeti-park.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                   
+                   
+                    
+                    <!-- Destination 2 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/manyara.jpeg" alt="Lake Manyara National Park" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Lake Manyara National Park</h3>
+                            <div>
+                                <span class="destination-type national-park-badge">National Park</span>
+                                <span class="destination-type">Tree-climbing Lions</span>
+                                <span class="destination-type">Birding</span>
+                            </div>
+                            <p class="destination-description">Compact park known for its tree-climbing lions, large flamingo flocks, diverse ecosystems from groundwater forest to alkaline lake.</p>
+                            <a href="lake-manyara.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 3 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/selous.jpeg" alt="Selous Game Reserve" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Selous Game Reserve</h3>
+                            <div>
+                                <span class="destination-type national-park-badge">UNESCO Site</span>
+                                <span class="destination-type">Largest Reserve</span>
+                                <span class="destination-type">Rufiji River</span>
+                            </div>
+                            <p class="destination-description">One of Africa's largest game reserves and UNESCO site with diverse habitats, walking safaris, and boat safaris on the Rufiji River.</p>
+                            <a href="selous-reserve.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                   
+                    <!-- Destination 4 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/zanzibar stone.jpeg" alt="Zanzibar Stone Town" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Zanzibar Stone Town</h3>
+                            <div>
+                                <span class="destination-type cultural-badge">UNESCO Site</span>
+                                <span class="destination-type">Historical</span>
+                                <span class="destination-type">Swahili Culture</span>
+                            </div>
+                            <p class="destination-description">UNESCO World Heritage Site with narrow winding streets, ancient buildings, rich history as a spice and slave trade center.</p>
+                            <a href="stone-town.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                     <!-- Destination 5 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/zanzibar spice.jpeg" alt="Spice Tours Zanzibar" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Spice Tours Zanzibar</h3>
+                            <div>
+                                <span class="destination-type cultural-badge">Cultural Experience</span>
+                                <span class="destination-type">Spice Farms</span>
+                                <span class="destination-type">Agricultural</span>
+                            </div>
+                            <p class="destination-description">Educational tours of Zanzibar's spice farms where you can see, smell, and taste cloves, vanilla, cinnamon, and other spices.</p>
+                            <a href="spice-tours.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                     <!-- Destination 6 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/paje.jpeg" alt="Paje Beach" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Paje Beach</h3>
+                            <div>
+                                <span class="destination-type beach-badge">Beach Destination</span>
+                                <span class="destination-type">Kite Surfing</span>
+                                <span class="destination-type">East Coast</span>
+                            </div>
+                            <p class="destination-description">Zanzibar's kite surfing capital with wide white sand beaches, turquoise waters, and excellent water sports conditions.</p>
+                            <a href="paje-beach.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+            
+          
+            <!-- Page 2 Content - Mountains & Highlands -->
+            <div id="page-2" class="page-content">
+                <h2 class="page-header">Mountains & Cultural sites</h2>
+                <div class="packages-grid">
+                    <!-- Destination 1 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/kilimanjaro.jpeg" alt="Mount Kilimanjaro" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Mount Kilimanjaro</h3>
+                            <div>
+                                <span class="destination-type mountain-badge">Highest Mountain</span>
+                                <span class="destination-type">UNESCO Site</span>
+                                <span class="destination-type">Trekking</span>
+                            </div>
+                            <p class="destination-description">Africa's highest mountain and the world's highest free-standing mountain, with several climbing routes to Uhuru Peak (5,895m).</p>
+                            <a href="kilimanjaro.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                   
+                    <!-- Destination 2 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/usambara.jpeg" alt="Usambara Mountains" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Usambara Mountains</h3>
+                            <div>
+                                <span class="destination-type mountain-badge">Mountain Range</span>
+                                <span class="destination-type">Hiking</span>
+                                <span class="destination-type">Biodiversity</span>
+                            </div>
+                            <p class="destination-description">Biodiversity hotspot known as the "Galapagos of Africa" with unique flora and fauna, excellent hiking, and German colonial history.</p>
+                            <a href="usambara-mountains.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                   
+                    
+                  
+                  
+                    
+                  
+                    <!-- Destination 3 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/pare.jpeg" alt="Pare Mountains" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Pare Mountains</h3>
+                            <div>
+                                <span class="destination-type mountain-badge">Mountain Range</span>
+                                <span class="destination-type">Cultural</span>
+                                <span class="destination-type">Hiking</span>
+                            </div>
+                            <p class="destination-description">Two mountain ranges (North and South Pare) with traditional villages, cultural experiences, and beautiful hiking trails.</p>
+                            <a href="pare-mountains.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+
+                     <!-- Destination 4 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/olduvai.jpeg" alt="Olduvai Gorge" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Olduvai Gorge</h3>
+                            <div>
+                                <span class="destination-type cultural-badge">Archaeological Site</span>
+                                <span class="destination-type">Cradle of Mankind</span>
+                                <span class="destination-type">Museum</span>
+                            </div>
+                            <p class="destination-description">"Cradle of Mankind" where some of the earliest human fossils were discovered, with a museum explaining human evolution.</p>
+                            <a href="olduvai-gorge.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 5 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/kadoa.jpeg" alt="Kondoa Rock Art Sites" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Kondoa Rock Art Sites</h3>
+                            <div>
+                                <span class="destination-type cultural-badge">UNESCO Site</span>
+                                <span class="destination-type">Rock Paintings</span>
+                                <span class="destination-type">Historical</span>
+                            </div>
+                            <p class="destination-description">UNESCO World Heritage Site with ancient rock paintings dating back thousands of years, depicting animals, humans, and abstract designs.</p>
+                            <a href="kondoa-rock-art.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 6 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/bagamoyo.jpeg" alt="Bagamoyo" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Bagamoyo</h3>
+                            <div>
+                                <span class="destination-type city-badge">Historical Town</span>
+                                <span class="destination-type">Slave Trade</span>
+                                <span class="destination-type">Coastal</span>
+                            </div>
+                            <p class="destination-description">Historical coastal town with important slave trade history, German colonial architecture, and Catholic mission heritage.</p>
+                            <a href="bagamoyo.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+ 
+                </div>
+            </div>
+            
+           
+            <!-- Page 3 Content - Cities & Urban Destinations -->
+            <div id="page-3" class="page-content">
+                <h2 class="page-header">Cities & Urban Destinations</h2>
+                <div class="packages-grid">
+                    <!-- Destination 1 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/dar es salam.jpeg" alt="Dar es Salaam" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Dar es Salaam</h3>
+                            <div>
+                                <span class="destination-type city-badge">Commercial Capital</span>
+                                <span class="destination-type">Coastal City</span>
+                                <span class="destination-type">Cultural</span>
+                            </div>
+                            <p class="destination-description">Tanzania's largest city and commercial hub on the Indian Ocean coast, with vibrant markets, museums, and cultural diversity.</p>
+                            <a href="dar-es-salaam.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 2 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/arusha.jpeg" alt="Arusha" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Arusha</h3>
+                            <div>
+                                <span class="destination-type city-badge">Safari Gateway</span>
+                                <span class="destination-type">Northern Circuit</span>
+                                <span class="destination-type">Cultural</span>
+                            </div>
+                            <p class="destination-description">Gateway to Tanzania's northern safari circuit, at the foot of Mount Meru, with cultural heritage sites and vibrant markets.</p>
+                            <a href="arusha.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                  
+                    
+                    <!-- Destination 3 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/dodoma.jpeg" alt="Dodoma" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Dodoma</h3>
+                            <div>
+                                <span class="destination-type city-badge">Capital City</span>
+                                <span class="destination-type">Political Center</span>
+                                <span class="destination-type">Wine Region</span>
+                            </div>
+                            <p class="destination-description">Tanzania's capital city in the central region, known for government buildings, vineyards, and traditional Gogo culture.</p>
+                            <a href="dodoma.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                    <!-- Destination 4 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/mwanza.jpeg" alt="Mwanza" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Mwanza</h3>
+                            <div>
+                                <span class="destination-type city-badge">Lake City</span>
+                                <span class="destination-type">Lake Victoria</span>
+                                <span class="destination-type">Rock Formations</span>
+                            </div>
+                            <p class="destination-description">Tanzania's second largest city on Lake Victoria shores, known for unique rock formations and as gateway to western parks.</p>
+                            <a href="mwanza.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                    
+                    
+                    
+                   
+                    
+                    <!-- Destination 5 -->
+                    <div class="package-card">
+                        <div class="package-image-container">
+                            <img src="img/mbeya-pic.jpg" alt="Mbeya" class="package-image">
+                        </div>
+                        <div class="package-content">
+                            <h3 class="package-title">Mbeya</h3>
+                            <div>
+                                <span class="destination-type city-badge">Southern Highlands</span>
+                                <span class="destination-type">Agriculture</span>
+                                <span class="destination-type">Gateway</span>
+                            </div>
+                            <p class="destination-description">Major city in Tanzania's Southern Highlands surrounded by mountains, tea plantations, and gateway to Malawi and Zambia.</p>
+                            <a href="mbeya.html" class="read-more-btn">Read More</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+           
+            
+            
+            <!-- Pagination Updated for 7 Pages -->
+            <div class="pagination-container">
+                <ul class="pagination">
+                    <li class="page-item">
+                        <a href="#" class="page-link active" data-page="1">1</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link" data-page="2">2</a>
+                    </li>
+                    <li class="page-item">
+                        <a href="#" class="page-link" data-page="3">3</a>
+                    </li>
+                   
+                    <li class="page-item">
+                        <a href="#" class="page-link next-page" id="next-page-btn">See Next Page</a>
+                    </li>
+                </ul>
+                <div class="pages-info">Page 1 of 3</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+                        <a href=""><i class="fas fa-home me-2"></i> Kasese, Municipality, Uganda</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                        <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                        <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Popular Safaris</h4>
+                        <a href="ugandasafaris.html"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                        <a href="Kenya Safaris.html"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                        <a href="Tanzania Safaris.html"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                        <a href="DRC Safaris.html"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                        <a href="Rwanda Safaris.html"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                        <a href="EAst Africa Safaris.html"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Top Destinations</h4>
+                        <a href="Uganda.html"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                        <a href="Kenya.html"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                        <a href="Tanzania.html" class="active"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                        <a href="DRC.html"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                        <a href="Rwanda.html"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                        <a href="East Africa.html"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="booking.html"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                        <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                
+                        <a href="privacy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="sitemap.html"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html">Mahogany Travel Expeditions</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="Tanzania.html" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+ 
+    
+  <!-- JavaScript Libraries (LOAD THESE ONCE) -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="lib/owlcarousel/owl.carousel.min.js"></script>
+<script src="lib/lightbox/js/lightbox.min.js"></script>
+
+<script>
+// ==================== CLEAN VERSION - ALL IN ONE ====================
+
+// Utility function to create URL-friendly slugs
+function createSlug(text) {
+    return text.toString().toLowerCase()
+        .replace(/[^\w\s]/g, '')      // Remove punctuation
+        .replace(/\s+/g, '-')         // Replace spaces with hyphens
+        .replace(/--+/g, '-')         // Replace multiple hyphens with single
+        .trim();                      // Trim whitespace
+}
+
+// Main function that runs when page loads
+function setupPage() {
+    // 1. Setup pagination
+    setupPagination();
+    
+    // 2. Setup filters
+    setupFilters();
+    
+    // 3. Setup Read More buttons
+    setupReadMoreButtons();
+}
+
+// ==================== PAGINATION ====================
+function setupPagination() {
+    const pageLinks = document.querySelectorAll('.page-link');
+    const pageContents = document.querySelectorAll('.page-content');
+    const pagesInfo = document.querySelector('.pages-info');
+    
+    if (!pageLinks.length) return;
+    
+    let currentPage = 1;
+    
+    // Function to show a specific page
+    function showPage(pageNumber) {
+        // Hide all pages
+        pageContents.forEach(page => {
+            page.classList.remove('active');
+        });
+        
+        // Show the selected page
+        const targetPage = document.getElementById(`page-${pageNumber}`);
+        if (targetPage) {
+            targetPage.classList.add('active');
+        } else {
+            // Fallback to page 1
+            document.getElementById('page-1').classList.add('active');
+            pageNumber = 1;
+        }
+        
+        // Update active button
+        pageLinks.forEach(link => {
+            link.classList.remove('active');
+            if (link.getAttribute('data-page') == pageNumber) {
+                link.classList.add('active');
+            }
+        });
+        
+        // Update page info
+        if (pagesInfo) {
+            pagesInfo.textContent = `Page ${pageNumber} of 7`;
+        }
+        
+        currentPage = pageNumber;
+    }
+    
+    // Add click events to page links
+    pageLinks.forEach(link => {
+        link.addEventListener('click', function(e) {
+            e.preventDefault();
+            
+            if (this.classList.contains('next-page')) {
+                // Next page
+                if (currentPage < 7) {
+                    showPage(currentPage + 1);
+                }
+            } else if (this.hasAttribute('data-page')) {
+                // Specific page
+                const pageNum = parseInt(this.getAttribute('data-page'));
+                showPage(pageNum);
+            }
+        });
+    });
+    
+    // Show first page initially
+    showPage(1);
+}
+
+
+
+// ==================== READ MORE BUTTONS ====================
+function setupReadMoreButtons() {
+    const readMoreButtons = document.querySelectorAll('.read-more-btn');
+    
+    readMoreButtons.forEach(button => {
+        // Remove any existing click handlers
+        button.removeEventListener('click', handleReadMoreClick);
+        
+        // Add new click handler
+        button.addEventListener('click', handleReadMoreClick);
+    });
+}
+
+function handleReadMoreClick(e) {
+    e.preventDefault();
+    e.stopPropagation();
+    
+    try {
+        // Get the destination card
+        const card = this.closest('.package-card');
+        if (!card) {
+            console.error('Could not find package card');
+            return;
+        }
+        
+        // Get destination title
+        const titleElement = card.querySelector('.package-title');
+        if (!titleElement) {
+            console.error('Could not find title element');
+            return;
+        }
+        
+        const title = titleElement.textContent.trim();
+        
+        // Get description
+        const descElement = card.querySelector('.destination-description');
+        const description = descElement ? descElement.textContent.trim() : '';
+        
+        // Get tags
+        const tagElements = card.querySelectorAll('.destination-type');
+        const tags = Array.from(tagElements).map(tag => tag.textContent.trim());
+        
+        // Get image
+        const imgElement = card.querySelector('.package-image');
+        const imageUrl = imgElement ? imgElement.src : '';
+        
+        console.log('Processing destination:', title);
+        
+        // Create slug from title
+        const slug = createSlug(title);
+        console.log('Created slug:', slug);
+        
+        // Store data temporarily (for the detail page)
+        const destinationData = {
+            title: title,
+            description: description,
+            tags: tags,
+            image: imageUrl,
+            slug: slug,
+            timestamp: new Date().getTime()
+        };
+        
+        // Save to localStorage
+        localStorage.setItem('currentDestination', JSON.stringify(destinationData));
+        
+        // Set a flag to indicate we're navigating
+        sessionStorage.setItem('isNavigating', 'true');
+        
+        // Navigate to the detail page
+        console.log('Navigating to: destination-single.html?dest=' + slug);
+        window.location.href = 'destination-single.html?dest=' + slug;
+        
+    } catch (error) {
+        console.error('Error in handleReadMoreClick:', error);
+        alert('There was an error loading the destination. Please try again.');
+    }
+}
+
+// ==================== INITIALIZE EVERYTHING ====================
+// Wait for DOM to be fully loaded
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', setupPage);
+} else {
+    setupPage();
+}
+
+// Re-setup buttons when page changes (for pagination)
+// We'll use a simple observer to watch for page changes
+const observer = new MutationObserver(function(mutations) {
+    mutations.forEach(function(mutation) {
+        if (mutation.type === 'childList') {
+            // Check if new read-more buttons were added
+            const newButtons = document.querySelectorAll('.read-more-btn');
+            if (newButtons.length > 0) {
+                setupReadMoreButtons();
+            }
+        }
+    });
+});
+
+// Start observing the main content area
+const mainContent = document.querySelector('.main-content');
+if (mainContent) {
+    observer.observe(mainContent, {
+        childList: true,
+        subtree: true
+    });
+}
+
+// ==================== KEYBOARD SHORTCUTS ====================
+document.addEventListener('keydown', function(e) {
+    // Right arrow for next page
+    if (e.key === 'ArrowRight') {
+        const activePage = document.querySelector('.page-content.active');
+        if (activePage) {
+            const currentId = activePage.id;
+            const currentNum = parseInt(currentId.split('-')[1]);
+            if (currentNum < 7) {
+                const nextBtn = document.querySelector('.page-link[data-page="' + (currentNum + 1) + '"]');
+                if (nextBtn) nextBtn.click();
+            }
+        }
+    }
+    // Left arrow for previous page
+    else if (e.key === 'ArrowLeft') {
+        const activePage = document.querySelector('.page-content.active');
+        if (activePage) {
+            const currentId = activePage.id;
+            const currentNum = parseInt(currentId.split('-')[1]);
+            if (currentNum > 1) {
+                const prevBtn = document.querySelector('.page-link[data-page="' + (currentNum - 1) + '"]');
+                if (prevBtn) prevBtn.click();
+            }
+        }
+    }
+});
+
+// ==================== DEBUG HELPER ====================
+// This will help you see what's happening
+console.log('Destination page script loaded successfully');
+console.log('Found', document.querySelectorAll('.read-more-btn').length, 'Read More buttons');
+
+// Test one button to make sure it works
+setTimeout(function() {
+    const testButton = document.querySelector('.read-more-btn');
+    if (testButton) {
+        console.log('Test button ready:', testButton);
+        console.log('Test destination title:', 
+            testButton.closest('.package-card')?.querySelector('.package-title')?.textContent);
+    }
+}, 1000);
+</script>
+<script src="global.js"></script>
+</body>
+</html>

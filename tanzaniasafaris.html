@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mahogany Travel Expeditions - Tanzania Safaris</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        header h1 {
+            color:#4A2810;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #666;
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .package-image-container {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .package-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+        }
+        
+        .package-content {
+            padding: 20px;
+        }
+        
+        .package-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            min-height: 50px;
+        }
+        
+        .view-package-btn {
+            display: inline-block;
+            background-color: #4A2810;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .view-package-btn:hover {
+            background-color: #5C6B3E;
+        }
+        
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .pagination {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .page-item {
+            display: inline-block;
+        }
+        
+        .page-link {
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .page-link:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .page-link.active {
+            background-color: #4A2810;
+            color: white;
+            border-color: #4A2810;
+        }
+        
+        .page-link.next-page {
+            background-color: #4A2810;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+        }
+        
+        .page-link.next-page:hover {
+            background-color: #5C6B3E;
+        }
+        
+        .ellipsis {
+            padding: 8px 5px;
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .pages-info {
+            margin-left: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .packages-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .pagination-container {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .pages-info {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pagination {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        /* ADDED STYLES - Matching other country pages */
+        .highlight {
+            color: #5C6B3E;
+            font-weight: 600;
+        }
+        
+        .intro-box {
+            background-color: #f0f7f0;
+            border-left: 4px solid #4A2810;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .park-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .itinerary {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .day-box {
+            padding: 12px 15px;
+            background-color: #f0f7f0;
+            border-radius: 5px;
+            border-left: 3px solid #4A2810;
+        }
+        
+        .footer-note {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        /* Page header styles for organized package categories */
+        .page-header {
+            text-align: center;
+            margin-bottom: 30px;
+            color: #4A2810;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+        
+        /* Safari type badges - Tanzania specific */
+        .safari-type {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #e3f2fd;
+            color: #1565c0;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        /* Tanzania specific badges */
+        .wildebeest-badge {
+            background-color: #e8f5e9;
+            color: #4A2810;
+        }
+        
+        .mountain-badge {
+            background-color: #fff3e0;
+            color: #ef6c00;
+        }
+        
+        .beach-badge {
+            background-color: #e3f2fd;
+            color: #1565c0;
+        }
+        
+        .cultural-badge {
+            background-color: #f3e5f5;
+            color: #7b1fa2;
+        }
+        
+        .bigfive-badge {
+            background-color: #ffecb3;
+            color: #ff6f00;
+        }
+    </style>
+<link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0"><i class=""></i></h1>
+                <img src="img/BRIGHT LOGO.jpg" alt="Logo"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    
+                     <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Safaris</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                                <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                                <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                                <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                                <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                                <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                                
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                            <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                            <a href="Tanzania.html" class="dropdown-item">Tanzania</a>
+                            <a href="DRC.html" class="dropdown-item">DRC</a>
+                            <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                            <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="services.html" class="dropdown-item">Services</a>
+                           
+                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                            <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="reviews.html" class="dropdown-item">Reviews</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+            </div>
+        </nav>
+
+        <!-- Carousel Start -->
+        <div class="carousel-header">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/serengeti.jpeg" class="img-fluid" alt="Serengeti Wildebeest Migration">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore Tanzania</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">The Great Migration!</h1>
+                                <p class="mb-5 fs-5">Witness the greatest wildlife spectacle on Earth in the Serengeti with Mahogany Travel Expeditions.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#packages">View Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/ngorongoro-crater.jpg" class="img-fluid" alt="Ngorongoro Crater">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Tanzania Safaris</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Africa's Eden - Ngorongoro Crater</h1>
+                                <p class="mb-5 fs-5">Explore the world's largest intact volcanic caldera teeming with wildlife in Ngorongoro Conservation Area.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#packages">Explore Safaris</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/Mount-Kilimanjaro.jpg" class="img-fluid" alt="Mount Kilimanjaro">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Mountain Adventures</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Summit Africa's Roof</h1>
+                                <p class="mb-5 fs-5">Conquer Mount Kilimanjaro, Africa's highest peak and the world's tallest free-standing mountain.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#packages">View Mountain Tours</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Carousel End -->
+    </div>
+
+    <div class="container" id="packages">
+        <header>
+            <h1>Tanzania Safari Packages</h1>
+            <p>Experience Tanzania's incredible wildlife spectacles, from the Great Wildebeest Migration in Serengeti to the Big Five in Ngorongoro Crater. Climb Mount Kilimanjaro, relax on Zanzibar's pristine beaches, and explore Africa's most iconic destinations.</p>
+        </header>
+        
+        <!-- Page 1 Content - Great Migration Safaris -->
+        <div id="page-1" class="page-content active">
+            <h2 class="page-header">Great Migration & Serengeti Safaris</h2>
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/Serengeti-wildebeest-migration-tours.jpg" alt="Great Migration" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">6 Days Serengeti Wildebeest Migration Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">Great Migration</span>
+                            <span class="safari-type">Serengeti</span>
+                        </div>
+                        <a href="serengeti-migration-6-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/ndutu calving.jpg" alt="Calving Season" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Ndutu Calving Season Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">Calving Season</span>
+                            <span class="safari-type">Southern Serengeti</span>
+                        </div>
+                        <a href="ndutu-calving-5-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mara-river-crossing.jpg" alt="River Crossing" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">7 Days Mara River Crossing Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">River Crossing</span>
+                            <span class="safari-type">Northern Serengeti</span>
+                        </div>
+                        <a href="mara-river-7-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/photography.jpeg" alt="Migration Photography" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">8 Days Migration Photography Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">Photography</span>
+                            <span class="safari-type">Professional</span>
+                        </div>
+                        <a href="migration-photography-8-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 5 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/baloon.jpg" alt="Balloon Safari" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">4 Days Serengeti Balloon Safari Experience</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">Hot Air Balloon</span>
+                            <span class="safari-type">Aerial Views</span>
+                        </div>
+                        <a href="serengeti-balloon-4-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                
+                
+                <!-- Package 7 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/luxury.jpg" alt="Luxury Migration" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">7 Days Luxury Migration Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">Luxury</span>
+                            <span class="safari-type">Premium</span>
+                        </div>
+                        <a href="luxury-migration-7-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+        
+        <!-- Page 2 Content - Ngorongoro & Northern Circuit -->
+        <div id="page-2" class="page-content">
+            <h2 class="page-header">Ngorongoro Crater & Northern Circuit</h2>
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/crator lake.jpeg" alt="Ngorongoro Crater" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">3 Days Ngorongoro Crater Safari</h3>
+                        <div>
+                            <span class="safari-type bigfive-badge">Big Five</span>
+                            <span class="safari-type">Crater Floor</span>
+                        </div>
+                        <a href="ngorongoro-3-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/Tarangire.jpg" alt="Tarangire National Park" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">4 Days Tarangire & Lake Manyara Safari</h3>
+                        <div>
+                            <span class="safari-type bigfive-badge">Elephants</span>
+                            <span class="safari-type">Baobab Trees</span>
+                        </div>
+                        <a href="tarangire-manyara-4-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/treelions1-facebookJumbo-1.jpg" alt="Lake Manyara" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">2 Days Lake Manyara Tree-Climbing Lions</h3>
+                        <div>
+                            <span class="safari-type bigfive-badge">Tree-climbing Lions</span>
+                            <span class="safari-type">Alkaline Lake</span>
+                        </div>
+                        <a href="manyara-2-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                
+                <!-- Package 5 -->
+                <div cla="package-card">
+                    <div classss="package-image-container">
+                        <img src="img/arusha-national-park-3.webp" alt="Arusha National Park" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">3 Days Arusha National Park Canoe Safari</h3>
+                        <div>
+                            <span class="safari-type bigfive-badge">Canoe Safari</span>
+                            <span class="safari-type">Mount Meru</span>
+                        </div>
+                        <a href="arusha-canoe-3-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 6 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/highland.jpg" alt="Ngorongoro Highlands" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Ngorongoro Highlands Walking Safari</h3>
+                        <div>
+                            <span class="safari-type bigfive-badge">Walking Safari</span>
+                            <span class="safari-type">Maasai Culture</span>
+                        </div>
+                        <a href="ngorongoro-walking-5-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 7 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/ngorongoro luxury.jpg" alt="Crater Rim Luxury" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">4 Days Ngorongoro Crater Rim Luxury</h3>
+                        <div>
+                            <span class="safari-type bigfive-badge">Luxury</span>
+                            <span class="safari-type">Crater Views</span>
+                        </div>
+                        <a href="crater-rim-luxury.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                
+            </div>
+        </div>
+        
+        <!-- Page 3 Content - Mount Kilimanjaro Climbing -->
+        <div id="page-3" class="page-content">
+            <h2 class="page-header">Mount Kilimanjaro Climbing</h2>
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/Kilimajaro ma.jpeg" alt="Machame Route" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">7 Days Kilimanjaro Machame Route</h3>
+                        <div>
+                            <span class="safari-type mountain-badge">Kilimanjaro</span>
+                            <span class="safari-type">Machame Route</span>
+                        </div>
+                        <a href="kilimanjaro-machame-7-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+               
+              
+                
+                
+               
+                
+                <!-- Package 6 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/kilimanjaro family.jpeg" alt="Family Kilimanjaro" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Family Kilimanjaro Adventure</h3>
+                        <div>
+                            <span class="safari-type mountain-badge">Family</span>
+                            <span class="safari-type">Kid-Friendly</span>
+                        </div>
+                        <a href="family-kilimanjaro-5-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 7 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/kilimanjaro basecamp.jpeg" alt="Kilimanjaro Base Camp" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">4 Days Kilimanjaro Base Camp Trek</h3>
+                        <div>
+                            <span class="safari-type mountain-badge">Base Camp</span>
+                            <span class="safari-type">No Summit</span>
+                        </div>
+                        <a href="kilimanjaro-basecamp-4-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 8 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mount meru.jpeg" alt="Mount Meru" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">4 Days Mount Meru Climbing Safari</h3>
+                        <div>
+                            <span class="safari-type mountain-badge">Mount Meru</span>
+                            <span class="safari-type">Kilimanjaro View</span>
+                        </div>
+                        <a href="mount-meru-4-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        
+            </div>
+        </div>
+        
+        <!-- Pagination Updated for 6 Pages -->
+        <div class="pagination-container">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                </li>
+                <li class="page-item">
+                    <a href="#" class="page-link" data-page="2">2</a>
+                </li>
+                <li class="page-item">
+                    <a href="#" class="page-link" data-page="3">3</a>
+                </li>
+                
+                <li class="page-item">
+                    <span class="ellipsis">...</span>
+                </li>
+                
+                <li class="page-item">
+                    <a href="#" class="page-link next-page" id="next-page-btn">See Next Page</a>
+                </li>
+            </ul>
+            <div class="pages-info">Page 1 of 3</div>
+        </div>
+        
+        <!-- ADDED: Comprehensive Tanzania Information Section -->
+        <section>
+            <h2>Introduction</h2>
+            <div class="intro-box">
+                <p>Our customized Tanzania safari packages take you to witness the world-famous <span class="highlight">Great Wildebeest Migration</span> in the Serengeti, explore the <span class="highlight">Ngorongoro Crater</span> (Africa's Garden of Eden), summit <span class="highlight">Mount Kilimanjaro</span> (Africa's highest peak), and relax on <span class="highlight">Zanzibar's pristine beaches</span>. Tanzania offers Africa's most iconic wildlife and adventure experiences.</p>
+            </div>
+            
+            <p>Tanzania covers approximately 947,300 square kilometers in East Africa, bordered by Kenya, Uganda, Rwanda, Burundi, Democratic Republic of Congo, Zambia, Malawi, and Mozambique. The country boasts Africa's highest peak (Mount Kilimanjaro at 5,895m), deepest lake (Lake Tanganyika), and largest game reserve (Selous).</p>
+            
+            <p>Dodoma is the official capital, while Dar es Salaam remains the commercial hub. Tanzania's tourism infrastructure is well-developed, offering accommodations ranging from luxury tented camps and lodges to budget-friendly options and beach resorts, catering to all types of travelers seeking authentic African experiences.</p>
+        </section>
+        
+        <section>
+            <h2>Explore Tanzania – Land of Safari Legends</h2>
+            <p>Tanzania is home to Africa's most famous national parks and natural wonders. The Serengeti National Park hosts the Great Wildebeest Migration, where over 1.5 million wildebeest, zebras, and gazelles follow the rains in an annual cycle of survival. This spectacle, often called "The Greatest Show on Earth," offers unparalleled wildlife viewing opportunities.</p>
+            
+            <p>The Ngorongoro Conservation Area contains the world's largest intact volcanic caldera, hosting approximately 25,000 large animals including all of Africa's Big Five. Often described as "Africa's Eden" or "The Eighth Wonder of the World," Ngorongoro Crater provides some of the most concentrated wildlife viewing on the continent.</p>
+            
+            <p>Mount Kilimanjaro, Africa's highest mountain and the world's tallest free-standing mountain, attracts climbers from around the globe. The island of Zanzibar, with its rich Swahili culture, spice plantations, and pristine beaches, offers the perfect complement to a Tanzanian safari.</p>
+        </section>
+        
+        <section>
+            <h2>Tanzania's Wildlife and National Parks</h2>
+            
+            <div class="park-section">
+                <h3>Serengeti National Park</h3>
+                <p>A UNESCO World Heritage Site covering 14,750 km², famous for the annual Great Wildebeest Migration. The park hosts over 1.5 million wildebeest, 500,000 gazelles, 250,000 zebras, and thousands of predators. The Serengeti ecosystem is one of the oldest on Earth, with fossils showing similar patterns of life existing for over a million years.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Ngorongoro Conservation Area</h3>
+                <p>Home to the Ngorongoro Crater, the world's largest inactive, intact, and unfilled volcanic caldera. The crater floor covers 260 km² and hosts approximately 25,000 large animals including lions, elephants, black rhinos, and large herds of wildebeest and zebras. The area also contains Olduvai Gorge, an important paleoanthropological site.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Tarangire National Park</h3>
+                <p>Known for its large elephant herds (the highest density in Tanzania), ancient baobab trees, and diverse birdlife. During the dry season (June-October), the Tarangire River attracts thousands of animals, creating excellent wildlife viewing. The park covers 2,850 km² and hosts over 550 bird species.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Lake Manyara National Park</h3>
+                <p>Famous for its tree-climbing lions, alkaline lake that hosts thousands of flamingos, and diverse ecosystems within a small area (330 km²). The park ranges from the Rift Valley escarpment to the lake shore, hosting elephants, hippos, giraffes, and over 400 bird species.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Selous Game Reserve</h3>
+                <p>Africa's largest game reserve (50,000 km²) and a UNESCO World Heritage Site. Selous offers diverse activities including game drives, boat safaris on the Rufiji River, and walking safaris. The reserve is known for its large populations of elephants, wild dogs, black rhinos, and over 440 bird species.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Ruaha National Park</h3>
+                <p>Tanzania's largest national park (20,226 km²), known for its rugged wilderness, large elephant herds (about 10% of Africa's population), and diverse landscapes. Ruaha hosts over 570 bird species and 10% of Africa's lion population, offering a remote and exclusive safari experience.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Katavi National Park</h3>
+                <p>Tanzania's third largest park (4,471 km²) and one of Africa's most remote wilderness areas. Katavi is known for massive hippo and crocodile populations during the dry season, large herds of buffalo and elephants, and authentic wilderness experiences with few visitors.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Mahale Mountains National Park</h3>
+                <p>Located on the shores of Lake Tanganyika, Mahale is famous for its chimpanzee populations. The park can only be accessed by boat or small aircraft, offering an exclusive primate tracking experience in a stunning lakeside setting with forested mountains.</p>
+            </div>
+        </section>
+        
+        <div class="columns">
+            <div class="column">
+                <h3>Wildlife Highlights</h3>
+                <ul>
+                    <li><strong>Great Migration:</strong> 1.5 million wildebeest, 500,000 gazelles, 250,000 zebras</li>
+                    <li><strong>Big Five:</strong> Lions, leopards, elephants, buffalo, and black rhinos (Ngorongoro)</li>
+                    <li><strong>Predators:</strong> Highest lion population in Africa, cheetahs, hyenas, wild dogs</li>
+                    <li><strong>Birdlife:</strong> Over 1,100 bird species (40% of Africa's total)</li>
+                    <li><strong>Primates:</strong> Chimpanzees in Mahale and Gombe, various monkey species</li>
+                </ul>
+            </div>
+            
+            <div class="column">
+                <h3>Travel Practicalities</h3>
+                <ul>
+                    <li><strong>Visa Requirements:</strong> Available on arrival for most nationalities or as e-Visa. East Africa Tourist Visa available for Kenya, Uganda, Rwanda, and Tanzania.</li>
+                    <li><strong>Best Time to Visit:</strong> Dry season (June-October) for wildlife viewing. January-February for calving season. March-May (rainy season) for birding and fewer crowds.</li>
+                    <li><strong>Health Requirements:</strong> Yellow fever vaccination if coming from endemic area. Malaria prophylaxis strongly recommended. COVID-19 requirements may apply.</li>
+                    <li><strong>Currency:</strong> Tanzanian Shilling (TZS), but USD widely accepted. Credit cards accepted in major establishments.</li>
+                    <li><strong>Park Fees:</strong> Vary by park and nationality. Higher fees for non-residents support conservation efforts.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <section>
+            <h2>Sample Itinerary: 12-Day Tanzania Highlights Safari</h2>
+            <div class="itinerary">
+                <div class="day-box">
+                    <strong>Day 1:</strong> Arrive at Kilimanjaro International Airport (JRO), transfer to Arusha hotel. Optional Arusha town tour.
+                </div>
+                <div class="day-box">
+                    <strong>Day 2:</strong> Drive to Tarangire National Park, afternoon game drive among ancient baobabs and elephant herds.
+                </div>
+                <div class="day-box">
+                    <strong>Day 3:</strong> Full day in Tarangire with morning and afternoon game drives focusing on birdlife and predators.
+                </div>
+                <div class="day-box">
+                    <strong>Day 4:</strong> Transfer to Lake Manyara National Park, game drive to see tree-climbing lions and flamingos.
+                </div>
+                <div class="day-box">
+                    <strong>Day 5:</strong> Drive to Ngorongoro Conservation Area, afternoon visit to a Maasai village.
+                </div>
+                <div class="day-box">
+                    <strong>Day 6:</strong> Full day exploring Ngorongoro Crater floor - Africa's densest wildlife concentration.
+                </div>
+                <div class="day-box">
+                    <strong>Day 7:</strong> Drive to Central Serengeti, afternoon game drive in Seronera Valley.
+                </div>
+                <div class="day-box">
+                    <strong>Day 8:</strong> Full day in Central Serengeti exploring kopjes and searching for predators.
+                </div>
+                <div class="day-box">
+                    <strong>Day 9:</strong> Transfer to Northern Serengeti (Mara River area) for river crossing viewing (seasonal).
+                </div>
+                <div class="day-box">
+                    <strong>Day 10:</strong> Morning game drive, afternoon flight to Zanzibar, transfer to beach hotel.
+                </div>
+                <div class="day-box">
+                    <strong>Day 11:</strong> Zanzibar Stone Town tour including former slave market, spice market, and Sultan's Palace.
+                </div>
+                <div class="day-box">
+                    <strong>Day 12:</strong> Relaxation on Zanzibar beach, optional spice tour, evening departure.
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Mount Kilimanjaro Climbing Routes</h2>
+            <p>Kilimanjaro offers several routes to the summit (Uhuru Peak at 5,895m/19,341ft):</p>
+            
+            <div class="columns">
+                <div class="column">
+                    <h4>Machame Route (7 days)</h4>
+                    <p>The most popular route, known as the "Whiskey Route" for its challenging but scenic ascent. Higher success rate due to better acclimatization profile.</p>
+                </div>
+                <div class="column">
+                    <h4>Marangu Route (6 days)</h4>
+                    <p>Known as the "Coca-Cola Route" for hut accommodations. The only route with sleeping huts. Shorter duration but lower success rate.</p>
+                </div>
+                <div class="column">
+                    <h4>Lemosho Route (8 days)</h4>
+                    <p>The most scenic route starting from the western side. Excellent acclimatization profile with highest success rates. Remote and beautiful.</p>
+                </div>
+            </div>
+            
+            <div class="columns">
+                <div class="column">
+                    <h4>Rongai Route (7 days)</h4>
+                    <p>Approaches from the north near the Kenyan border. Drier climate and less crowded. Good for those seeking a more remote experience.</p>
+                </div>
+                <div class="column">
+                    <h4>Northern Circuit (9 days)</h4>
+                    <p>The newest and longest route with the highest success rate. Circles the northern slopes with excellent acclimatization.</p>
+                </div>
+                <div class="column">
+                    <h4>Umbwe Route (6 days)</h4>
+                    <p>The shortest and steepest route for experienced climbers only. Challenging with lower success rates but very direct.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Zanzibar Archipelago</h2>
+            <p>The Zanzibar Archipelago consists of numerous islands, with Unguja (commonly called Zanzibar) and Pemba being the main islands:</p>
+            
+            <div class="park-section">
+                <h4>✓ Stone Town</h4>
+                <p>A UNESCO World Heritage Site with narrow winding streets, historic buildings, and rich Swahili culture. Key sites include the House of Wonders, former slave market, and Sultan's Palace.</p>
+            </div>
+            
+            <div class="park-section">
+                <h4>✓ Spice Tours</h4>
+                <p>Zanzibar was once the world's largest producer of cloves. Spice tours offer opportunities to see, smell, and taste various spices including cloves, cinnamon, nutmeg, and vanilla.</p>
+            </div>
+            
+            <div class="park-section">
+                <h4>✓ Beaches</h4>
+                <p>Zanzibar offers some of Africa's best beaches with white sand and turquoise waters. Popular areas include Nungwi, Kendwa, Paje (for kitesurfing), and Jambiani.</p>
+            </div>
+            
+            <div class="park-section">
+                <h4>✓ Marine Activities</h4>
+                <p>Excellent snorkeling and diving opportunities, particularly around Mnemba Atoll. Dolphin tours in Kizimkazi and traditional dhow sailing trips are also popular.</p>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Cultural Heritage</h2>
+            <p>Tanzania's cultural diversity includes over 120 ethnic groups, with the Maasai being the most internationally recognized:</p>
+            
+            <div class="columns">
+                <div class="column">
+                    <h4>✓ Maasai Culture</h4>
+                    <p>Semi-nomadic pastoralists known for their distinctive dress, jewelry, and jumping dances. Cultural visits to Maasai villages offer insights into their traditional lifestyle.</p>
+                </div>
+                <div class="column">
+                    <h4>✓ Swahili Culture</h4>
+                    <p>The coastal Swahili culture blends African, Arab, Persian, and Indian influences. Zanzibar is the heart of Swahili culture with its architecture, cuisine, and language.</p>
+                </div>
+                <div class="column">
+                    <h4>✓ Traditional Crafts</h4>
+                    <p>Tingatinga painting style (bright, colorful depictions of animals), Makonde wood carvings, and Maasai beadwork are distinctive Tanzanian crafts.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Conservation Success Stories</h2>
+            <p>Tanzania has been at the forefront of African conservation:</p>
+            
+            <div class="columns">
+                <div class="column">
+                    <h4>✓ Anti-Poaching Success</h4>
+                    <p>Significant reduction in elephant poaching since 2015, with elephant populations stabilizing in many parks.</p>
+                </div>
+                <div class="column">
+                    <h4>✓ Community Conservation</h4>
+                    <p>Successful community-based conservation projects like the Burunge Wildlife Management Areas that benefit local communities.</p>
+                </div>
+                <div class="column">
+                    <h4>✓ Rhino Protection</h4>
+                    <p>Intensive protection of the critically endangered black rhino population in Ngorongoro Crater and Serengeti.</p>
+                </div>
+            </div>
+            
+            <div class="columns">
+                <div class="column">
+                    <h4>✓ Sustainable Tourism</h4>
+                    <p>High park fees (for non-residents) directly fund conservation efforts and park management.</p>
+                </div>
+                <div class="column">
+                    <h4>✓ Chimpanzee Research</h4>
+                    <p>Gombe Stream National Park continues Jane Goodall's pioneering chimpanzee research since 1960.</p>
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Conclusion</h2>
+            <p>Tanzania offers Africa's most iconic safari experiences: witnessing the Great Wildebeest Migration in the Serengeti, descending into the wildlife-rich Ngorongoro Crater, summiting Mount Kilimanjaro, and relaxing on Zanzibar's pristine beaches. With diverse landscapes, abundant wildlife, and rich cultures, Tanzania delivers the complete African experience.</p>
+            
+            <p>The country's well-established tourism infrastructure, political stability, and English as a second language make it accessible to international travelers. From budget camping safaris to luxury lodge experiences, Tanzania offers options for every traveler seeking authentic African adventures in the land of safari legends.</p>
+            
+            <p>Whether you're watching millions of wildebeest cross the Mara River, spotting the Big Five in Ngorongoro Crater, standing on the roof of Africa at Kilimanjaro's summit, or exploring the spice-scented streets of Stone Town, Tanzania creates memories that last a lifetime.</p>
+        </section>
+        
+        <div class="footer-note">
+            <p>For more information and customized safari packages, contact our travel specialists. Great Migration viewing depends on seasonal movements - consult our experts for timing your visit. Mount Kilimanjaro climbs require advance booking, especially for peak seasons.</p>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+                        <a href=""><i class="fas fa-home me-2"></i> Kasese, Municipality, Uganda</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                        <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                        <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Popular Safaris</h4>
+                        <a href="ugandasafaris.html"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                        <a href="Kenya Safaris.html"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                        <a href="Tanzania Safaris.html" class="active"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                        <a href="DRC Safaris.html"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                        <a href="Rwanda Safaris.html"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                        <a href="EAst Africa Safaris.html"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Top Destinations</h4>
+                        <a href="Uganda.html"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                        <a href="Kenya.html"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                        <a href="Tanzania.html"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                        <a href="DRC.html"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                        <a href="Rwanda.html"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                        <a href="East Africa.html"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="booking.html"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                        <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+       
+                        <a href="privacy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="sitemap.html"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html">Mahogany Travel Expeditions</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <script>
+    // Pagination functionality - UPDATED FOR 14 PAGES
+    document.addEventListener('DOMContentLoaded', function() {
+        const pageLinks = document.querySelectorAll('.page-link');
+        const nextPageBtn = document.getElementById('next-page-btn');
+        const pageContents = document.querySelectorAll('.page-content');
+        const pagesInfo = document.querySelector('.pages-info');
+        
+        // Set initial active page
+        let currentPage = 1;
+        updateActivePage(currentPage);
+        
+        // Add click event to all page links
+        pageLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.classList.contains('next-page')) {
+                    // Next page button
+                    if (currentPage < 14) {
+                        currentPage++;
+                        updateActivePage(currentPage);
+                    }
+                } else if (this.dataset.page) {
+                    // Numbered page button
+                    currentPage = parseInt(this.dataset.page);
+                    updateActivePage(currentPage);
+                }
+            });
+        });
+        
+        // Function to update active page
+        function updateActivePage(pageNum) {
+            // Update page content visibility
+            pageContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const activePageContent = document.getElementById(`page-${pageNum}`);
+            if (activePageContent) {
+                activePageContent.classList.add('active');
+            } else {
+                // If page doesn't have specific content, show page 1
+                document.getElementById('page-1').classList.add('active');
+            }
+            
+            // Update pagination links
+            pageLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page && parseInt(link.dataset.page) === pageNum) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Update page info
+            pagesInfo.textContent = `Page ${pageNum} of 14`;
+            
+            // Update next page button text
+            if (pageNum < 14) {
+                nextPageBtn.textContent = 'See Next Page';
+            } else {
+                nextPageBtn.textContent = 'Last Page';
+            }
+            
+            // Scroll to top of packages section
+            window.scrollTo({
+                top: document.querySelector('.packages-grid').offsetTop - 20,
+                behavior: 'smooth'
+            });
+        }
+        
+        // View Package button functionality - SIMPLIFIED VERSION
+        const viewPackageButtons = document.querySelectorAll('.view-package-btn');
+        viewPackageButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the URL from the href attribute
+                const packageUrl = this.getAttribute('href');
+                
+                if (!packageUrl || packageUrl === '#') {
+                    // If no URL is set, show a message
+                    alert('Package details page is coming soon!');
+                    return;
+                }
+                
+                // Visual feedback
+                const originalText = this.textContent;
+                this.textContent = 'Loading...';
+                this.style.backgroundColor = '#5C6B3E';
+                this.disabled = true;
+                
+                // Check if the page exists before navigating
+                fetch(packageUrl)
+                    .then(response => {
+                        if (response.ok) {
+                            // Page exists, navigate to it
+                            window.location.href = packageUrl;
+                        } else {
+                            // Page doesn't exist, show fallback modal
+                            showPackageModal(this);
+                            
+                            // Restore button state
+                            this.textContent = originalText;
+                            this.style.backgroundColor = '';
+                            this.disabled = false;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error checking package page:', error);
+                        // Navigate anyway (for local development without server)
+                        window.location.href = packageUrl;
+                        
+                        // Fallback: restore button if navigation fails
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.backgroundColor = '';
+                            this.disabled = false;
+                        }, 2000);
+                    });
+            });
+        });
+        
+        // Function to show package details in a modal (fallback)
+        function showPackageModal(button) {
+            const packageCard = button.closest('.package-card');
+            const packageTitle = packageCard.querySelector('.package-title').textContent;
+            const safariTypes = Array.from(packageCard.querySelectorAll('.safari-type')).map(type => type.textContent).join(', ');
+            
+            // Remove existing modal if any
+            const existingModal = document.getElementById('package-modal');
+            if (existingModal) {
+                document.body.removeChild(existingModal);
+            }
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.id = 'package-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                padding: 20px;
+            `;
+            
+            modal.innerHTML = `
+                <div style="
+                    background: white;
+                    padding: 30px;
+                    border-radius: 10px;
+                    max-width: 600px;
+                    width: 100%;
+                    max-height: 80vh;
+                    overflow-y: auto;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                    position: relative;
+                ">
+                    <button id="close-modal" style="
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        background: #ff4444;
+                        color: white;
+                        border: none;
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        cursor: pointer;
+                        font-size: 18px;
+                        line-height: 1;
+                    ">×</button>
+                    
+                    <h2 style="color: #4A2810; margin-top: 0;">${packageTitle}</h2>
+                    <p style="color: #666; font-style: italic; margin-bottom: 10px;">Safari Type: ${safariTypes}</p>
+                    <p style="color: #666; font-style: italic;">Package details page is under construction</p>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                        <h3 style="color: #333;">Package Information</h3>
+                        <p>This Tanzania safari package page will be available soon. In the meantime, you can contact us for more details about this incredible Tanzanian adventure featuring the Great Migration, Ngorongoro Crater, Mount Kilimanjaro, or Zanzibar beaches.</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+                        <a href="contact.html" style="
+                            padding: 12px 24px;
+                            background: #4A2810;
+                            color: white;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            font-weight: bold;
+                            text-decoration: none;
+                            text-align: center;
+                            display: inline-block;
+                        ">Contact Us for Details</a>
+                        
+                        <button onclick="window.print()" style="
+                            padding: 12px 24px;
+                            background: #ff9800;
+                            color: white;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        ">Print Info</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Close modal functionality
+            const closeModal = () => {
+                document.body.removeChild(modal);
+            };
+            
+            modal.querySelector('#close-modal').addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+            
+            // Escape key to close
+            const handleEscape = (e) => {
+                if (e.key === 'Escape') closeModal();
+            };
+            document.addEventListener('keydown', handleEscape);
+        }
+        
+        // Keyboard navigation for pagination
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' && currentPage < 14) {
+                currentPage++;
+                updateActivePage(currentPage);
+            } else if (e.key === 'ArrowLeft' && currentPage > 1) {
+                currentPage--;
+                updateActivePage(currentPage);
+            }
+        });
+    });
+    </script>
+<script src="global.js"></script>
+</body>
+</html>

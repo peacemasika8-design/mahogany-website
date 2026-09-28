@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Agro Tourism in Uganda | Discovering the Pearl of Africa Through Its Farms | Mahogany Travel Expeditions</title>
+    <meta name="description" content="Discover Uganda's emerging agro tourism sector - explore coffee farms, tea plantations, traditional cattle ranches, and rural communities across the Pearl of Africa.">
+    <meta name="keywords" content="agro tourism Uganda, farm tourism, coffee farms Uganda, tea plantations, agricultural tourism, rural tourism Uganda">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Additional custom styles for article */
+        body {
+            font-family: 'Roboto', sans-serif;
+            color: #333;
+            line-height: 1.8;
+        }
+        
+        h1, h2, h3, h4, .navbar-nav, .btn, .section-title {
+            font-family: 'Jost', sans-serif;
+        }
+        
+        .article-header {
+            background: linear-gradient(135deg,#4A2810 0%,#4A2810 100%);
+            padding: 80px 0 60px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .article-header::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('img/pattern.png') repeat;
+            opacity: 0.08;
+        }
+        
+        .article-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        
+        .article-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.95;
+            max-width: 800px;
+            margin: 0 auto;
+            position: relative;
+        }
+        
+        .article-content {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 50px 20px;
+        }
+        
+        .article-content h2 {
+            color:#4A2810;
+            font-size: 1.8rem;
+            margin-top: 40px;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #e6b325;
+            display: inline-block;
+        }
+        
+        .article-content h3 {
+            color:#4A2810;
+            font-size: 1.4rem;
+            margin-top: 30px;
+            margin-bottom: 15px;
+        }
+        
+        .article-content p {
+            margin-bottom: 20px;
+            font-size: 1.05rem;
+        }
+        
+        .article-content ul, .article-content ol {
+            margin-bottom: 20px;
+            padding-left: 25px;
+        }
+        
+        .article-content li {
+            margin-bottom: 8px;
+        }
+        
+        .highlight-box {
+            background: #f0f8f0;
+            border-left: 5px solid#4A2810;
+            padding: 25px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+        
+        .highlight-box h4 {
+            color:#4A2810;
+            margin-bottom: 15px;
+        }
+        
+        .farm-card {
+            background: #fff;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+            margin-bottom: 25px;
+            transition: transform 0.3s;
+        }
+        
+        .farm-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .farm-card-body {
+            padding: 20px;
+        }
+        
+        .farm-card h4 {
+            color:#4A2810;
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .benefit-item {
+            background: #f8f9fa;
+            padding: 25px;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s;
+        }
+        
+        .benefit-item:hover {
+            background:#4A2810;
+            color: white;
+        }
+        
+        .benefit-item:hover i {
+            color: #e6b325;
+        }
+        
+        .benefit-item i {
+            font-size: 2.5rem;
+            color:#4A2810;
+            margin-bottom: 15px;
+        }
+        
+        .benefit-item h4 {
+            margin-bottom: 10px;
+            font-size: 1.2rem;
+        }
+        
+        .activity-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin: 25px 0;
+        }
+        
+        .activity-tag {
+            background: #e8f0e8;
+            padding: 8px 18px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color:#4A2810;
+            font-weight: 500;
+        }
+        
+        .activity-tag i {
+            margin-right: 8px;
+        }
+        
+        .quote-box {
+            background:#4A2810;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin: 40px 0;
+        }
+        
+        .quote-box i {
+            font-size: 2.5rem;
+            color: #e6b325;
+            margin-bottom: 20px;
+        }
+        
+        .quote-box p {
+            font-size: 1.2rem;
+            font-style: italic;
+            margin-bottom: 0;
+        }
+        
+        .back-to-safaris {
+            display: inline-block;
+            margin-bottom: 30px;
+            color:#4A2810;
+            text-decoration: none;
+            font-weight: 600;
+            transition: color 0.3s;
+        }
+        
+        .back-to-safaris:hover {
+            color:#4A2810;
+        }
+        
+        @media (max-width: 768px) {
+            .article-title {
+                font-size: 2rem;
+            }
+            .article-header {
+                padding: 50px 0 40px;
+            }
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="global.css">
+</head>
+<body>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <img src="img/BRIGHT LOGO.jpg" alt="Logo" style="height: 60px;"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Safaris</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                            <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                            <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                            <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                            <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                            <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                            <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                            <a href="Tanzania.html" class="dropdown-item">Tanzania</a>
+                            <a href="DRC.html" class="dropdown-item">DRC</a>
+                            <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                            <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="services.html" class="dropdown-item">Services</a>
+                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                            <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="reviews.html" class="dropdown-item">Reviews</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Article Header Start -->
+    <div class="article-header text-white text-center">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <h1 class="article-title">Agro Tourism in Uganda:<br>Discovering the Pearl of Africa Through Its Farms</h1>
+                    <p class="article-subtitle">Explore the authentic heart of Uganda—where fertile soils, vibrant farming communities, and unforgettable agricultural experiences await every traveler.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Article Header End -->
+
+    <!-- Article Content Start -->
+    <div class="container">
+        <div class="article-content">
+            
+            <!-- Introduction -->
+            <h2>Introduction</h2>
+            <p>Uganda, widely known as the "Pearl of Africa," is famous for its spectacular landscapes, rich biodiversity, and vibrant cultural heritage. Tourists from around the world travel to Uganda to experience wildlife safaris, mountain gorillas, lakes, and beautiful scenery. However, beyond the famous national parks lies another unique tourism experience that is steadily gaining popularity—<strong>agro tourism</strong>.</p>
+            <p>Agro tourism combines agriculture and tourism by allowing visitors to explore farms, plantations, and rural communities while learning about farming practices and traditional lifestyles. In Uganda, where agriculture employs a large percentage of the population and contributes significantly to the national economy, agro tourism provides an opportunity for travelers to experience the country in a more authentic and meaningful way.</p>
+            <p>From coffee farms on the slopes of Mount Elgon to cattle ranches in western Uganda, agro tourism offers travelers a chance to interact with farmers, learn about agricultural traditions, and understand how food moves from farm to table.</p>
+
+            <!-- Understanding Agro Tourism -->
+            <h2>Understanding Agro Tourism</h2>
+            <p>Agro tourism refers to tourism activities that take place on farms or in agricultural environments where visitors can participate in or observe farming activities. These experiences may include planting crops, harvesting fruits, milking cows, feeding animals, processing agricultural products, and tasting fresh farm produce.</p>
+            <p>Unlike conventional tourism that focuses mainly on sightseeing, agro tourism provides hands-on experiences that allow travelers to connect with rural life. Visitors can gain a deeper understanding of how agriculture shapes the culture, economy, and daily life of rural communities.</p>
+            <p>In Uganda, agro tourism is increasingly recognized as an important way to diversify the tourism industry. While wildlife tourism remains the country's main attraction, agro tourism offers additional experiences that highlight Uganda's agricultural heritage.</p>
+
+            <!-- Why Uganda Is Ideal -->
+            <h2>Why Uganda Is Ideal for Agro Tourism</h2>
+            <p>Uganda's geography, climate, and fertile soils make it one of the most suitable countries in Africa for agricultural production. The country enjoys a tropical climate with two rainy seasons in most regions, allowing farmers to grow crops throughout the year.</p>
+            <div class="row mt-4 mb-4">
+                <div class="col-md-6">
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-mountain me-2"></i> Regional Agricultural Diversity</h4>
+                        <p><strong>Western Uganda</strong> — Cooler temperatures and fertile volcanic soils ideal for tea plantations and dairy farming.</p>
+                        <p><strong>Eastern Uganda</strong> — Highlands perfect for growing Arabica coffee.</p>
+                        <p><strong>Central Uganda</strong> — Supports mixed farming and fruit production.</p>
+                        <p><strong>Northern Uganda</strong> — Known for oilseed crops such as sunflower and sesame.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-leaf me-2"></i> Year-Round Growing Season</h4>
+                        <p>With two rainy seasons in most regions, farmers can cultivate crops throughout the year, making Uganda a living agricultural showcase that visitors can experience any time.</p>
+                    </div>
+                </div>
+            </div>
+            <p>This diversity makes agro tourism in Uganda particularly attractive because visitors can experience different types of farming systems across the country.</p>
+
+            <!-- Major Agro Tourism Farms -->
+            <h2>Major Agro Tourism Farms and Villages</h2>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <div class="farm-card">
+                        <div class="farm-card-body">
+                            <h4><i class="fas fa-coffee me-2"></i> Mugamba Farm</h4>
+                            <p>Near Fort Portal, this leading agro tourism farm integrates agriculture, conservation, and ecotourism. Visitors explore coffee, cocoa, banana plantations, vegetable gardens, and beekeeping projects.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="farm-card">
+                        <div class="farm-card-body">
+                            <h4><i class="fas fa-drumstick-bite me-2"></i> Nshenyi Cultural Village</h4>
+                            <p>In southwestern Uganda, visitors explore banana plantations, observe traditional cattle keeping practices, and experience local culture through storytelling, music, and food preparation.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="farm-card">
+                        <div class="farm-card-body">
+                            <h4><i class="fas fa-cow me-2"></i> Kamihingo Farm</h4>
+                            <p>Known for promoting the famous Ankole long-horned cattle. Visitors learn about pastoral lifestyles, cattle grazing, and traditional dairy production in western Uganda.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="farm-card">
+                        <div class="farm-card-body">
+                            <h4><i class="fas fa-industry me-2"></i> Kabeihura Farmers Ltd</h4>
+                            <p>Demonstrates modern agribusiness integrated with agro tourism, featuring tea plantations, dairy farming, fish farming, and poultry production.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="farm-card">
+                        <div class="farm-card-body">
+                            <h4><i class="fas fa-utensils me-2"></i> Kaynela Farm</h4>
+                            <p>In central Uganda, promotes food-based agro tourism through culinary festivals and farm experiences celebrating Uganda's diverse cuisine.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="farm-card">
+                        <div class="farm-card-body">
+                            <h4><i class="fas fa-water me-2"></i> Awoja Riverside Farm</h4>
+                            <p>In eastern Uganda, combines agriculture with environmental education and community development.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Agro Tourism Activities -->
+            <h2>Agro Tourism Activities</h2>
+            <p>Agro tourism experiences in Uganda are interactive and educational. Visitors can participate in a variety of activities that showcase rural lifestyles and agricultural traditions.</p>
+            <div class="activity-list">
+                <span class="activity-tag"><i class="fas fa-walking"></i> Guided farm tours</span>
+                <span class="activity-tag"><i class="fas fa-coffee"></i> Coffee harvesting</span>
+                <span class="activity-tag"><i class="fas fa-leaf"></i> Tea picking</span>
+                <span class="activity-tag"><i class="fas fa-tint"></i> Milking cows</span>
+                <span class="activity-tag"><i class="fas fa-paw"></i> Feeding livestock</span>
+                <span class="activity-tag"><i class="fas fa-bug"></i> Beekeeping & honey harvesting</span>
+                <span class="activity-tag"><i class="fas fa-apple-alt"></i> Fruit picking</span>
+                <span class="activity-tag"><i class="fas fa-utensils"></i> Traditional cooking classes</span>
+                <span class="activity-tag"><i class="fas fa-road"></i> Village walks</span>
+            </div>
+            <p>These experiences allow travelers to interact directly with farmers and gain a deeper appreciation of how agricultural systems support local communities.</p>
+
+            <!-- Benefits of Agro Tourism -->
+            <h2>Benefits of Agro Tourism</h2>
+            <div class="benefits-grid">
+                <div class="benefit-item">
+                    <i class="fas fa-chart-line"></i>
+                    <h4>Additional Income</h4>
+                    <p>Farmers earn from farm tours, accommodation, and sales of coffee, fruits, honey, and dairy products.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-users"></i>
+                    <h4>Rural Development</h4>
+                    <p>Creates employment for local communities as guides, cooks, drivers, and cultural performers.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-landmark"></i>
+                    <h4>Cultural Heritage</h4>
+                    <p>Preserves traditional cooking methods, storytelling, and cultural performances.</p>
+                </div>
+                <div class="benefit-item">
+                    <i class="fas fa-seedling"></i>
+                    <h4>Environmental Awareness</h4>
+                    <p>Promotes sustainable farming practices like organic farming, agroforestry, and soil conservation.</p>
+                </div>
+            </div>
+
+            <!-- The Future -->
+            <h2>The Future of Agro Tourism in Uganda</h2>
+            <p>The future of agro tourism in Uganda is promising. As global travelers increasingly seek authentic, sustainable, and educational travel experiences, agro tourism offers exactly what modern tourists are looking for.</p>
+            <p>Government initiatives, private investments, and community-based tourism projects are helping promote farm tourism across the country. With improved infrastructure, training for farmers, and effective marketing strategies, Uganda has the potential to become one of Africa's leading agro tourism destinations.</p>
+
+            <!-- Conclusion -->
+            <div class="quote-box">
+                <i class="fas fa-quote-left"></i>
+                <p>Agro tourism provides visitors with an opportunity to experience a deeper and more personal side of Uganda. Walking through coffee plantations, harvesting fresh fruits, milking cows on traditional farms, and sharing meals with rural families create unforgettable travel memories.</p>
+            </div>
+            
+            <h2>Conclusion</h2>
+            <p>For travelers seeking meaningful experiences beyond wildlife safaris, Uganda's farms and rural communities offer a unique journey that celebrates the land, the people, and the traditions that sustain the nation. Whether you are a coffee enthusiast, a nature lover, or someone looking to connect with authentic African rural life, agro tourism in Uganda invites you to discover the Pearl of Africa through its farms.</p>
+            
+            <div class="text-center mt-5 pt-4">
+                <a href="ugandasafaris.html" class="btn btn-primary rounded-pill py-3 px-5" style="background-color:#4A2810; border: none;">
+                    <i class="fas fa-tractor me-2"></i>Explore Our Agro Tourism Safaris
+                </a>
+            </div>
+        </div>
+    </div>
+    <!-- Article Content End -->
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5" style="background-color:#4A2810;">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+                        <a href="#" class="text-white-50" style="text-decoration: none;"><i class="fas fa-home me-2"></i> Kasese, Municipality, Uganda</a>
+                        <a href="#" class="text-white-50" style="text-decoration: none;"><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                        <a href="#" class="text-white-50" style="text-decoration: none;"><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                        <a href="#" class="mb-3 text-white-50" style="text-decoration: none;"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                        <div class="d-inline-flex align-items-center" style="height: 45px;">
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Popular Safaris</h4>
+                        <a href="ugandasafaris.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                        <a href="kenyasafaris.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                        <a href="tanzaniasafaris.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                        <a href="rwandasafaris.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                        <a href="drcsafaris.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                        <a href="eastafricasafaris.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Top Destinations</h4>
+                        <a href="uganda.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                        <a href="kenya.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                        <a href="tanzania.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                        <a href="rwanda.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                        <a href="drc.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                        <a href="eastafrica.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href="contact.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="booking.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                        <a href="gallery.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                        <a href="privacy.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="sitemap.html" class="text-white-50" style="text-decoration: none;"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4" style="background-color: #0e2a0e;">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-12 text-center">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html" style="text-decoration: none;">Mahogany Travel Expeditions</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+<script src="global.js"></script>
+</body>
+</html>

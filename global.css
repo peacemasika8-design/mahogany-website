@@ -1,0 +1,466 @@
+/* ============================================
+   GLOBAL.CSS - Complete Working Version
+   All widget styles
+   ============================================ */
+
+/* ============================================
+   CHAT WIDGET STYLES - LEFT SIDE
+   ============================================ */
+
+   /* ============================================
+   OVERRIDE BOOTSTRAP BLUE → MAHOGANY BRAND
+   ============================================ */
+
+/* Blue background (topbar, sections) */
+.bg-primary {
+    background-color: #4A2810 !important;
+}
+
+/* Blue text */
+.text-primary {
+    color: #4A2810 !important;
+}
+
+/* Blue buttons (Book Now, etc.) */
+.btn-primary {
+    background-color: #4A2810 !important;
+    border-color: #4A2810 !important;
+    color: #ffffff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-primary:active {
+    background-color: #6B3A2A !important;
+    border-color: #6B3A2A !important;
+    color: #ffffff !important;
+}
+
+/* Blue outline buttons */
+.btn-outline-primary {
+    color: #4A2810 !important;
+    border-color: #4A2810 !important;
+}
+
+.btn-outline-primary:hover {
+    background-color: #4A2810 !important;
+    color: #ffffff !important;
+}
+
+/* Blue links */
+a.text-primary,
+.link-primary {
+    color: #4A2810 !important;
+}
+
+/* Blue borders */
+.border-primary {
+    border-color: #4A2810 !important;
+}
+
+/* Bootstrap badges */
+.badge.bg-primary {
+    background-color: #4A2810 !important;
+}
+
+.chat-container {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    z-index: 1000;
+}
+
+/* Chat Toggle Button - WhatsApp Style */
+.chat-toggle-btn {
+    width: 65px;
+    height: 65px;
+    background: #25D366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    animation: pulse 2s infinite;
+}
+
+.chat-toggle-btn:hover {
+    transform: scale(1.1);
+    background: #128C7E;
+    box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+}
+
+.chat-toggle-btn i {
+    font-size: 35px;
+    color: white;
+}
+
+.chat-badge {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    background: #ff4757;
+    color: white;
+    border-radius: 50%;
+    width: 22px;
+    height: 22px;
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    animation: bounce 1s infinite;
+}
+
+/* Pulse Animation */
+@keyframes pulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(37, 211, 102, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(37, 211, 102, 0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-3px);
+    }
+}
+
+/* Chat Window - Positioned to the left */
+.chat-window {
+    position: absolute;
+    bottom: 85px;
+    left: 0;
+    width: 350px;
+    background: white;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.15);
+    overflow: hidden;
+    display: none;
+    animation: slideUp 0.3s ease;
+}
+
+.chat-window.active {
+    display: block;
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Chat Header */
+.chat-header {
+    background: #075E54;
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+}
+
+.chat-header-info {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.chat-avatar {
+    width: 45px;
+    height: 45px;
+    background: rgba(255,255,255,0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+}
+
+.chat-info h4 {
+    font-size: 16px;
+    margin: 0 0 3px 0;
+    font-weight: 600;
+}
+
+.chat-info p {
+    font-size: 11px;
+    margin: 0;
+    opacity: 0.8;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 18px;
+    padding: 5px;
+    transition: opacity 0.3s;
+}
+
+.chat-close:hover {
+    opacity: 0.8;
+}
+
+/* Chat Body */
+.chat-body {
+    padding: 15px;
+    background: #ECE5DD;
+    max-height: 320px;
+    overflow-y: auto;
+}
+
+/* Custom scrollbar for chat body */
+.chat-body::-webkit-scrollbar {
+    width: 5px;
+}
+
+.chat-body::-webkit-scrollbar-track {
+    background: #ddd;
+    border-radius: 10px;
+}
+
+.chat-body::-webkit-scrollbar-thumb {
+    background: #075E54;
+    border-radius: 10px;
+}
+
+.chat-message {
+    margin-bottom: 15px;
+    display: flex;
+}
+
+.chat-message.support {
+    justify-content: flex-start;
+}
+
+.message-bubble {
+    background: white;
+    padding: 12px 15px;
+    border-radius: 18px;
+    border-top-left-radius: 5px;
+    max-width: 85%;
+    box-shadow: 0 1px 2px rgba(0,0,0,0.1);
+}
+
+.message-bubble p {
+    margin: 0;
+    font-size: 14px;
+    color: #333;
+    line-height: 1.4;
+}
+
+.message-time {
+    font-size: 10px;
+    color: #999;
+    display: block;
+    margin-top: 5px;
+}
+
+/* Chat Options */
+.chat-options {
+    padding: 15px;
+    background: white;
+    border-top: 1px solid #eee;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.chat-option-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.whatsapp-btn {
+    background: #25D366;
+    color: white;
+}
+
+.whatsapp-btn:hover {
+    background: #128C7E;
+    transform: translateX(5px);
+}
+
+.booking-btn {
+    background:#4A2810;
+    color: white;
+}
+
+.booking-btn:hover {
+    background: #1e421e;
+    transform: translateX(5px);
+}
+
+.contact-btn {
+    background: #f0f0f0;
+    color: #333;
+}
+
+.contact-btn:hover {
+    background: #e0e0e0;
+    transform: translateX(5px);
+}
+
+/* ============================================
+   BOOKING FLOATING BUTTON - BOTTOM CENTER
+   ============================================ */
+
+.booking-float {
+    position: fixed;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 1000;
+}
+
+.booking-float-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    background: linear-gradient(135deg, #5c422c 0%, #8B4513 100%);
+    color: white;
+    padding: 14px 35px;
+    border-radius: 60px;
+    text-decoration: none;
+    font-family: 'Montserrat', 'Open Sans', sans-serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 1.5px;
+    box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+    transition: all 0.3s ease;
+    animation: bookingPulse 2s infinite;
+    border: none;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+}
+
+.booking-float-btn span {
+    font-size: 18px;
+    font-weight: 800;
+}
+
+.booking-float-btn:hover {
+    transform: translateY(-3px);
+    background: linear-gradient(135deg, #1e421e 0%, #0f2a0f 100%);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    gap: 15px;
+}
+
+/* Booking Pulse Animation */
+@keyframes bookingPulse {
+    0% {
+        box-shadow: 0 0 0 0 rgba(44, 92, 44, 0.4);
+    }
+    70% {
+        box-shadow: 0 0 0 15px rgba(44, 92, 44, 0);
+    }
+    100% {
+        box-shadow: 0 0 0 0 rgba(44, 92, 44, 0);
+    }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE
+   ============================================ */
+
+@media (max-width: 768px) {
+    .chat-container {
+        bottom: 20px;
+        left: 20px;
+    }
+    
+    .chat-toggle-btn {
+        width: 55px;
+        height: 55px;
+    }
+    
+    .chat-toggle-btn i {
+        font-size: 28px;
+    }
+    
+    .chat-window {
+        width: 310px;
+        bottom: 75px;
+    }
+    
+    .chat-header-info {
+        gap: 8px;
+    }
+    
+    .chat-avatar {
+        width: 38px;
+        height: 38px;
+        font-size: 20px;
+    }
+    
+    .chat-info h4 {
+        font-size: 14px;
+    }
+    
+    .booking-float {
+        bottom: 20px;
+    }
+    
+    .booking-float-btn {
+        padding: 12px 28px;
+        font-size: 16px;
+    }
+    
+    .booking-float-btn span {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 480px) {
+    .chat-window {
+        width: 290px;
+    }
+    
+    .message-bubble p {
+        font-size: 12px;
+    }
+    
+    .chat-option-btn {
+        padding: 10px;
+        font-size: 12px;
+    }
+    
+    .booking-float {
+        bottom: 15px;
+    }
+    
+    .booking-float-btn {
+        padding: 10px 22px;
+    }
+    
+    .booking-float-btn span {
+        font-size: 14px;
+    }
+}

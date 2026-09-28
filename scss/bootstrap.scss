@@ -1,0 +1,34 @@
+/******* Customized Bootstrap ********/
+
+
+$primary: #28a745; // Green
+$secondary: #5C9CA5; // Teal from logo
+$accent: #FFD233; // Gold from logo
+$light: #FFFFFF; // White from logo
+$dark: #0A2C33; // Deep blue (or keep #14141F for more contrast)
+
+$font-family-base: 'Roboto', sans-serif;
+
+$headings-font-family: 'Jost', sans-serif;
+
+$body-color: #757575;
+
+$headings-color: $dark;
+
+$headings-font-weight: 500;
+
+$display-font-weight: 600;
+
+$enable-responsive-font-sizes: true;
+
+$border-radius: 10px;
+
+$border-radius-sm: $border-radius;
+
+$border-radius-lg: $border-radius;
+
+$link-decoration: none;
+
+$enable-negative-margins: true;
+
+@import "bootstrap/scss/bootstrap";

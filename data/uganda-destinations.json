@@ -1,0 +1,44 @@
+{
+  "destinations": [
+    {
+      "id": 1,
+      "slug": "queen-elizabeth-national-park",
+      "title": "Queen Elizabeth National Park",
+      "category": "National Parks & Wildlife Reserves",
+      "tags": ["National Park", "Tree-climbing Lions", "Kazinga Channel"],
+      "short_description": "Home to tree-climbing lions, elephants, hippos, and over 600 bird species along the Kazinga Channel connecting Lakes Edward and George.",
+      "full_description": "<h2>About Queen Elizabeth National Park</h2><p>Queen Elizabeth National Park (QENP) is Uganda's most popular savanna park and a UNESCO-designated Biosphere Reserve for humanity. Located in western Uganda, the park includes the Maramagambo Forest, Kyambura Gorge, Kazinga Channel, and the crater lakes region.</p><p>The park is famous for its tree-climbing lions in the Ishasha sector, large elephant herds, and the 40km Kazinga Channel that connects Lake Edward and Lake George.</p><h3>Key Highlights:</h3><ul><li><strong>Tree-climbing lions</strong> in the Ishasha sector</li><li><strong>Kazinga Channel boat cruise</strong> with hippos, crocodiles, and birds</li><li><strong>Kyambura Gorge chimpanzee tracking</strong></li><li><strong>Over 600 bird species</strong> including the shoebill stork</li><li><strong>Crater lakes</strong> with stunning scenery</li></ul>",
+      "location": "Western Uganda, spanning Kasese, Kamwenge, Rubirizi, and Rukungiri districts",
+      "size": "1,978 sq km",
+      "best_time_to_visit": "January-February and June-July",
+      "activities": ["Game drives", "Boat cruise", "Chimpanzee tracking", "Bird watching", "Nature walks"],
+      "wildlife": ["Lions", "Elephants", "Buffalos", "Hippos", "Crocodiles", "600+ bird species"],
+      "image": "queen-elizabeth-park.jpg",
+      "gallery": ["qenp1.jpg", "qenp2.jpg", "qenp3.jpg", "qenp4.jpg"],
+      "tours": [
+        {
+          "name": "2-Day Queen Elizabeth Safari",
+          "duration": "2 days",
+          "price": "$450",
+          "includes": ["Accommodation", "Game drives", "Boat cruise", "Meals"]
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "slug": "murchison-falls-national-park",
+      "title": "Murchison Falls National Park",
+      "category": "National Parks & Wildlife Reserves",
+      "tags": ["National Park", "Nile River", "Big Five"],
+      "short_description": "Uganda's largest national park where the Nile River forces through a 7-meter gap creating the powerful Murchison Falls, home to abundant wildlife.",
+      "full_description": "<h2>About Murchison Falls National Park</h2><p>Murchison Falls National Park is Uganda's largest protected area at 3,840 sq km. The park is bisected by the Victoria Nile, which plunges 45 meters over the remnant rift valley wall, creating the dramatic Murchison Falls, the centerpiece of the park and the final event in an 80km stretch of rapids.</p><p>The park is part of the larger Murchison Falls Conservation Area (MFCA) which includes Bugungu and Karuma Falls Wildlife Reserves.</p><h3>Key Highlights:</h3><ul><li><strong>Murchison Falls</strong> - World's most powerful waterfall</li><li><strong>Victoria Nile boat cruise</strong> to the base of the falls</li><li><strong>Big Five viewing</strong> (except rhinos)</li><li><strong>Budongo Forest chimpanzee tracking</strong></li><li><strong>Bird watching</strong> with 450+ species including the rare shoebill</li></ul>",
+      "location": "Northwestern Uganda, Masindi District",
+      "size": "3,840 sq km",
+      "best_time_to_visit": "December-February",
+      "activities": ["Game drives", "Boat cruise to the falls", "Chimpanzee tracking", "Hiking to top of falls", "Bird watching"],
+      "wildlife": ["Lions", "Elephants", "Buffalos", "Leopards", "Giraffes", "Hippos"],
+      "image": "murchison-falls.jpg"
+    }
+    // Add ALL 56 destinations from your Uganda.html page here
+  ]
+}

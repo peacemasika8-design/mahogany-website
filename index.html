@@ -1,0 +1,1524 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="utf-8">
+        <title>MAHOGANY TRAVEL EXPEDITIONS</title>
+        <meta content="width=device-width, initial-scale=1.0" name="viewport">
+        <meta content="" name="keywords">
+        <meta content="" name="description">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="manifest" href="/site.webmanifest">
+
+        <!-- Google Web Fonts -->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+        <!-- Icon Font Stylesheet -->
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+        <!-- Libraries Stylesheet -->
+        <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+        <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+
+        <!-- Customized Bootstrap Stylesheet -->
+        <link href="css/bootstrap.min.css" rel="stylesheet">
+
+        <!-- Template Stylesheet -->
+        <link href="css/style.css" rel="stylesheet">
+        <style>
+             .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .package-image-container {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .package-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+        }
+        
+        .package-content {
+            padding: 20px;
+        }
+        
+        .package-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            min-height: 50px;
+        }
+        
+        .view-package-btn {
+            display: inline-block;
+            background-color: #4A2810;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .view-package-btn:hover {
+            background-color: #5C6B3E;
+        }
+        .country-details {
+    background: #f8f9fa;
+}
+
+.country-detail-card {
+    background: white;
+    padding: 30px;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s ease;
+}
+
+.country-detail-card:hover {
+    transform: translateY(-5px);
+}
+
+.country-name {
+    color: #333;
+    font-size: 1.8rem;
+    font-weight: 700;
+    border-bottom: 3px solid #ff6b35;
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.country-description {
+    color: #555;
+    line-height: 1.8;
+    margin-bottom: 15px;
+    text-align: justify;
+}
+
+.country-highlights {
+    background: #f8f9fa;
+    padding: 20px;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.country-highlights h5 {
+    color: #333;
+    font-weight: 600;
+}
+
+.country-highlights ul {
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.country-highlights li {
+    margin-bottom: 8px;
+    color: #555;
+    line-height: 1.6;
+}
+
+.country-highlights li strong {
+    color: #333;
+}
+
+.country-stats {
+    background: linear-gradient(135deg, #ff6b35 0%, #e55a2b 100%);
+    color: white;
+    border-radius: 10px;
+    height: 100%;
+}
+
+.country-stats h5 {
+    color: white;
+    font-weight: 600;
+    border-bottom: 2px solid rgba(255,255,255,0.2);
+    padding-bottom: 10px;
+}
+
+.country-stats p {
+    margin-bottom: 10px;
+    font-size: 0.95rem;
+}
+
+.country-stats strong {
+    display: inline-block;
+    width: 160px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .country-detail-card {
+        padding: 20px;
+    }
+    
+    .country-name {
+        font-size: 1.5rem;
+    }
+    
+    .country-stats {
+        margin-top: 20px;
+    }
+}
+        </style>
+    <link rel="stylesheet" href="global.css">
+</head>
+
+    <body>
+
+        <!-- Spinner Start
+        <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+            <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+                <span class="sr-only">Loading...</span>
+            </div>
+        </div>
+        <-- Spinner End -->
+
+        <!-- Topbar Start -->
+        <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+            <div class="row gx-0">
+                <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                    <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+                </div>
+                
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Topbar End -->
+
+        <!-- Navbar & Hero Start -->
+        <div class="container-fluid position-relative p-0">
+            <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+                <a href="" class="navbar-brand p-0">
+                    <h1 class="m-0"><i class=""></i></h1>
+                     <img src="img/BRIGHT LOGO.jpg" alt="Logo"> 
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                    <span class="fa fa-bars"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarCollapse">
+                    <div class="navbar-nav ms-auto py-0">
+                        <a href="index.html" class="nav-item nav-link active">Home</a>
+                        
+                       <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Safaris</a>
+                            <div class="dropdown-menu m-0">
+                               <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                                <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                                <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                                <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                                <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                                <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                                
+                            </div>
+                        </div>
+                       
+                         <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                                <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                                <a href="Tanzania.html" class="dropdown-item">Tanzania</a>
+                                <a href="DRC.html" class="dropdown-item">DRC</a>
+                                <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                                <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                    
+                            </div>
+                        </div>
+                        <div class="nav-item dropdown">
+                            <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                            <div class="dropdown-menu m-0">
+                                <a href="services.html" class="dropdown-item">Services</a>
+                               
+                                <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                                <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                                <a href="about.html" class="dropdown-item">About Us</a>
+                                <a href="reviews.html" class="dropdown-item">Reviews</a>
+                               
+                            </div>
+                        </div>
+                       <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                    <a href="booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+                </div>
+            </nav>
+
+            <!-- Carousel Start -->
+            <div class="carousel-header">
+                <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                    <ol class="carousel-indicators">
+                        <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+                        <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <img src="img/bwindi 4.jpg" class="img-fluid" alt="Image">
+                            <div class="carousel-caption">
+                                <div class="p-3" style="max-width: 900px;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore Uganda</h4>
+                                    <h1 class="display-2 text-capitalize text-white mb-4">Let's Explore Uganda Together!</h1>
+                                    <p class="mb-5 fs-5">Discover breathtaking destinations, unique cultures, and unforgettable adventures with Mahogany Travel Expeditions and Safaris. Start your journey today and create memories that last a lifetime. 
+                                      </p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/sipi 6.jpg" class="img-fluid" alt="Image">
+                            <div class="carousel-caption">
+                                <div class="p-3" style="max-width: 900px;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore Africa</h4>
+                                    <h1 class="display-2 text-capitalize text-white mb-4">Find Your Perfect Tour At Mahogany Travel Expeditions</h1>
+                                    <p class="mb-5 fs-5">Experience the beauty of new destinations, immerse yourself in vibrant cultures, and make unforgettable memories with every journey. 
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="carousel-item">
+                            <img src="img/nile 16.JPG" class="img-fluid" alt="Image">
+                            <div class="carousel-caption">
+                                <div class="p-3" style="max-width: 900px;">
+                                    <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore The World</h4>
+                                    <h1 class="display-2 text-capitalize text-white mb-4">You Like To Go?</h1>
+                                    <p class="mb-5 fs-5">Embark on exciting journeys, discover hidden games, and experience the wonders of the world with Mahogany Travel Expeditions. 
+                                    </p>
+                                    <div class="d-flex align-items-center justify-content-center">
+                                        <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#">Discover Now</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                   <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                        <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+            <!-- Carousel End -->
+        </div>
+        
+        </div>
+                
+       
+        
+        <!-- Navbar & Hero End -->
+
+        
+        
+
+   <!-- Top Destinations Start -->
+<div class="container-fluid destinations-section py-5">
+    <div class="container py-5">
+        <!-- Section Header -->
+        <div class="text-center mb-5">
+            <h5 class="section-subtitle text-uppercase mb-2">Explore Africa with Mahogany Travel Expeditions </h5>
+            <h1 class="section-title mb-4">Top Destinations</h1>
+        </div>
+
+        <!-- Destinations Grid -->
+        <div class="row justify-content-center">
+            <!-- Destination 1: Uganda -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="destination-item text-center">
+                    <div class="destination-image mb-3">
+                        <img src="img/uganda.jpeg" alt="Uganda" class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="destination-name mb-2">Uganda</h3>
+                    <p class="destination-description px-3">
+                        The Pearl of Africa with mountain gorillas, chimpanzees, and diverse wildlife in its national parks.
+                    
+                    <a href="Uganda.html" class="btn btn-outline-primary">Explore Uganda</a>
+                </div>
+            </div>
+
+            <!-- Destination 2: Rwanda -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="destination-item text-center">
+                  <div class="destination-image mb-3">
+                        <img src="img/images.jpeg" alt="Rwanda" class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="destination-name mb-2">Rwanda</h3>
+                    <p class="destination-description px-3">
+                        Land of a Thousand Hills with unforgettable gorilla trekking experiences and rich cultural heritage.
+                    </p>
+                    <a href="Rwanda.html" class="btn btn-outline-primary">Explore Rwanda</a>
+                </div>
+            </div>
+
+            <!-- Destination 3: Congo -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="destination-item text-center">
+                    <div class="destination-image mb-3">
+                        <img src="img/congo.jpeg" alt="Congo" class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="destination-name mb-2">Congo</h3>
+                    <p class="destination-description px-3">
+                        Home to Virunga National Park, lowland gorillas, and the magnificent Congo River basin.
+                    </p>
+                    <a href="DRC.html" class="btn btn-outline-primary">Explore Congo</a>
+                </div>
+            </div>
+
+            <!-- Destination 4: Tanzania -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="destination-item text-center">
+                    <div class="destination-image mb-3">
+                        <img src="img/tanzania.jpeg" alt="Tanzania" class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="destination-name mb-2">Tanzania</h3>
+                    <p class="destination-description px-3">
+                        The Great Migration, Mount Kilimanjaro, and the stunning beaches of Zanzibar await.
+                    </p>
+                    <a href="Tanzania.html" class="btn btn-outline-primary">Explore Tanzania</a>
+                </div>
+            </div>
+
+            <!-- Destination 5: Kenya -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="destination-item text-center">
+                    <div class="destination-image mb-3">
+                        <img src="img/kenya.jpeg" alt="Kenya" class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="destination-name mb-2">Kenya</h3>
+                    <p class="destination-description px-3">
+                        Experience the classic African safari with the Maasai Mara's wildlife and vibrant cultures.
+                    </p>
+                    <a href="Kenya.html" class="btn btn-outline-primary">Explore Kenya</a>
+                </div>
+            </div>
+
+            <!-- Destination 6: East Africa -->
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="destination-item text-center">
+                    <div class="destination-image mb-3">
+                        <img src="img/east.jpeg" alt="East Africa" class="img-fluid rounded-circle">
+                    </div>
+                    <h3 class="destination-name mb-2">East Africa</h3>
+                    <p class="destination-description px-3">
+                        Multi-country adventures combining wildlife, culture, and stunning landscapes across the region.
+                    </p>
+                    <a href="East Africa.html" class="btn btn-outline-primary">Explore East Africa</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Top Destinations End -->
+ <!-- Detailed Country Descriptions -->
+
+        <!-- Explore Tour Start -->
+
+        <!-- Packages Start -->
+         <div class="container-fluid packages py-5">
+            <div class="container py-5">
+                <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                    <h5 class="section-title px-3">Packages</h5>
+                    <h1 class="mb-0">Awesome Packages</h1>
+                </div>
+              
+    <div class="container" id="packages">
+       
+        
+        <!-- Page 1 Content - Gorilla Trekking -->
+        <div id="page-1" class="page-content active">
+          
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bwindi 14.jpg" alt="Bwindi Gorillas" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">4 Days Bwindi Gorilla Habituation & Trekking Safari</h3>
+                        <div>
+                            <span class="safari-type primate-badge">Gorilla Trekking</span>
+                            <span class="safari-type">Bwindi Forest</span>
+                        </div>
+                        <a href="bwindi-4-day-gorilla.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bwindi 15.jpg" alt="Lake Bunyonyi" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">3 Days Bwindi Gorilla Trekking with Lake Bunyonyi</h3>
+                        <div>
+                            <span class="safari-type primate-badge">Gorilla Trekking</span>
+                            <span class="safari-type">Lake Bunyonyi</span>
+                        </div>
+                        <a href="bwindi-3-day-bunyonyi.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bwindi 4.jpg" alt="Gorilla Habituation" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">2 Days Gorilla Habituation Experience</h3>
+                        <div>
+                            <span class="safari-type primate-badge">Gorilla Habituation</span>
+                            <span class="safari-type">Exclusive</span>
+                        </div>
+                        <a href="gorilla-habituation.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bwindi 8.jpg" alt="gorilla-2-day-budget" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">2 Days Uganda Gorilla Trekking Budget Safari</h3>
+                        <div>
+                            <span class="safari-type primate-badge">Gorilla Trekking</span>
+                            <span class="safari-type">Budget</span>
+                        </div>
+                        <a href="gorilla-2-day-budget.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 5 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bwindi 10.jpg" alt="Luxury Gorilla" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Luxury Gorilla and Wildlife Safari</h3>
+                        <div>
+                            <span class="safari-type primate-badge">Gorilla Trekking</span>
+                            <span class="safari-type">Luxury</span>
+                        </div>
+                        <a href="luxury-gorilla-5-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                  <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mara-river-crossing.jpg" alt="Maasai Mara" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">7 Days Maasai Mara Great Migration Safari</h3>
+                        <div>
+                            <span class="safari-type">Great Migration</span>
+                            <span class="safari-type">Big Five</span>
+                            <span class="safari-type">Group Safari</span>
+                        </div>
+                        <a href="masai-mara-migration.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/amboseli and tsavo.jpeg" alt="Amboseli" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Amboseli Elephant Safari with Kilimanjaro Views</h3>
+                        <div>
+                            <span class="safari-type">Elephants</span>
+                            <span class="safari-type">Scenic</span>
+                        </div>
+                        <a href="amboseli-kilimanjaro.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/tsavo 1.jpeg">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">6 Days Tsavo East and West National Parks Adventure</h3>
+                        <div>
+                            <span class="safari-type">Wilderness</span>
+                            <span class="safari-type">Adventure</span>
+                        </div>
+                        <a href="tsavo-parks.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/samburu.jpeg">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Samburu Special Five Wildlife Safari</h3>
+                        <div>
+                            <span class="safari-type">Special Five</span>
+                            <span class="safari-type">Cultural</span>
+                        </div>
+                        <a href="samburu-special-five.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 5 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/nakuru.jpeg" alt="Lake Nakuru" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">4 Days Lake Nakuru Flamingo Spectacle Tour</h3>
+                        <div>
+                            <span class="safari-type">Birding</span>
+                            <span class="safari-type">Rhinos</span>
+                        </div>
+                        <a href="lake-nakuru-flamingos.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                 <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/serengeti.jpeg" alt="Great Migration" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">6 Days Serengeti Wildebeest Migration Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">Great Migration</span>
+                            <span class="safari-type">Serengeti</span>
+                        </div>
+                        <a href="serengeti-migration-6-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/ndutu calving.jpg" alt="Calving Season" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Ndutu Calving Season Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">Calving Season</span>
+                            <span class="safari-type">Southern Serengeti</span>
+                        </div>
+                        <a href="ndutu-calving-5-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mara-river-crossing.jpg" alt="River Crossing" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">7 Days Mara River Crossing Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">River Crossing</span>
+                            <span class="safari-type">Northern Serengeti</span>
+                        </div>
+                        <a href="mara-river-7-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 4 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/serengeti-lions.jpg" alt="Migration Photography" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">8 Days Migration Photography Safari</h3>
+                        <div>
+                            <span class="safari-type wildebeest-badge">Photography</span>
+                            <span class="safari-type">Professional</span>
+                        </div>
+                        <a href="migration-photography-8-day.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 8 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bwindi 11.jpg" alt="Honeymoon Gorilla" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">6 Days Honeymoon Gorilla Safari</h3>
+                        <div>
+                            <span class="safari-type primate-badge">Gorilla Trekking</span>
+                            <span class="safari-type">Honeymoon</span>
+                            <span class="safari-type">Romantic</span>
+                        </div>
+                        <a href="honeymoon-gorilla.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+
+                 <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bwindi 4.jpg" alt="DRC Rwanda" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">7 Days DRC-Rwanda Gorilla Safari</h3>
+                        <a href="drc-rwanda-gorilla.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bwindi 9.jpg" alt="DRC Uganda" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">8 Days DRC-Uganda Gorilla Adventure</h3>
+                        <a href="drc-uganda-gorilla.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/great lakes.jpeg" alt="Great Lakes" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">10 Days Great Lakes Safari (DRC, Rwanda, Uganda)</h3>
+                        <a href="great-lakes-safari.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+             
+                
+               
+                
+               
+                
+                <!-- Package 7 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/gallery/0S2A3452.JPG" alt="Birding Combo" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">7 Days DRC Birding and Wildlife Combo</h3>
+                        <a href="drc-birding-combo.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 8 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/ultimate adventure.jpeg" alt="Adventure Combo" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">9 Days DRC Ultimate Adventure Safari</h3>
+                        <a href="drc-ultimate-adventure.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+            
+       
+            </div>
+        </div>
+    </div>
+</div>           
+        
+        <!-- Packages End -->
+<!-- Partners Section Start -->
+<div class="partners-section">
+    <div class="container">
+        <div class="section-header">
+            <h5 class="section-title">Our Partners</h5>
+            <h2>Trusted By Leading Organizations</h2>
+            <p>We proudly collaborate with these esteemed partners to deliver exceptional safari experiences</p>
+        </div>
+        
+        <div class="partners-grid">
+            <!-- Partner 1 - USAGA -->
+            <div class="partner-card">
+                <a href="https://ugasaf.org/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/USAGA.png" alt="USAGA">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 2 - UTB -->
+            <div class="partner-card">
+                <a href="https://utb.go.ug/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/UTB.jpeg" alt="UTB">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 3 - EXPLORE UGANDA -->
+            <div class="partner-card">
+                <a href="https://exploreuganda.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/exploreuganda.png" alt="Explore Uganda">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 4 - SAFARI DEAL -->
+            <div class="partner-card">
+                <a href="https://safarideal.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/SAFARIDEAL.jpeg" alt="Safari Deal">
+                    </div>
+                   
+                </a>
+            </div>
+            
+            <!-- Partner 5 - Travel Agents10 -->
+            <div class="partner-card">
+                <a href="https://www.travelagents10.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/travelagents.png" alt="Travel Agents10">
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Partners Section Styles */
+.partners-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,#4A2810, #e6b325,#4A2810);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    display: inline-block;
+    background: rgba(44, 92, 44, 0.1);
+    color:#4A2810;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color:#4A2810;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Partners Grid */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    align-items: center;
+}
+
+/* Partner Card - Professional Design */
+.partner-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.partner-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg,#4A2810, #e6b325);
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: rgba(44, 92, 44, 0.1);
+}
+
+.partner-card:hover::after {
+    width: 60px;
+}
+
+.partner-card a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Partner Logo - Full Color, No Grayscale */
+.partner-logo {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+    transform: scale(1.02);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* REMOVED grayscale and opacity filters - FULL COLOR */
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover .partner-logo img {
+    transform: scale(1.05);
+}
+
+/* Partner Name - Professional Styling */
+.partner-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.partner-card:hover .partner-name {
+    color:#4A2810;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .partners-section {
+        padding: 60px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .partner-logo {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .partner-logo img {
+        max-height: 75px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 50px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .partner-card {
+        padding: 25px 15px;
+    }
+    
+    .partner-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .partner-logo img {
+        max-height: 65px;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 14px;
+    }
+    
+    .partner-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-section {
+        padding: 40px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .partner-card {
+        padding: 20px 12px;
+    }
+    
+    .partner-logo {
+        width: 85px;
+        height: 85px;
+        padding: 12px;
+    }
+    
+    .partner-logo img {
+        max-height: 55px;
+    }
+    
+    .partner-name {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    
+    .section-header h2 {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 12px;
+    }
+}
+
+/* For very large screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .partners-grid {
+        gap: 40px;
+    }
+    
+    .partner-logo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .partner-logo img {
+        max-height: 100px;
+    }
+}
+</style>
+<section class="reviews-homepage">
+  <h2>TOURS REVIEWS: WHAT CLIENTS SAY</h2>
+  <p class="intro">Discover the natural beauty, wildlife, and vibrant culture of Africa with Mahogany Travel Expeditions. From gorilla safaris to family trips, every journey offers stunning landscapes and warm, welcoming communities. Read firsthand reviews and inspiring stories from travelers who have toured with us.</p>
+
+  <div class="reviews-grid">
+    <!-- Business Card -->
+    <div class="business-card">
+      <div class="business-logo">
+        <img src="img/BRIGHT LOGO.jpg" alt="Mahogany Travel Expeditions">
+      </div>
+      <h3>Mahogany Travel Expeditions</h3>
+      <div class="business-stars" id="business-stars">★★★★★</div>
+      <p class="review-count" id="review-count">Loading...</p>
+    </div>
+
+    <!-- Recent reviews (3 cards) -->
+    <div class="review-cards" id="homepage-reviews">
+      <!-- Filled by JS -->
+    </div>
+  </div>
+
+  <div class="reviews-cta">
+    <a href="/reviews.html" class="btn-primary">ADD A REVIEW</a>
+    <a href="/reviews.html" class="btn-primary">READ ALL REVIEWS</a>
+  </div>
+</section>
+
+<style>
+  .reviews-homepage { padding: 60px 20px; background: #fdfaf7; text-align: center; }
+  .reviews-homepage h2 { color: #5c3a21; font-size: 32px; letter-spacing: 2px; margin-bottom: 20px; }
+  .intro { max-width: 800px; margin: 0 auto 50px; color: #444; line-height: 1.7; }
+
+  .reviews-grid {
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    gap: 30px;
+    max-width: 1100px;
+    margin: 0 auto 40px;
+    align-items: start;
+  }
+
+  .business-card { text-align: center; }
+  .business-logo img { max-width: 150px; }
+  .business-stars { color: #865d2e; font-size: 18px; margin: 10px 0; }
+  .review-count { color: #666; font-size: 14px; }
+
+  .review-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+
+  .homepage-review-card {
+    background: white;
+    border-radius: 10px;
+    padding: 20px;
+    text-align: left;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  /* Reviewer header (avatar + name) */
+  .homepage-review-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+  }
+
+  .homepage-review-header .avatar-wrap {
+    flex-shrink: 0;
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    background: #5c3a21;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    border: 2px solid #e0d5c7;
+  }
+
+  .homepage-review-header .avatar-wrap img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+  }
+
+  .homepage-review-header .reviewer-meta {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .homepage-review-header .reviewer {
+    font-weight: 700;
+    color: #2b2b2b;
+    font-size: 15px;
+    line-height: 1.2;
+  }
+
+  .homepage-review-header .reviewer-country {
+    color: #7a6a5a;
+    font-size: 12px;
+    margin-top: 2px;
+  }
+
+  .homepage-review-card .stars {
+    color: #865d2e;
+    font-size: 15px;
+    letter-spacing: 1px;
+  }
+
+  .homepage-review-card .title {
+    font-weight: 700;
+    color: #5c3a21;
+    font-size: 14px;
+    margin: 0;
+  }
+
+  .homepage-review-card .comment {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .reviews-cta { display: flex; gap: 20px; justify-content: center; margin-top: 30px; flex-wrap: wrap; }
+  .btn-primary { background: #e8a41a; color: white; padding: 14px 32px; border-radius: 6px; text-decoration: none; font-weight: bold; letter-spacing: 1px; }
+
+  @media (max-width: 768px) {
+    .reviews-grid { grid-template-columns: 1fr; }
+    .review-cards { grid-template-columns: 1fr; }
+  }
+</style>
+
+<script>
+  (async () => {
+    // Fetch stats
+    try {
+      const statsRes = await fetch('/.netlify/functions/get-stats');
+      const stats = await statsRes.json();
+      const avg = Math.round(stats.average || 0);
+      document.getElementById('business-stars').textContent = '★'.repeat(avg) + '☆'.repeat(5 - avg);
+      document.getElementById('review-count').textContent = `${stats.total} reviews`;
+    } catch (e) { console.error(e); }
+
+    // Fetch 3 most recent reviews
+    try {
+      const revRes = await fetch('/.netlify/functions/get-recent-reviews');
+      const reviews = await revRes.json();
+      const container = document.getElementById('homepage-reviews');
+
+      if (!reviews || reviews.length === 0) {
+        container.innerHTML = '<p style="grid-column: 1/-1; text-align: center; color: #888;">Be the first to share your journey!</p>';
+        return;
+      }
+
+      container.innerHTML = reviews.map(r => {
+        const initials = (r.name || '?')
+          .split(' ')
+          .map(n => n[0])
+          .join('')
+          .slice(0, 2)
+          .toUpperCase();
+
+        const avatarInner = r.photo_url
+          ? `<img src="${escapeHtml(r.photo_url)}" alt="${escapeHtml(r.name)}">`
+          : escapeHtml(initials);
+
+        return `
+          <div class="homepage-review-card">
+            <div class="homepage-review-header">
+              <div class="avatar-wrap">${avatarInner}</div>
+              <div class="reviewer-meta">
+                <span class="reviewer">${escapeHtml(r.name)}</span>
+                <span class="reviewer-country">${escapeHtml(r.country || '')}</span>
+              </div>
+            </div>
+            <div class="stars">${'★'.repeat(r.rating)}${'☆'.repeat(5 - r.rating)}</div>
+            ${r.title ? `<p class="title">${escapeHtml(r.title)}</p>` : ''}
+            <div class="comment">${escapeHtml(r.comment)}</div>
+          </div>
+        `;
+      }).join('');
+    } catch (e) { console.error(e); }
+  })();
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text || '';
+    return div.innerHTML;
+  }
+</script>
+
+       
+
+        <!-- Footer Start -->
+        <div class="container-fluid footer py-5">
+            <div class="container py-5">
+                <div class="row g-5">
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Get In Touch</h4>
+                            <a href=""><i class="fas fa-home me-2"></i> Kasese, Municipality, Uganda</a>
+                            <a href="mailto:info@mahoganytravelexpeditions.com"><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                            <a href=""><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                            <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Popular Safaris</h4>
+                            <a href="ugandasafaris.html"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                            <a href="kenyasafaris.html"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                            <a href="tanzaniasafaris.html"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                            <a href="rwandasafaris.html"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                            <a href="drcsafaris.html"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                            <a href="eastafricasafaris.html"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Top Destinations</h4>
+                            <a href="uganda.html"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                            <a href="kenya.html"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                            <a href="tanzania.html"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                            <a href="rwanda.html"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                            <a href="drc.html"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                            <a href="eastafrica.html"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item d-flex flex-column">
+                            <h4 class="mb-4 text-white">Support</h4>
+                            <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                            <a href="booking.html"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                            <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                           
+                            <a href="privacy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                            <a href="sitemap.html"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                        </div>
+                    </div>
+
+                   
+                    <div class="col-md-6 col-lg-6 col-xl-3">
+                        <div class="footer-item">
+                            <div class="row gy-3 gx-2 mb-4">
+                                <div class="col-xl-6">
+                                    
+                                </div>
+                                <div class="col-xl-6">
+                                    <form>
+                                       
+                                           
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Footer End -->
+        
+        <!-- Copyright Start -->
+        <div class="container-fluid copyright text-body py-4">
+            <div class="container">
+                <div class="row g-4 align-items-center">
+                    <div class="col-md-6 text-center text-md-end mb-md-0">
+                        <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html">Mahogany Travel Expeditions</a>, All rights reserved.
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+        <!-- Copyright End -->
+
+        <!-- Back to Top -->
+        <a href="index.html" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+        
+        <!-- JavaScript Libraries -->
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="lib/easing/easing.min.js"></script>
+        <script src="lib/waypoints/waypoints.min.js"></script>
+        <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+        <script src="lib/lightbox/js/lightbox.min.js"></script>
+        
+
+        <!-- Template Javascript -->
+        <script src="js/main.js"></script>
+
+    <script src="global.js"></script>
+
+  <script>
+  // ============================================
+  // 1. STAR RATING INTERACTION
+  // ============================================
+  const stars = document.querySelectorAll('.star-rating span');
+  const ratingInput = document.getElementById('rating-value');
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const value = star.dataset.value;
+      ratingInput.value = value;
+      stars.forEach(s => {
+        s.classList.toggle('active', s.dataset.value <= value);
+      });
+    });
+  });
+
+  // ============================================
+  // 2. LOAD AND DISPLAY REVIEWS
+  // ============================================
+  async function loadReviews() {
+    const container = document.getElementById('reviews-list');
+    if (!container) return;
+
+    try {
+      const response = await fetch('/.netlify/functions/get-reviews');
+      const reviews = await response.json();
+
+      if (!reviews || reviews.length === 0) {
+        container.innerHTML = '<p class="no-reviews">Be the first to share your journey!</p>';
+        return;
+      }
+
+      container.innerHTML = reviews.map(review => {
+        const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+        const date = new Date(review.created_at).toLocaleDateString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric'
+        });
+
+        return `
+          <div class="review-card">
+            <div class="review-header">
+              <div>
+                <span class="review-name">${escapeHtml(review.name)}</span>
+                <span class="review-country">${escapeHtml(review.country || '')}</span>
+              </div>
+              <div class="review-stars">${stars}</div>
+            </div>
+            <p class="review-comment">${escapeHtml(review.comment)}</p>
+            <div class="review-date">${date}</div>
+          </div>
+        `;
+      }).join('');
+    } catch (error) {
+      console.error('Error loading reviews:', error);
+      container.innerHTML = '<p class="no-reviews">Unable to load reviews right now.</p>';
+    }
+  }
+
+  // Prevents malicious HTML in reviews from being rendered
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text || '';
+    return div.innerHTML;
+  }
+
+  // ============================================
+  // 3. FORM SUBMISSION
+  // ============================================
+  const form = document.getElementById('review-form');
+  
+  if (form) {
+    form.addEventListener('submit', async (e) => {
+      e.preventDefault();
+      const formData = new FormData(form);
+      const data = Object.fromEntries(formData);
+
+      const response = await fetch('/.netlify/functions/submit-review', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data)
+      });
+
+      if (response.ok) {
+        alert('Thank you! Your review has been submitted.');
+        form.reset();
+        stars.forEach(s => s.classList.remove('active'));
+        ratingInput.value = '';
+        loadReviews(); // Reload the reviews list to show the new review
+      } else {
+        alert('Sorry, there was an error submitting your review.');
+      }
+    });
+  }
+
+  // ============================================
+  // 4. INITIAL LOAD
+  // ============================================
+  loadReviews();
+</script>
+</body>
+
+</html>

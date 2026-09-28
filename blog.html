@@ -1,0 +1,1238 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Travel Blog | Mahogany Travel Expeditions</title>
+    <meta name="description" content="Read our latest travel stories, safari tips, and destination guides from Uganda, Rwanda, Kenya, and Tanzania.">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+    <style>
+        :root {
+            --mahogany-dark: #3D1E0C;
+            --mahogany-medium: #6B3410;
+            --mahogany-brown: #8B5A2B;
+            --golden-yellow: #D4A843;
+            --warm-beige: #F5E6D3;
+            --olive-green: #6B7A4A;
+            --sage-green: #8A9A6E;
+            --cream-white: #FAF7F2;
+        }
+
+        .bg-primary {
+            background-color: var(--mahogany-dark) !important;
+        }
+
+        .navbar-nav .nav-link {
+            color: var(--mahogany-dark) !important;
+            font-weight: 500;
+        }
+
+        .navbar-nav .nav-link:hover,
+        .navbar-nav .nav-link.active {
+            color: var(--golden-yellow) !important;
+        }
+
+        .btn-primary {
+            background-color: var(--mahogany-medium) !important;
+            border-color: var(--mahogany-medium) !important;
+        }
+
+        .btn-primary:hover {
+            background-color: var(--mahogany-dark) !important;
+            border-color: var(--mahogany-dark) !important;
+        }
+
+        .btn-primary.rounded-pill {
+            background-color: var(--golden-yellow) !important;
+            border-color: var(--golden-yellow) !important;
+            color: var(--mahogany-dark) !important;
+        }
+
+        .btn-primary.rounded-pill:hover {
+            background-color: #c49a3a !important;
+            border-color: #c49a3a !important;
+        }
+
+        .blog-header {
+            background: linear-gradient(135deg, var(--mahogany-dark) 0%, var(--mahogany-medium) 100%);
+            padding: 60px 0;
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .blog-header::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('img/pattern.png') repeat;
+            opacity: 0.05;
+        }
+
+        .blog-header h1 {
+            font-family: 'Jost', sans-serif;
+            font-weight: 700;
+            color: var(--golden-yellow);
+        }
+
+        .blog-header p {
+            color: var(--warm-beige);
+        }
+
+        .blog-card {
+            background: var(--cream-white);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 5px 20px rgba(61, 30, 12, 0.08);
+            margin-bottom: 30px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-bottom: 4px solid var(--golden-yellow);
+        }
+
+        .blog-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 30px rgba(61, 30, 12, 0.15);
+        }
+
+        .blog-image {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+        }
+
+        .blog-content {
+            padding: 25px;
+        }
+
+        .blog-meta {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 12px;
+        }
+
+        .blog-category {
+            display: inline-block;
+            padding: 4px 14px;
+            background: var(--golden-yellow);
+            color: var(--mahogany-dark);
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .blog-date {
+            font-size: 0.85rem;
+            color: var(--mahogany-brown);
+            font-weight: 500;
+        }
+
+        .blog-date i {
+            color: var(--golden-yellow);
+            margin-right: 5px;
+        }
+
+        .blog-title {
+            font-family: 'Jost', sans-serif;
+            font-size: 1.4rem;
+            margin: 10px 0 12px;
+            color: var(--mahogany-dark);
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .blog-title a {
+            color: var(--mahogany-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .blog-title a:hover {
+            color: var(--golden-yellow);
+        }
+
+        .blog-excerpt {
+            color: #5a4a3a;
+            line-height: 1.7;
+            margin-bottom: 18px;
+            font-size: 0.95rem;
+        }
+
+        .read-more-btn {
+            display: inline-block;
+            color: var(--mahogany-medium);
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s;
+            font-size: 0.95rem;
+        }
+
+        .read-more-btn i {
+            transition: transform 0.3s;
+            margin-left: 5px;
+        }
+
+        .read-more-btn:hover {
+            color: var(--golden-yellow);
+        }
+
+        .read-more-btn:hover i {
+            transform: translateX(5px);
+        }
+
+        .sidebar-widget {
+            background: var(--cream-white);
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            border-left: 4px solid var(--golden-yellow);
+            box-shadow: 0 3px 15px rgba(61, 30, 12, 0.06);
+        }
+
+        .sidebar-widget h4 {
+            color: var(--mahogany-dark);
+            margin-bottom: 20px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+            font-size: 1.1rem;
+            border-bottom: 2px solid var(--warm-beige);
+            padding-bottom: 10px;
+        }
+
+        .sidebar-widget h4 i {
+            color: var(--golden-yellow);
+            margin-right: 10px;
+        }
+
+        .sidebar-widget ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .sidebar-widget ul li {
+            margin-bottom: 12px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #f0e8df;
+        }
+
+        .sidebar-widget ul li:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .sidebar-widget ul li a {
+            color: var(--mahogany-brown);
+            text-decoration: none;
+            transition: color 0.3s;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .sidebar-widget ul li a:hover {
+            color: var(--golden-yellow);
+        }
+
+        .sidebar-widget ul li a i {
+            color: var(--golden-yellow);
+            font-size: 0.8rem;
+            width: 20px;
+        }
+
+        .popular-post-item {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #f0e8df;
+            align-items: center;
+        }
+
+        .popular-post-item:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+
+        .popular-post-img {
+            width: 70px;
+            height: 70px;
+            border-radius: 8px;
+            object-fit: cover;
+            flex-shrink: 0;
+        }
+
+        .popular-post-content h5 {
+            font-size: 0.9rem;
+            margin-bottom: 4px;
+            font-family: 'Jost', sans-serif;
+            font-weight: 600;
+        }
+
+        .popular-post-content h5 a {
+            color: var(--mahogany-dark);
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .popular-post-content h5 a:hover {
+            color: var(--golden-yellow);
+        }
+
+        .popular-post-content small {
+            color: var(--mahogany-brown);
+            font-size: 0.75rem;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 3px 12px;
+            background: var(--warm-beige);
+            color: var(--mahogany-brown);
+            border-radius: 15px;
+            font-size: 0.75rem;
+            margin-right: 5px;
+            margin-bottom: 5px;
+            transition: all 0.3s;
+        }
+
+        .tag:hover {
+            background: var(--golden-yellow);
+            color: var(--mahogany-dark);
+        }
+
+        .footer {
+            background-color: var(--mahogany-dark) !important;
+        }
+
+        .footer h4 {
+            color: var(--golden-yellow) !important;
+        }
+
+        .footer a {
+            color: var(--warm-beige) !important;
+            text-decoration: none;
+        }
+
+        .footer a:hover {
+            color: var(--golden-yellow) !important;
+        }
+
+        .copyright {
+            background-color: #2a1508 !important;
+        }
+
+        .copyright a {
+            color: var(--golden-yellow) !important;
+            text-decoration: none;
+        }
+
+        .copyright a:hover {
+            color: var(--warm-beige) !important;
+        }
+
+        .dropdown-menu {
+            border-top: 3px solid var(--golden-yellow) !important;
+        }
+
+        .dropdown-item:hover {
+            background-color: var(--warm-beige) !important;
+            color: var(--mahogany-dark) !important;
+        }
+
+        .back-to-top {
+            background-color: var(--mahogany-medium) !important;
+            border-color: var(--mahogany-medium) !important;
+            color: white !important;
+        }
+
+        .back-to-top:hover {
+            background-color: var(--mahogany-dark) !important;
+            border-color: var(--mahogany-dark) !important;
+        }
+
+        @media (max-width: 768px) {
+            .blog-image {
+                height: 200px;
+            }
+            .blog-title {
+                font-size: 1.2rem;
+            }
+            .sidebar-widget {
+                padding: 20px;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="global.css">
+</head>
+<body>
+
+    <!-- Topbar Start -->
+    <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="d-inline-flex align-items-center" style="height: 45px;">
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <img src="img/BRIGHT LOGO.jpg" alt="Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Safaris</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                            <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                            <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                            <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                            <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                            <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                            <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                            <a href="Tanzania.html" class="dropdown-item">Tanzania</a>
+                            <a href="DRC.html" class="dropdown-item">DRC</a>
+                            <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                            <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="services.html" class="dropdown-item">Services</a>
+                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                            <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="reviews.html" class="dropdown-item">Reviews</a>
+                           
+                        </div>
+                    </div>
+                 <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar End -->
+
+    <!-- Blog Header Start -->
+    <div class="blog-header">
+        <div class="container position-relative">
+            <h1 class="display-4 mb-3">Travel Blog</h1>
+            <p class="lead mb-0" style="max-width: 700px; margin: 0 auto;">Stories, tips, and inspiration from the heart of Africa — crafted for curious travelers seeking authentic journeys.</p>
+        </div>
+    </div>
+    <!-- Blog Header End -->
+
+    <!-- Blog Content Start -->
+
+    
+    <div class="container py-5">
+
+        <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Is Gorilla Trekking Safe in Congoxx.jpg" alt="Is Gorilla Trekking Safe in Congo?" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Gorilla Trekking</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> August 5, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="gorilla-trekking-congo.html">Is Gorilla Trekking Safe in Congo? Everything You Need to Know Before You Go</a></h3>
+            <p class="blog-excerpt">Is gorilla trekking safe in Congo? Discover everything you need to know about gorilla trekking in Virunga and Kahuzi-Biega National Parks, safety measures, and travel tips.</p>
+            <a href="gorilla-trekking-congo.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+
+<div class="row" id="blogPostsContainer">
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/kigali.jpg" alt="How to Experience the Best of Rwanda: Adventure and Culture" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Rwanda</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> August 3, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="rwanda-adventure-culture.html">How to Experience the Best of Rwanda: Adventure and Culture</a></h3>
+            <p class="blog-excerpt">Discover how to experience the best of Rwanda - from gorilla trekking in Volcanoes National Park to Big Five safaris in Akagera, chimpanzee tracking in Nyungwe, and cultural experiences.</p>
+            <a href="rwanda-adventure-culture.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/How Gorilla Trekking Benefits ConservationXX.webp" alt="How Gorilla Trekking Benefits Conservation" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Conservation</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 31, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="gorilla-trekking-conservation.html">How Gorilla Trekking Benefits Conservation: Protecting Africa's Mountain Gorillas Through Responsible Tourism</a></h3>
+            <p class="blog-excerpt">Discover how gorilla trekking benefits conservation in Uganda and Rwanda. Learn how responsible tourism protects mountain gorillas, supports communities, and preserves rainforests.</p>
+            <a href="gorilla-trekking-conservation.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Gorillas vs Chimpsxx.jpg" alt="Gorillas vs Chimpanzees" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Primate Trekking</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 30, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 12 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="gorillas-vs-chimps.html">Gorillas vs. Chimpanzees: Key Differences for Trekkers in Uganda and Rwanda</a></h3>
+            <p class="blog-excerpt">Discover the key differences between gorillas and chimpanzees for trekkers in Uganda and Rwanda. Compare size, behavior, habitat, and trekking experiences.</p>
+            <a href="gorillas-vs-chimps.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/bwindi-gorilla-eating.jpg" alt="Planning a Gorilla Trek Before or After the World Cup" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Gorilla Trekking</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 29, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="planning-gorilla-trek-world-cup.html">Planning a Gorilla Trek? Before or After the World Cup</a></h3>
+            <p class="blog-excerpt">Should you plan your gorilla trek before or after the World Cup? Compare the pros and cons, permit availability, and travel tips for Uganda and Rwanda.</p>
+            <a href="planning-gorilla-trek-world-cup.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/African safari in tz.jpg" alt="African Safari in Tanzania" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Tanzania</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 28, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 14 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="african-safari-tanzania.html">African Safari in Tanzania: Everything You Need to Know Before You Go</a></h3>
+            <p class="blog-excerpt">Discover everything you need to know about an African safari in Tanzania - from the Great Migration and Serengeti to Ngorongoro Crater, Zanzibar, and more.</p>
+            <a href="african-safari-tanzania.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Adventure Activities in Uganda.jpg" alt="Adventure Activities in Uganda Beyond Safari" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Adventure</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 25, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 12 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="adventure-activities-uganda.html">Adventure Activities in Uganda Beyond Safari: The Ultimate Guide to Thrilling Experiences in the Pearl of Africa</a></h3>
+            <p class="blog-excerpt">Discover thrilling adventure activities in Uganda beyond safari - white water rafting on the Nile, mountain hiking, zip lining, bungee jumping, and more in the Pearl of Africa.</p>
+            <a href="adventure-activities-uganda.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/12 Beautiful places in Africa.webp" alt="12 Beautiful Places in Africa You Should Visit in 2026" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Africa</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 24, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 15 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="12-beautiful-places-africa-2026.html">12 Beautiful Places in Africa You Should Visit in 2026</a></h3>
+            <p class="blog-excerpt">Discover 12 beautiful places in Africa to visit in 2026 - from Victoria Falls and the Serengeti to Bwindi Gorillas, Zanzibar, Sossusvlei, and more. Your ultimate African bucket list.</p>
+            <a href="12-beautiful-places-africa-2026.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Best Places for a Holiday in Uganda-sipi falls.jpg" alt="Best Places for a Holiday in Uganda" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Uganda</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 3, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="best-places-uganda-holiday.html">Best Places for a Holiday in Uganda</a></h3>
+            <p class="blog-excerpt">Discover the best places for a holiday in Uganda - from gorilla trekking in Bwindi to wildlife safaris in Queen Elizabeth, chimpanzee tracking in Kibale, and relaxation on Lake Bunyonyi.</p>
+            <a href="best-places-uganda-holiday.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Uganda vs Rwanda Gorilla Trekking2.jpg" alt="Uganda vs Congo Gorilla Trekking" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Gorilla Trekking</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 2, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 12 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="uganda-vs-congo-gorilla-trekking.html">Uganda vs Congo Gorilla Trekking: Which Destination Is Best for Your Gorilla Safari?</a></h3>
+            <p class="blog-excerpt">Compare Uganda vs Congo gorilla trekking - permits, accessibility, safety, accommodation, and overall experience. Find the best destination for your gorilla safari.</p>
+            <a href="uganda-vs-congo-gorilla-trekking.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Best Places to Visit in Rwanda-kigali city.jpg" alt="Best Places to Visit in Rwanda" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Rwanda</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> July 1, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 9 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="best-places-rwanda.html">Best Places to Visit in Rwanda</a></h3>
+            <p class="blog-excerpt">Discover the best places to visit in Rwanda - from gorilla trekking in Volcanoes National Park to wildlife safaris in Akagera, culture in Kigali, and relaxation on Lake Kivu.</p>
+            <a href="best-places-rwanda.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Essential Safari Packing List.jpg" alt="Essential Safari Packing List" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Safari Tips</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> June 30, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="safari-packing-list.html">Essential Safari Packing List: What to Pack for an African Safari</a></h3>
+            <p class="blog-excerpt">Don't leave home without these essential items! A complete packing guide for your African safari including clothing, gear, accessories, and health essentials.</p>
+            <a href="safari-packing-list.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+    <div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Best Place to See Gorillas in East Africa.jpg" alt="Best Place to See Gorillas in East Africa" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Gorilla Trekking</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> June 26, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 10 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="best-place-gorillas-east-africa.html">Best Place to See Gorillas in East Africa</a></h3>
+            <p class="blog-excerpt">Discover the top destinations for gorilla trekking across East Africa. Compare Uganda, Rwanda, and DRC to find the perfect gorilla encounter for your next adventure.</p>
+            <a href="best-place-gorillas-east-africa.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+
+<div class="col-md-6">
+    <div class="blog-card">
+        <img src="pics/Visiting Uganda’s Local Communities Responsibly-Batwa.jpg" alt="Visiting Uganda's Local Communities Responsibly" class="blog-image">
+        <div class="blog-content">
+            <div class="blog-meta">
+                <span class="blog-category">Cultural Travel</span>
+                <span class="blog-date"><i class="far fa-calendar"></i> June 26, 2026</span>
+                <span class="blog-date"><i class="far fa-clock"></i> 8 min read</span>
+            </div>
+            <h3 class="blog-title"><a href="visiting-uganda-communities.html">Visiting Uganda's Local Communities Responsibly</a></h3>
+            <p class="blog-excerpt">Learn how to engage with Uganda's vibrant local communities in a respectful and meaningful way. Tips on cultural etiquette, sustainable tourism, and authentic experiences.</p>
+            <a href="visiting-uganda-communities.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+        </div>
+    </div>
+</div>
+    <!-- Blog Post 1: Top 5 Reasons to Visit Kenya -->
+    <div class="col-md-6">
+        <div class="blog-card">
+            <img src="pics/Top 5 Reasons to Visit Kenya1.jpg" alt="Top 5 Reasons to Visit Kenya" class="blog-image">
+            <div class="blog-content">
+                <div class="blog-meta">
+                    <span class="blog-category">Kenya</span>
+                    <span class="blog-date"><i class="far fa-calendar"></i> June 25, 2026</span>
+                    <span class="blog-date"><i class="far fa-clock"></i> 6 min read</span>
+                </div>
+                <h3 class="blog-title"><a href="top-5-reasons-visit-kenya.html">Top 5 Reasons to Visit Kenya</a></h3>
+                <p class="blog-excerpt">From the Great Migration in the Masai Mara to the white-sand beaches of the Indian Ocean, discover why Kenya is one of Africa's most iconic travel destinations.</p>
+                <a href="top-5-reasons-visit-kenya.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Blog Post 2: Planning Your Safari in Uganda 2026 -->
+    <div class="col-md-6">
+        <div class="blog-card">
+            <img src="pics/Planning Your Safari in Uganda 2026.webp" alt="Planning Your Safari in Uganda 2026" class="blog-image">
+            <div class="blog-content">
+                <div class="blog-meta">
+                    <span class="blog-category">Safari Planning</span>
+                    <span class="blog-date"><i class="far fa-calendar"></i> June 24, 2026</span>
+                    <span class="blog-date"><i class="far fa-clock"></i> 12 min read</span>
+                </div>
+                <h3 class="blog-title"><a href="planning-uganda-safari-2026.html">Planning Your Safari in Uganda 2026</a></h3>
+                <p class="blog-excerpt">A comprehensive guide to planning your 2026 Uganda safari - from gorilla permits and accommodation to the best time to visit and top destinations.</p>
+                <a href="planning-uganda-safari-2026.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </div>
+    </div>
+        <div class="row">
+            <!-- Main Blog Posts -->
+            <div class="col-lg-8">
+                <div class="row" id="blogPostsContainer">
+                    <!-- Blog Post 1: Uganda vs Rwanda Gorilla Trekking -->
+                    <div class="col-md-6">
+                        <div class="blog-card">
+                            <img src="pics/Uganda vs Rwanda Gorilla Trekking1.jpg" alt="Uganda vs Rwanda Gorilla Trekking" class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span class="blog-category">Gorilla Trekking</span>
+                                    <span class="blog-date"><i class="far fa-calendar"></i> June 23, 2026</span>
+                                    <span class="blog-date"><i class="far fa-clock"></i> 10 min read</span>
+                                </div>
+                                <h3 class="blog-title"><a href="uganda-vs-rwanda-gorilla-trekking.html">Uganda vs Rwanda Gorilla Trekking: Which One Is Better?</a></h3>
+                                <p class="blog-excerpt">Both Uganda and Rwanda offer incredible mountain gorilla trekking experiences, but which one should you choose? We compare costs, accessibility, trekking conditions, and overall experience to help you decide.</p>
+                                <a href="uganda-vs-rwanda-gorilla-trekking.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Blog Post 2: When Is the Best Time to Visit Uganda -->
+                    <div class="col-md-6">
+                        <div class="blog-card">
+                            <img src="pics//Best Places for a Holiday in Uganda-jinja.jpg" alt="Best Time to Visit Uganda" class="blog-image">
+                            <div class="blog-content">
+                                <div class="blog-meta">
+                                    <span class="blog-category">Travel Tips</span>
+                                    <span class="blog-date"><i class="far fa-calendar"></i> June 23, 2026</span>
+                                    <span class="blog-date"><i class="far fa-clock"></i> 8 min read</span>
+                                </div>
+                                <h3 class="blog-title"><a href="best-time-visit-uganda.html">When Is the Best Time to Visit Uganda for a Safari?</a></h3>
+                                <p class="blog-excerpt">Discover the best time to visit Uganda for gorilla trekking, wildlife safaris, birdwatching, and more. Month-by-month guide to Uganda's seasons and travel tips.</p>
+                                <a href="best-time-visit-uganda.html" class="read-more-btn">Read More <i class="fas fa-arrow-right"></i></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+          
+
+            <!-- Sidebar -->
+            <div class="col-lg-4">
+                <!-- Popular Safaris Widget -->
+                <div class="sidebar-widget">
+                    <h4><i class="fas fa-compass"></i> Popular Safaris</h4>
+                    <ul>
+                        <li><a href="ugandasafaris.html"><i class="fas fa-angle-right"></i> Uganda Safaris</a></li>
+                        <li><a href="rwandasafaris.html"><i class="fas fa-angle-right"></i> Rwanda Safaris</a></li>
+                        <li><a href="drcsafaris.html"><i class="fas fa-angle-right"></i> Congo Safaris</a></li>
+                        <li><a href="kenyasafaris.html"><i class="fas fa-angle-right"></i> Kenya Safaris</a></li>
+                        <li><a href="tanzaniasafaris.html"><i class="fas fa-angle-right"></i> Tanzania Safaris</a></li>
+                        <li><a href="eastafricasafaris.html"><i class="fas fa-angle-right"></i> East Africa Safaris</a></li>
+                    </ul>
+                </div>
+
+                <!-- Popular Tags Widget -->
+                <div class="sidebar-widget">
+                    <h4><i class="fas fa-tags"></i> Popular Tags</h4>
+                    <div>
+                        <span class="tag">Gorilla Trekking</span>
+                        <span class="tag">Uganda</span>
+                        <span class="tag">Rwanda</span>
+                        <span class="tag">Wildlife</span>
+                        <span class="tag">Safari Tips</span>
+                        <span class="tag">Cultural Travel</span>
+                        <span class="tag">Birding</span>
+                        <span class="tag">Adventure</span>
+                        <span class="tag">Travel Tips</span>
+                    </div>
+                </div>
+
+                <!-- Book Now Widget -->
+                <div class="sidebar-widget" style="background: linear-gradient(135deg, var(--mahogany-dark), var(--mahogany-medium)); border-left-color: var(--golden-yellow);">
+                    <h4 style="color: var(--golden-yellow); border-bottom-color: rgba(255,255,255,0.1);"><i class="fas fa-calendar-check"></i> Plan Your Safari</h4>
+                    <p style="color: var(--warm-beige); font-size: 0.95rem;">Ready to explore Uganda? Let us help you plan the perfect safari adventure.</p>
+                    <a href="booking.html" class="btn" style="background: var(--golden-yellow); color: var(--mahogany-dark); font-weight: 600; width: 100%;">Book Now</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Blog Content End -->
+
+     <!-- Partners Section Start -->
+<div class="partners-section">
+    <div class="container">
+        <div class="section-header">
+            <h5 class="section-title">Our Partners</h5>
+            <h2>Trusted By Leading Organizations</h2>
+            <p>We proudly collaborate with these esteemed partners to deliver exceptional safari experiences</p>
+        </div>
+        
+        <div class="partners-grid">
+            <!-- Partner 1 - USAGA -->
+            <div class="partner-card">
+                <a href="https://ugasaf.org/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/USAGA.png" alt="USAGA">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 2 - UTB -->
+            <div class="partner-card">
+                <a href="https://utb.go.ug/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/UTB.jpeg" alt="UTB">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 3 - EXPLORE UGANDA -->
+            <div class="partner-card">
+                <a href="https://exploreuganda.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/exploreuganda.png" alt="Explore Uganda">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 4 - SAFARI DEAL -->
+            <div class="partner-card">
+                <a href="https://safarideal.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/SAFARIDEAL.jpeg" alt="Safari Deal">
+                    </div>
+                   
+                </a>
+            </div>
+            
+            <!-- Partner 5 - Travel Agents10 -->
+            <div class="partner-card">
+                <a href="https://www.travelagents10.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/travelagents.png" alt="Travel Agents10">
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Partners Section Styles */
+.partners-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,#4A2810, #e6b325,#4A2810);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    display: inline-block;
+    background: rgba(44, 92, 44, 0.1);
+    color:#4A2810;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color:#4A2810;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Partners Grid */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    align-items: center;
+}
+
+/* Partner Card - Professional Design */
+.partner-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.partner-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg,#4A2810, #e6b325);
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: rgba(44, 92, 44, 0.1);
+}
+
+.partner-card:hover::after {
+    width: 60px;
+}
+
+.partner-card a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Partner Logo - Full Color, No Grayscale */
+.partner-logo {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+    transform: scale(1.02);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* REMOVED grayscale and opacity filters - FULL COLOR */
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover .partner-logo img {
+    transform: scale(1.05);
+}
+
+/* Partner Name - Professional Styling */
+.partner-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.partner-card:hover .partner-name {
+    color:#4A2810;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .partners-section {
+        padding: 60px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .partner-logo {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .partner-logo img {
+        max-height: 75px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 50px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .partner-card {
+        padding: 25px 15px;
+    }
+    
+    .partner-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .partner-logo img {
+        max-height: 65px;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 14px;
+    }
+    
+    .partner-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-section {
+        padding: 40px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .partner-card {
+        padding: 20px 12px;
+    }
+    
+    .partner-logo {
+        width: 85px;
+        height: 85px;
+        padding: 12px;
+    }
+    
+    .partner-logo img {
+        max-height: 55px;
+    }
+    
+    .partner-name {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    
+    .section-header h2 {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 12px;
+    }
+}
+
+/* For very large screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .partners-grid {
+        gap: 40px;
+    }
+    
+    .partner-logo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .partner-logo img {
+        max-height: 100px;
+    }
+}
+</style>
+
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+                        <a href="#"><i class="fas fa-home me-2"></i> Kasese, Municipality, Uganda</a>
+                        <a href="#"><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                        <a href="#"><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                        <a href="#" class="mb-3"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                        <div class="d-inline-flex align-items-center" style="height: 45px;">
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Popular Safaris</h4>
+                        <a href="ugandasafaris.html"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                        <a href="kenyasafaris.html"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                        <a href="tanzaniasafaris.html"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                        <a href="rwandasafaris.html"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                        <a href="drcsafaris.html"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                        <a href="eastafricasafaris.html"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Top Destinations</h4>
+                        <a href="uganda.html"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                        <a href="kenya.html"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                        <a href="tanzania.html"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                        <a href="rwanda.html"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                        <a href="drc.html"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                        <a href="eastafrica.html"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="booking.html"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                        <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                        <a href="privacy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="sitemap.html"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-12 text-center">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html">Mahogany Travel Expeditions</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="js/main.js"></script>
+<script src="global.js"></script>
+</body>
+</html>

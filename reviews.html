@@ -1,0 +1,1695 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mahogany Travel Expeditions | Reviewss</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet">
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* Professional styling for review form and dynamic elements - maintains original aesthetics */
+        .review-form-section {
+            background: #ffffff;
+            border-radius: 20px;
+            padding: 2.5rem;
+            margin-top: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            border: 1px solid rgba(0,0,0,0.05);
+        }
+        .review-form-section h3 {
+            color: #1f2a3a;
+            margin-bottom: 1rem;
+            font-weight: 700;
+            border-left: 5px solid #FEA116;
+            padding-left: 18px;
+            font-family: 'Jost', sans-serif;
+        }
+        .review-form-section p {
+            color: #5a6e7c;
+            margin-bottom: 1.8rem;
+        }
+        .image-preview {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #FEA116;
+            margin-top: 12px;
+            background: #f8f9fa;
+            box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+        }
+        .preview-container {
+            display: flex;
+            justify-content: flex-start;
+            margin-top: 12px;
+        }
+        .btn-submit-review {
+            background: #FEA116;
+            border: none;
+            padding: 12px 35px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            letter-spacing: 0.5px;
+            font-family: 'Jost', sans-serif;
+        }
+        .btn-submit-review:hover {
+            background: #e08e00;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(254,161,22,0.3);
+        }
+        .star-rating {
+            display: inline-flex;
+            flex-direction: row-reverse;
+            justify-content: flex-end;
+            gap: 8px;
+            margin-bottom: 8px;
+        }
+        .star-rating input {
+            display: none;
+        }
+        .star-rating label {
+            font-size: 28px;
+            color: #ddd;
+            cursor: pointer;
+            transition: color 0.2s;
+        }
+        .star-rating label:hover,
+        .star-rating label:hover ~ label,
+        .star-rating input:checked ~ label {
+            color: #FEA116;
+        }
+        .rating-text {
+            margin-left: 12px;
+            font-size: 14px;
+            color: #6c757d;
+            font-style: italic;
+        }
+        .review-item {
+            transition: all 0.3s ease;
+        }
+        .Reviews-carousel .owl-item {
+            padding: 8px;
+        }
+        .form-label {
+            font-weight: 600;
+            color: #2c3e50;
+            margin-bottom: 8px;
+            font-family: 'Jost', sans-serif;
+        }
+        .form-label i {
+            color: #FEA116;
+            margin-right: 6px;
+        }
+        .alert-custom {
+            position: fixed;
+            top: 25px;
+            right: 25px;
+            z-index: 9999;
+            min-width: 320px;
+            animation: slideInRight 0.35s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+            border: none;
+            font-weight: 500;
+        }
+        @keyframes slideInRight {
+            from { transform: translateX(100%); opacity: 0; }
+            to { transform: translateX(0); opacity: 1; }
+        }
+        .form-control:focus {
+            border-color: #FEA116;
+            box-shadow: 0 0 0 0.2rem rgba(254,161,22,0.2);
+        }
+        .Reviews-comment p {
+            font-size: 1rem;
+            line-height: 1.6;
+            color: #4a5b6e;
+        }
+        .Reviews-item h5 {
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+
+
+
+
+            :root {
+      --mahogany-dark: #5c3a21;
+      --mahogany-deep: #4a2e1a;
+      --mahogany-gold: #c89b3c;
+      --mahogany-gold-light: #e8a41a;
+      --mahogany-cream: #fdfaf7;
+      --mahogany-border: #e0d5c7;
+      --mahogany-text: #2b2b2b;
+      --mahogany-muted: #7a6a5a;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: var(--mahogany-cream);
+      color: var(--mahogany-text);
+      margin: 0;
+      line-height: 1.6;
+    }
+
+    .page-wrap {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 40px 20px 80px;
+    }
+
+    /* ============ FORM SECTION ============ */
+    .review-form-container {
+      background: #fff;
+      border-radius: 12px;
+      padding: 40px;
+      box-shadow: 0 4px 20px rgba(92, 58, 33, 0.08);
+      margin-bottom: 60px;
+      border-top: 5px solid var(--mahogany-gold);
+    }
+
+    .quick-rating-row {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      padding: 16px 0 24px;
+      border-bottom: 1px solid var(--mahogany-border);
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .quick-rating-label {
+      font-size: 15px;
+      font-weight: 600;
+      color: var(--mahogany-text);
+    }
+
+    .large-stars span {
+      font-size: 36px;
+      color: #d9d0c5;
+      cursor: pointer;
+      transition: color 0.15s ease, transform 0.15s ease;
+      user-select: none;
+    }
+
+    .large-stars span:hover {
+      transform: scale(1.1);
+    }
+
+    .large-stars span.active,
+    .large-stars span:hover,
+    .large-stars span:hover ~ span {
+      color: var(--mahogany-gold-light);
+    }
+
+    .rating-text {
+      color: var(--mahogany-gold);
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 0.5px;
+    }
+
+    .form-group {
+      margin-bottom: 26px;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .form-group label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--mahogany-dark);
+      margin-bottom: 10px;
+    }
+
+    .form-group input[type="text"],
+    .form-group textarea {
+      padding: 14px 16px;
+      border: 1.5px solid var(--mahogany-border);
+      border-radius: 8px;
+      font-size: 15px;
+      font-family: inherit;
+      background: #fff;
+      color: var(--mahogany-text);
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    .form-group input[type="text"]:focus,
+    .form-group textarea:focus {
+      outline: none;
+      border-color: var(--mahogany-gold);
+      box-shadow: 0 0 0 3px rgba(200, 155, 60, 0.15);
+    }
+
+    .form-group textarea {
+      min-height: 160px;
+      resize: vertical;
+      line-height: 1.6;
+    }
+
+    .textarea-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-top: 8px;
+      font-size: 13px;
+      color: var(--mahogany-muted);
+    }
+
+    .form-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    /* ============ PHOTO UPLOAD ============ */
+    .photo-upload {
+      margin-bottom: 26px;
+    }
+
+    .photo-upload label {
+      font-size: 15px;
+      font-weight: 700;
+      color: var(--mahogany-dark);
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .photo-upload .optional {
+      font-weight: 400;
+      color: var(--mahogany-muted);
+      font-size: 14px;
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .drop-zone {
+      border: 2px dashed var(--mahogany-border);
+      border-radius: 10px;
+      padding: 40px 20px;
+      text-align: center;
+      cursor: pointer;
+      transition: all 0.2s;
+      background: var(--mahogany-cream);
+      position: relative;
+    }
+
+    .drop-zone:hover,
+    .drop-zone.dragover {
+      border-color: var(--mahogany-gold);
+      background: #fbf3e6;
+    }
+
+    .drop-zone.has-file {
+      padding: 20px;
+      border-style: solid;
+      border-color: var(--mahogany-gold);
+    }
+
+    .drop-zone svg {
+      width: 40px;
+      height: 40px;
+      color: var(--mahogany-gold);
+      margin-bottom: 10px;
+    }
+
+    .drop-zone-text {
+      color: var(--mahogany-dark);
+      font-weight: 600;
+      font-size: 15px;
+      margin-bottom: 4px;
+    }
+
+    .drop-zone-sub {
+      color: var(--mahogany-muted);
+      font-size: 13px;
+    }
+
+    .drop-zone input[type="file"] {
+      display: none;
+    }
+
+    .preview-img {
+      max-width: 200px;
+      max-height: 200px;
+      border-radius: 8px;
+      margin: 0 auto;
+      display: block;
+    }
+
+    /* ============ CONFIRMATION CHECKBOX ============ */
+    .confirmation-box {
+      margin: 30px 0;
+      padding: 18px 20px;
+      background: var(--mahogany-cream);
+      border-left: 4px solid var(--mahogany-gold);
+      border-radius: 6px;
+    }
+
+    .checkbox-label {
+      display: flex;
+      gap: 12px;
+      align-items: flex-start;
+      cursor: pointer;
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--mahogany-text);
+    }
+
+    .checkbox-label input[type="checkbox"] {
+      width: 18px;
+      height: 18px;
+      margin-top: 2px;
+      flex-shrink: 0;
+      cursor: pointer;
+      accent-color: var(--mahogany-gold);
+    }
+
+    /* ============ SUBMIT BUTTON ============ */
+    .submit-btn {
+      background: var(--mahogany-dark);
+      color: #fff;
+      padding: 16px 48px;
+      border: none;
+      border-radius: 30px;
+      font-size: 16px;
+      font-weight: 700;
+      cursor: pointer;
+      display: block;
+      margin: 0 auto;
+      letter-spacing: 0.5px;
+      transition: background-color 0.2s, transform 0.15s;
+      width: 100%;
+      max-width: 320px;
+    }
+
+    .submit-btn:hover {
+      background: var(--mahogany-deep);
+      transform: translateY(-1px);
+    }
+
+    .submit-btn:disabled {
+      background: #b8b8b8;
+      cursor: not-allowed;
+      transform: none;
+    }
+
+    /* ============ REVIEWS DISPLAY SECTION ============ */
+    .reviews-display {
+      margin-top: 60px;
+    }
+
+    .reviews-display h2 {
+      font-size: 28px;
+      color: var(--mahogany-dark);
+      text-align: center;
+      margin-bottom: 30px;
+      position: relative;
+      padding-bottom: 15px;
+    }
+
+    .reviews-display h2::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 80px;
+      height: 3px;
+      background: var(--mahogany-gold);
+      border-radius: 2px;
+    }
+
+    .review-card {
+      background: #fff;
+      border-radius: 12px;
+      padding: 26px;
+      margin-bottom: 20px;
+      box-shadow: 0 2px 12px rgba(92, 58, 33, 0.06);
+      border-left: 4px solid var(--mahogany-gold);
+    }
+
+    .review-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 16px;
+      margin-bottom: 12px;
+      flex-wrap: wrap;
+    }
+
+    .reviewer-info {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+        const avatarHTML = review.photo_url
+          ? `<img src="${escapeHtml(review.photo_url)}" alt="${escapeHtml(review.name)}" class="reviewer-avatar-img">`
+          : `<div class="reviewer-avatar">${escapeHtml(initials)}</div>`;
+
+        return `
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-info">
+                ${avatarHTML}
+                <div>
+
+    .reviewer-name {
+      font-weight: 700;
+      color: var(--mahogany-text);
+      font-size: 16px;
+    }
+
+    .reviewer-country {
+      color: var(--mahogany-muted);
+      font-size: 13px;
+    }
+
+    .review-stars {
+      color: var(--mahogany-gold-light);
+      font-size: 18px;
+      letter-spacing: 1px;
+    }
+
+    .review-title {
+      font-weight: 700;
+      font-size: 17px;
+      color: var(--mahogany-dark);
+      margin: 8px 0;
+    }
+
+    .review-comment {
+      color: #444;
+      line-height: 1.7;
+      margin: 8px 0;
+    }
+
+    .review-photo {
+      max-width: 100%;
+      border-radius: 8px;
+      margin: 12px 0;
+      max-height: 300px;
+      object-fit: cover;
+    }
+
+    .review-date {
+      color: var(--mahogany-muted);
+      font-size: 12px;
+      margin-top: 12px;
+      font-style: italic;
+    }
+
+    .no-reviews {
+      text-align: center;
+      color: var(--mahogany-muted);
+      font-style: italic;
+      padding: 40px 20px;
+    }
+
+    /* ============ MOBILE ============ */
+    @media (max-width: 600px) {
+      .review-form-container { padding: 24px 20px; }
+      .form-row { grid-template-columns: 1fr; }
+      .large-stars span { font-size: 30px; }
+      .submit-btn { max-width: 100%; }
+    }
+.reviewer-avatar {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  background: var(--mahogany-dark);
+  color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 18px;
+  flex-shrink: 0;
+}
+.reviewer-avatar-img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  border: 2px solid var(--mahogany-border);
+  display: block;
+}
+
+/* ============ REVIEWS CAROUSEL SECTION ============ */
+.reviews-carousel-section {
+  background: linear-gradient(180deg, #fdfaf7 0%, #ffffff 100%);
+  padding: 80px 0 70px;
+  position: relative;
+  overflow: hidden;
+}
+
+.reviews-carousel-section::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 4px;
+  background: linear-gradient(90deg, var(--mahogany-dark), var(--mahogany-gold), var(--mahogany-dark));
+}
+
+.reviews-carousel-header {
+  text-align: center;
+  max-width: 780px;
+  margin: 0 auto 55px;
+  padding: 0 20px;
+}
+
+.section-eyebrow {
+  display: inline-block;
+  background: rgba(200, 155, 60, 0.12);
+  color: var(--mahogany-dark);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 2.5px;
+  text-transform: uppercase;
+  padding: 8px 22px;
+  border-radius: 30px;
+  margin-bottom: 18px;
+}
+
+.section-heading {
+  font-family: 'Jost', sans-serif;
+  font-size: 38px;
+  font-weight: 700;
+  color: var(--mahogany-dark);
+  margin: 0 0 18px;
+  line-height: 1.2;
+  letter-spacing: -0.3px;
+}
+
+.section-subheading {
+  font-size: 16px;
+  color: #5a4a3a;
+  line-height: 1.75;
+  margin: 0;
+}
+
+/* Optional: tighter spacing on mobile */
+@media (max-width: 768px) {
+  .reviews-carousel-section { padding: 60px 0 50px; }
+  .section-heading { font-size: 28px; }
+  .section-subheading { font-size: 15px; }
+}
+        
+    </style>
+<link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+
+    <!-- Spinner Start (preserved original) -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start (original preserved) -->
+    <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start (original structure preserved) -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0"><i class=""></i></h1>
+                <img src="img/BRIGHT LOGO.jpg" alt="Logo"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link active">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Safaris</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                            <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                            <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                            <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                            <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                            <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                            <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                            <a href="Tanzania.html" class="dropdown-item">Tanzania</a>
+                            <a href="DRC.html" class="dropdown-item">DRC</a>
+                            <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                            <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="services.html" class="dropdown-item">Services</a>
+                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                            <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="reviews.html" class="dropdown-item">Reviews</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start (preserved) -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-white display-3 mb-4">Our Reviews</h3>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active text-white">Reviews</li>
+            </ol>    
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- ============ REVIEWS CAROUSEL SECTION ============ -->
+<section class="reviews-carousel-section">
+  <div class="container">
+
+    <!-- Section header -->
+    <div class="reviews-carousel-header">
+      <span class="section-eyebrow">Testimonials</span>
+      <h2 class="section-heading">What Our Travelers Say</h2>
+      <p class="section-subheading">
+        Real stories from real adventurers. Discover why travelers from around the world
+        trust Mahogany Travel Expeditions to craft their unforgettable African safari
+        experiences — from gorilla trekking in Uganda to the vast plains of the Serengeti.
+      </p>
+    </div>
+
+    <!-- Carousel (dynamic reviews injected via JS) -->
+    <div class="Reviews-carousel owl-carousel" id="reviewsCarousel">
+      <!-- All reviews will be injected dynamically via JavaScript -->
+    </div>
+
+  </div>
+</section>
+<!-- Reviews Carousel End -->
+
+    <!-- REVIEW FORM SECTION - AFTER THE REVIEWS (professional, no delete option) -->
+   <div class="page-wrap">
+
+  <!-- ============ FORM ============ -->
+  <div class="review-form-container" id="write-review">
+    <form id="review-form">
+
+      <!-- Star rating -->
+      <div class="quick-rating-row">
+        <span class="quick-rating-label">Your overall rating:</span>
+        <div class="star-rating large-stars">
+          <span data-value="1">★</span>
+          <span data-value="2">★</span>
+          <span data-value="3">★</span>
+          <span data-value="4">★</span>
+          <span data-value="5">★</span>
+        </div>
+        <input type="hidden" name="rating" id="rating-value" required>
+        <span class="rating-text" id="rating-text"></span>
+      </div>
+
+      <!-- Review text -->
+      <div class="form-group">
+        <label for="comment">Your review *</label>
+        <textarea 
+          id="comment" 
+          name="comment" 
+          placeholder="Share your experience..." 
+          maxlength="1500"
+          required></textarea>
+        <div class="textarea-footer">
+          <span></span>
+          <span class="char-count"><span id="char-count">0</span>/1500</span>
+        </div>
+      </div>
+
+      <!-- Title -->
+      <div class="form-group">
+        <label for="title">Title your review *</label>
+        <input 
+          type="text" 
+          id="title" 
+          name="title" 
+          placeholder="Give us the gist of your experience"
+          maxlength="100"
+          required>
+      </div>
+
+      <!-- Name & Country -->
+      <div class="form-row">
+        <div class="form-group">
+          <label for="name">Full Name *</label>
+          <input type="text" name="name" id="name" placeholder="e.g., Sarah Johnson" required>
+        </div>
+        <div class="form-group">
+          <label for="country">Country *</label>
+          <input type="text" name="country" id="country" placeholder="e.g., United Kingdom" required>
+        </div>
+      </div>
+
+      <!-- Photo upload -->
+      <div class="photo-upload">
+        <label>Add a photo</label>
+        <span class="optional">Optional — help others see what you experienced</span>
+        <div class="drop-zone" id="drop-zone">
+          <input type="file" name="photo" id="photo-input" accept="image/jpeg,image/png,image/webp">
+          <div id="drop-zone-content">
+            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+            </svg>
+            <div class="drop-zone-text">Click to add photo</div>
+            <div class="drop-zone-sub">or drag and drop (JPG, PNG, max 2MB)</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Confirmation -->
+      <div class="confirmation-box">
+        <label class="checkbox-label">
+          <input type="checkbox" name="confirm" required>
+          <span>I confirm that this review is based on my own experience and is my genuine opinion. I have no personal or business relationship with Mahogany Travel Expeditions and have not been offered any incentive or payment to write this review.</span>
+        </label>
+      </div>
+
+      <button type="submit" class="submit-btn">Post Review</button>
+    </form>
+  </div>
+
+  <!-- ============ REVIEWS DISPLAY ============ -->
+  <div class="reviews-display">
+    <h2>What Our Travelers Say</h2>
+    <div id="reviews-list">
+      <p class="no-reviews">Loading reviews...</p>
+    </div>
+  </div>
+
+</div>
+
+<!-- Partners Section Start -->
+<div class="partners-section">
+    <div class="container">
+        <div class="section-header">
+            <h5 class="section-title">Our Partners</h5>
+            <h2>Trusted By Leading Organizations</h2>
+            <p>We proudly collaborate with these esteemed partners to deliver exceptional safari experiences</p>
+        </div>
+        
+        <div class="partners-grid">
+            <!-- Partner 1 - USAGA -->
+            <div class="partner-card">
+                <a href="https://ugasaf.org/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/USAGA.png" alt="USAGA">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 2 - UTB -->
+            <div class="partner-card">
+                <a href="https://utb.go.ug/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/UTB.jpeg" alt="UTB">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 3 - EXPLORE UGANDA -->
+            <div class="partner-card">
+                <a href="https://exploreuganda.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/exploreuganda.png" alt="Explore Uganda">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 4 - SAFARI DEAL -->
+            <div class="partner-card">
+                <a href="https://safarideal.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/SAFARIDEAL.jpeg" alt="Safari Deal">
+                    </div>
+                   
+                </a>
+            </div>
+            
+            <!-- Partner 5 - Travel Agents10 -->
+            <div class="partner-card">
+                <a href="https://www.travelagents10.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/travelagents.png" alt="Travel Agents10">
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Partners Section Styles */
+.partners-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,#4A2810, #e6b325,#4A2810);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    display: inline-block;
+    background: rgba(44, 92, 44, 0.1);
+    color:#4A2810;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color:#4A2810;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Partners Grid */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    align-items: center;
+}
+
+/* Partner Card - Professional Design */
+.partner-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.partner-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg,#4A2810, #e6b325);
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: rgba(44, 92, 44, 0.1);
+}
+
+.partner-card:hover::after {
+    width: 60px;
+}
+
+.partner-card a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Partner Logo - Full Color, No Grayscale */
+.partner-logo {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+    transform: scale(1.02);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* REMOVED grayscale and opacity filters - FULL COLOR */
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover .partner-logo img {
+    transform: scale(1.05);
+}
+
+/* Partner Name - Professional Styling */
+.partner-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.partner-card:hover .partner-name {
+    color:#4A2810;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .partners-section {
+        padding: 60px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .partner-logo {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .partner-logo img {
+        max-height: 75px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 50px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .partner-card {
+        padding: 25px 15px;
+    }
+    
+    .partner-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .partner-logo img {
+        max-height: 65px;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 14px;
+    }
+    
+    .partner-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-section {
+        padding: 40px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .partner-card {
+        padding: 20px 12px;
+    }
+    
+    .partner-logo {
+        width: 85px;
+        height: 85px;
+        padding: 12px;
+    }
+    
+    .partner-logo img {
+        max-height: 55px;
+    }
+    
+    .partner-name {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    
+    .section-header h2 {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 12px;
+    }
+}
+
+/* For very large screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .partners-grid {
+        gap: 40px;
+    }
+    
+    .partner-logo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .partner-logo img {
+        max-height: 100px;
+    }
+}
+</style>
+
+    <!-- Footer Start (fully original) -->
+    <div class="container-fluid footer py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+                        <a href=""><i class="fas fa-home me-2"></i> Kasese, Municipality, Uganda</a>
+                        <a href="mailto:info@mahoganytravelexpeditions.com"><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                        <a href="+256 778 106920"><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                        <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                        <div class="d-inline-flex align-items-center" style="height: 45px;">
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Popular Safaris</h4>
+                        <a href="ugandasafaris.html"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                        <a href="kenyasafaris.html"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                        <a href="tanzaniasafaris.html"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                        <a href="rwandasafaris.html"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                        <a href="drcsafaris.html"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                        <a href="eastafricasafaris.html"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Top Destinations</h4>
+                        <a href="uganda.html"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                        <a href="kenya.html"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                        <a href="tanzania.html"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                        <a href="rwanda.html"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                        <a href="drc.html"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                        <a href="eastafrica.html"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="booking.html"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                        <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                        <a href="privacy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="sitemap.html"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+
+    <!-- Copyright Start (original) -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html">Mahogany Travel Expeditions</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="index.html" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+    <!-- JavaScript Libraries (preserved from original code) -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript (original main.js preserved) -->
+    <script src="js/main.js"></script>
+    
+    <!-- Enhanced Professional Reviews Management (maintains original javascript core) -->
+    <script>
+        (function() {
+            // Ensure all original libraries and carousel behavior works seamlessly
+            // Reviews storage key (no delete functionality present - only add reviews)
+            const STORAGE_KEY = 'mahogany_travel_reviews_pro';
+            
+            // Default professional reviews exactly as provided in original design
+            const DEFAULT_REVIEWS = [
+                {
+                    id: 'rev1',
+                    name: 'Flavia Mirembe',
+                    country: 'Uganda',
+                    rating: 5,
+                    text: '“Celebrating our marriage anniversary in Queen Elizabeth National Park with Mahogany Travel Expeditions and Safaris was nothing short of a dream come true. From the moment we set off, everything was filled with love, care, and breathtaking beauty. Our guide made the experience deeply personal — every sunset, every wildlife encounter, and every quiet moment together felt special.”',
+                    photo: 'img/Flavia.jpeg'
+                },
+                {
+                    id: 'rev2',
+                    name: 'Elizaveta Terentieva',
+                    country: 'Italy',
+                    rating: 5,
+                    text: '“Booking with Mahogany Travel Expeditions was the best decision I made for my vacation. The guides were knowledgeable and passionate, sharing fascinating stories and local insights. Every activity was well-organized, and the accommodations exceeded my expectations.”',
+                    photo: 'img/Italy.jpeg'
+                },
+                {
+                    id: 'rev3',
+                    name: 'Timothy',
+                    country: 'Uganda',
+                    rating: 5,
+                    text: '“I highly recommend Mahogany Travel Expeditions to anyone looking for a personalized and memorable travel experience. Their attention to detail and commitment to customer satisfaction truly set them apart. I can’t wait to book my next adventure with them!”',
+                    photo: 'img/Timothy.jpeg'
+                },
+                {
+                    id: 'rev4',
+                    name: 'Suzan',
+                    country: 'UK',
+                    rating: 5,
+                    text: '“From start to finish, the service was outstanding. The online booking process was easy, and the support team was always available to answer my questions. The tour itself was incredible, and I made memories that will last a lifetime.”',
+                    photo: 'img/suzan.jpeg'
+                }
+            ];
+            
+            // Load reviews from localStorage or default
+          async function loadReviews() {
+  const container = document.getElementById('reviews-list');
+  try {
+    const response = await fetch('/.netlify/functions/get-reviews');
+    const reviews = await response.json();
+
+    if (!reviews || reviews.length === 0) {
+      container.innerHTML = '<p class="no-reviews">Be the first to share your journey!</p>';
+      return;
+    }
+
+    container.innerHTML = reviews.map(review => {
+      const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+      const date = new Date(review.created_at).toLocaleDateString('en-US', {
+        year: 'numeric', month: 'long', day: 'numeric'
+      });
+      const initials = (review.name || '?').split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+
+      // Show photo as avatar if uploaded, otherwise show initials
+      const avatarHTML = review.photo_url
+        ? `<img src="${escapeHtml(review.photo_url)}" alt="${escapeHtml(review.name)}" class="reviewer-avatar-img">`
+        : `<div class="reviewer-avatar">${escapeHtml(initials)}</div>`;
+
+      return `
+        <div class="review-card">
+          <div class="review-header">
+            <div class="reviewer-info">
+              ${avatarHTML}
+              <div>
+                <div class="reviewer-name">${escapeHtml(review.name)}</div>
+                <div class="reviewer-country">${escapeHtml(review.country || '')}</div>
+              </div>
+            </div>
+            <div class="review-stars">${stars}</div>
+          </div>
+          ${review.title ? `<div class="review-title">${escapeHtml(review.title)}</div>` : ''}
+          <p class="review-comment">${escapeHtml(review.comment)}</p>
+          <div class="review-date">${date}</div>
+        </div>
+      `;
+    }).join('');
+  } catch (error) {
+    console.error('Error loading reviews:', error);
+    container.innerHTML = '<p class="no-reviews">Unable to load reviews right now.</p>';
+  }
+}
+            
+            // Render the carousel with latest reviews (always updates instantly)
+            let activeCarousel = null;
+            
+            function renderReviewsCarousel() {
+                const $carouselContainer = $('#reviewsCarousel');
+                if (!$carouselContainer.length) return;
+                
+                if (reviewsCollection.length === 0) {
+                    $carouselContainer.html('<div class="text-center p-5 bg-light rounded"><h5>No reviews yet. Be the first to share your experience!</h5></div>');
+                    return;
+                }
+                
+                let reviewsHTML = '';
+                reviewsCollection.forEach(review => {
+                    let starHtml = '';
+                    for (let i = 1; i <= 5; i++) {
+                        starHtml += `<i class="fas fa-star ${i <= review.rating ? 'text-primary' : 'text-secondary'}"></i>`;
+                    }
+                    let displayPhoto = review.photo && review.photo !== '' ? review.photo : 'img/default-avatar.png';
+                    if (!displayPhoto.startsWith('data:') && !displayPhoto.startsWith('img/') && !displayPhoto.startsWith('http')) {
+                        displayPhoto = 'img/default-avatar.png';
+                    }
+                    reviewsHTML += `
+                        <div class="Reviews-item text-center rounded pb-4">
+                            <div class="Reviews-comment bg-light rounded p-4">
+                                <p class="text-center mb-5" style="font-style: normal;">${escapeHtmlSafe(review.text)}</p>
+                            </div>
+                            <div class="Reviews-img p-1">
+                                <img src="${displayPhoto}" class="img-fluid rounded-circle" alt="${escapeHtmlSafe(review.name)}" style="width: 100px; height: 100px; object-fit: cover; border: 3px solid #FEA116;">
+                            </div>
+                            <div style="margin-top: -35px;">
+                                <h5 class="mb-0">${escapeHtmlSafe(review.name)}</h5>
+                                <p class="mb-0">${escapeHtmlSafe(review.country)}</p>
+                                <div class="d-flex justify-content-center">
+                                    ${starHtml}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+                
+                $carouselContainer.html(reviewsHTML);
+                
+                // Properly destroy and reinitialize owl carousel (preserving original plugin behavior)
+                if ($carouselContainer.data('owl.carousel')) {
+                    $carouselContainer.trigger('destroy.owl.carousel');
+                }
+                $carouselContainer.owlCarousel({
+                    loop: reviewsCollection.length > 1,
+                    margin: 30,
+                    nav: true,
+                    autoplay: true,
+                    autoplayTimeout: 5000,
+                    smartSpeed: 800,
+                    dots: true,
+                    responsive: {
+                        0: { items: 1 },
+                        768: { items: 2 },
+                        992: { items: 3 }
+                    }
+                });
+            }
+            
+            // Show toast notification
+            function notifyUser(message, type = 'success') {
+                const bg = type === 'success' ? 'bg-success' : 'bg-danger';
+                const icon = type === 'success' ? 'fa-check-circle' : 'fa-exclamation-triangle';
+                const toastHtml = $(`<div class="alert alert-custom ${bg} text-white p-3 rounded-pill shadow-lg d-flex align-items-center" style="z-index: 1100;">
+                    <i class="fas ${icon} me-2 fa-lg"></i>
+                    <span class="flex-grow-1">${message}</span>
+                    <button type="button" class="btn-close btn-close-white ms-3" data-bs-dismiss="alert"></button>
+                </div>`);
+                $('body').append(toastHtml);
+                setTimeout(() => {
+                    toastHtml.fadeOut(500, function() { $(this).remove(); });
+                }, 4500);
+            }
+            
+            // Image preview handler
+            $('#reviewPhoto').on('change', function(e) {
+                const file = e.target.files[0];
+                const $preview = $('#photoPreviewContainer');
+                $preview.empty();
+                if (file) {
+                    if (!file.type.match('image/jpeg') && !file.type.match('image/png')) {
+                        notifyUser('Please upload JPG or PNG image only.', 'error');
+                        $(this).val('');
+                        return;
+                    }
+                    if (file.size > 2 * 1024 * 1024) {
+                        notifyUser('Image size must be less than 2MB.', 'error');
+                        $(this).val('');
+                        return;
+                    }
+                    const reader = new FileReader();
+                    reader.onload = function(ev) {
+                        $preview.html(`<img src="${ev.target.result}" class="image-preview" alt="Preview">`);
+                    };
+                    reader.readAsDataURL(file);
+                }
+            });
+            
+            // Form submission: add new review dynamically, updates carousel instantly
+            $('#reviewForm').on('submit', async function(event) {
+                event.preventDefault();
+                
+                const name = $('#reviewerName').val().trim();
+                const country = $('#reviewerCountry').val().trim();
+                const reviewText = $('#reviewText').val().trim();
+                const selectedRating = $('input[name="rating"]:checked').val();
+                const photoFile = $('#reviewPhoto')[0].files[0];
+                
+                if (!name || !country || !reviewText) {
+                    notifyUser('Please fill in your name, country and review.', 'error');
+                    return;
+                }
+                if (!selectedRating) {
+                    notifyUser('Please select a star rating for your experience.', 'error');
+                    return;
+                }
+                
+                let photoBase64 = null;
+                if (photoFile) {
+                    try {
+                        photoBase64 = await convertFileToBase64(photoFile);
+                    } catch(err) {
+                        notifyUser('Failed to process image. Please try again.', 'error');
+                        return;
+                    }
+                }
+                
+                // Create new review object (no delete option anywhere)
+                const newReview = {
+                    id: Date.now().toString() + '-' + Math.random().toString(36).substring(2, 8),
+                    name: name,
+                    country: country,
+                    rating: parseInt(selectedRating),
+                    text: reviewText,
+                    photo: photoBase64 || 'img/default-avatar.png'
+                };
+                
+                // Add to collection (newest at the beginning for visibility)
+                reviewsCollection.unshift(newReview);
+                persistReviews();
+                
+                // Clear the form completely
+                $('#reviewerName').val('');
+                $('#reviewerCountry').val('');
+                $('#reviewText').val('');
+                $('input[name="rating"]').prop('checked', false);
+                $('#reviewPhoto').val('');
+                $('#photoPreviewContainer').empty();
+                
+                // Re-render carousel with updated data -> reviews update each time client submits
+                renderReviewsCarousel();
+                notifyUser('✨ Thank you! Your review has been published and is now visible.', 'success');
+            });
+            
+            // Initial render and ensure spinner is removed like original code
+            $(document).ready(function() {
+                renderReviewsCarousel();
+                // Remove spinner after load (preserve original behavior)
+                setTimeout(function() {
+                    $('#spinner').fadeOut('slow', function() {
+                        $(this).removeClass('show').addClass('d-none');
+                    });
+                }, 600);
+            });
+        })();
+    </script>
+<script src="global.js"></script>
+
+
+<script>
+  // ============ STAR RATING ============
+  const stars = document.querySelectorAll('.large-stars span');
+  const ratingInput = document.getElementById('rating-value');
+  const ratingText = document.getElementById('rating-text');
+  const ratingLabels = { 1: 'Terrible', 2: 'Poor', 3: 'Average', 4: 'Very Good', 5: 'Excellent' };
+
+  stars.forEach(star => {
+    star.addEventListener('click', () => {
+      const value = star.dataset.value;
+      ratingInput.value = value;
+      ratingText.textContent = ratingLabels[value];
+      stars.forEach(s => s.classList.toggle('active', s.dataset.value <= value));
+    });
+  });
+
+  // ============ CHARACTER COUNTER ============
+  const commentField = document.getElementById('comment');
+  const charCount = document.getElementById('char-count');
+  commentField.addEventListener('input', () => {
+    charCount.textContent = commentField.value.length;
+  });
+
+  // ============ PHOTO UPLOAD ============
+  const dropZone = document.getElementById('drop-zone');
+  const photoInput = document.getElementById('photo-input');
+  const dropContent = document.getElementById('drop-zone-content');
+
+  dropZone.addEventListener('click', () => photoInput.click());
+
+  dropZone.addEventListener('dragover', (e) => {
+    e.preventDefault();
+    dropZone.classList.add('dragover');
+  });
+
+  dropZone.addEventListener('dragleave', () => dropZone.classList.remove('dragover'));
+
+  dropZone.addEventListener('drop', (e) => {
+    e.preventDefault();
+    dropZone.classList.remove('dragover');
+    if (e.dataTransfer.files.length > 0) {
+      photoInput.files = e.dataTransfer.files;
+      showPreview();
+    }
+  });
+
+  photoInput.addEventListener('change', showPreview);
+
+  function showPreview() {
+    const file = photoInput.files[0];
+    if (!file) return;
+
+    if (file.size > 2 * 1024 * 1024) {
+      alert('Photo must be smaller than 2MB.');
+      photoInput.value = '';
+      return;
+    }
+
+    const reader = new FileReader();
+    reader.onload = (e) => {
+      dropContent.innerHTML = `<img src="${e.target.result}" class="preview-img" alt="Preview">
+        <div class="drop-zone-sub" style="margin-top:10px;">Click to change photo</div>`;
+      dropZone.classList.add('has-file');
+    };
+    reader.readAsDataURL(file);
+  }
+
+  // ============ FORM SUBMISSION ============
+  const form = document.getElementById('review-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const submitBtn = form.querySelector('.submit-btn');
+    submitBtn.disabled = true;
+    submitBtn.textContent = 'Posting...';
+
+    const formData = new FormData(form);
+
+    try {
+      const response = await fetch('/.netlify/functions/submit-review', {
+        method: 'POST',
+        body: formData
+      });
+
+      if (response.ok) {
+        alert('Thank you! Your review has been submitted.');
+        form.reset();
+        stars.forEach(s => s.classList.remove('active'));
+        ratingInput.value = '';
+        ratingText.textContent = '';
+        charCount.textContent = '0';
+        dropContent.innerHTML = `
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+          </svg>
+          <div class="drop-zone-text">Click to add photo</div>
+          <div class="drop-zone-sub">or drag and drop (JPG, PNG, max 2MB)</div>`;
+        dropZone.classList.remove('has-file');
+        loadReviews();
+      } else {
+        alert('Sorry, there was an error submitting your review. Please try again.');
+      }
+    } catch (error) {
+      console.error(error);
+      alert('Network error. Please check your connection and try again.');
+    } finally {
+      submitBtn.disabled = false;
+      submitBtn.textContent = 'Post Review';
+    }
+  });
+
+  // ============ LOAD REVIEWS ============
+  async function loadReviews() {
+    const container = document.getElementById('reviews-list');
+    try {
+      const response = await fetch('/.netlify/functions/get-reviews');
+      const reviews = await response.json();
+
+      if (!reviews || reviews.length === 0) {
+        container.innerHTML = '<p class="no-reviews">Be the first to share your journey!</p>';
+        return;
+      }
+
+      container.innerHTML = reviews.map(review => {
+        const stars = '★'.repeat(review.rating) + '☆'.repeat(5 - review.rating);
+        const date = new Date(review.created_at).toLocaleDateString('en-US', {
+          year: 'numeric', month: 'long', day: 'numeric'
+        });
+        const initials = (review.name || '?').split(' ').map(n => n[0]).join('').slice(0, 2).toUpperCase();
+
+        const avatarHTML = review.photo_url
+          ? `<img src="${escapeHtml(review.photo_url)}" alt="${escapeHtml(review.name)}" class="reviewer-avatar-img">`
+          : `<div class="reviewer-avatar">${escapeHtml(initials)}</div>`;
+
+        return `
+          <div class="review-card">
+            <div class="review-header">
+              <div class="reviewer-info">
+                ${avatarHTML}
+                <div>
+                  <div class="reviewer-name">${escapeHtml(review.name)}</div>
+                  <div class="reviewer-country">${escapeHtml(review.country || '')}</div>
+                </div>
+              </div>
+              <div class="review-stars">${stars}</div>
+            </div>
+            ${review.title ? `<div class="review-title">${escapeHtml(review.title)}</div>` : ''}
+            <p class="review-comment">${escapeHtml(review.comment)}</p>
+           
+          </div>
+        `;
+      }).join('');
+    } catch (error) {
+      console.error('Error loading reviews:', error);
+      container.innerHTML = '<p class="no-reviews">Unable to load reviews right now.</p>';
+    }
+  }
+
+  function escapeHtml(text) {
+    const div = document.createElement('div');
+    div.textContent = text || '';
+    return div.innerHTML;
+  }
+
+  // Load reviews on page load
+  loadReviews();
+</script>
+
+</body>
+</html>

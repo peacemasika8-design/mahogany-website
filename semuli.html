@@ -1,0 +1,368 @@
+<!-- JavaScript -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Get destination slug from URL
+    const urlParams = new URLSearchParams(window.location.search);
+    const destSlug = urlParams.get('dest');
+    
+    if (!destSlug) {
+        // No destination specified, go back to Uganda page
+        window.location.href = 'Uganda.html';
+        return;
+    }
+    
+    console.log('Loading destination:', destSlug);
+    
+    // Destination database with detailed tourist attraction information
+    const destinationDatabase = {
+        'semuliki-national-park': {
+            title: 'Semuliki National Park',
+            description: 'Semuliki Valley National Park is one of the unspoiled African safari destinations. Located in extreme Western Uganda, Semuliki National Park is home to the extensive Ituri Forest and boasts its biodiversity. Its forest is one of the few that survived the last ice age.',
+            heroImage: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+            country: 'Uganda',
+            
+            // Detailed tourist attraction information
+            attractions: {
+                mainAttractions: [
+                    {
+                        title: 'Sempaya Hot Springs',
+                        description: 'The key attraction that makes Semuliki National Park popular is its Sempaya hot springs, one of the most powerful hot springs in the world. This is an iconic attraction in the park, and tourists often come along with some plantain to prove its power. In just seconds/minutes, the egg or banana can be ready for consumption—the hot springs\' strong boiling rate often rises up to 100 degrees Celsius.',
+                        highlight: 'One of the world\'s most powerful hot springs'
+                    },
+                    {
+                        title: 'Ituri Forest',
+                        description: 'Semuliki features a lowland deciduous forest, one of its kind in East Africa. It is home to East Africa\'s only tract of true lowland tropical forest and one of the few forests that survived the last ice age.',
+                        highlight: 'East Africa\'s only true lowland tropical forest'
+                    }
+                ],
+                
+                wildlife: [
+                    'Semuliki National Park is a haven for wildlife enthusiasts, with about 53 species of mammals freely roaming its lowland forest and other habitats.',
+                    'From the elusive bush babies to the majestic forest buffaloes, the park is teeming with life, offering a thrilling safari experience.',
+                    'Primates of Semuliki: red-tailed monkeys, chimpanzees, DeBrazza\'s monkeys, grey-cheeked mangabeys, and other forest creatures.'
+                ],
+                
+                activities: [
+                    'Sempaya hot spring tours - Experience one of the world\'s most powerful hot springs',
+                    'Nature walks through the pristine lowland tropical forest',
+                    'Bird watching with over 400 bird species recorded',
+                    'Primate tracking and wildlife viewing',
+                    'Cultural encounters with local communities'
+                ]
+            },
+            
+            // History and background
+            history: 'Semuliki was originally gazetted as a Forest Reserve in 1932 and upgraded into a National Park, which it attained in 1993.',
+            
+            // Location details
+            location: 'Semuliki National Park is located in Bwamba County, Bundibugyo District in Western Uganda. The park lies close to the Congo border and on the North, Lake Albert borders it while on the South-eastern part, there are Rwenzori Mountain ranges.',
+            
+            // Best time to visit
+            bestTime: 'Semuliki safaris are open all year round. But, visits to explore and experience the most are during the dry season. The season runs through June, July, August, September, December, January, and February. The least/no rainfall amount is usually recorded this year, unlike during the wet or rainy season (March to May, October to November).',
+            
+            // Accommodation
+            accommodation: 'Semuliki National Park has few lodging or safari accommodations like Murchison Falls National Park or Queen Elizabeth National Park. The available accommodations include Semuliki Safari Lodge, Uganda Wildlife Authority (UWA) Campsites and Bandas, Noroko Game Lodge, Hotel Vanilla, and Krimia Guesthouse.',
+            
+            // Getting there
+            gettingThere: 'Getting to Semuliki Valley National Park involves traveling from Kampala through Fort Portal to Bundibugyo. The journey takes approximately 5-6 hours by road.',
+            
+            // Quick facts
+            quickFacts: {
+                size: '220 sq. km',
+                established: '1993 (as National Park)',
+                altitude: '670 - 760 meters above sea level',
+                rainfall: '1250 mm annually',
+                temperature: '18-30°C',
+                biodiversity: 'Over 400 bird species, 53 mammal species'
+            },
+            
+            tags: ['National Park', 'Hot Springs', 'Rainforest', 'Wildlife', 'Uganda']
+        },
+        
+        // Add other national parks with similar structure
+        'murchison-falls-national-park': {
+            title: 'Murchison Falls National Park',
+            description: 'Uganda\'s largest national park where the Nile River forces through a 7-meter gap creating the powerful Murchison Falls.',
+            heroImage: 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+            country: 'Uganda',
+            tags: ['National Park', 'Waterfalls', 'Wildlife', 'Uganda']
+        },
+        
+        'queen-elizabeth-national-park': {
+            title: 'Queen Elizabeth National Park',
+            description: 'Known for tree-climbing lions and the Kazinga Channel with abundant wildlife.',
+            heroImage: 'https://images.unsplash.com/photo-1547471080-7cc2caa01a7e?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+            country: 'Uganda',
+            tags: ['National Park', 'Wildlife', 'Lions', 'Uganda']
+        }
+    };
+    
+    // Get destination data
+    const destination = destinationDatabase[destSlug] || createDefaultDestination(destSlug);
+    
+    // Display the destination with detailed tourist attraction information
+    displayDestination(destination);
+    
+    // Update back link
+    updateBackLink(destination.country);
+    
+    function displayDestination(dest) {
+        // Update page title
+        document.title = `${dest.title} - Mahogany Travel Expeditions`;
+        
+        // Create HTML content with detailed tourist attraction information
+        const html = `
+            <!-- Hero Section -->
+            <div class="destination-hero" style="background-image: url('${dest.heroImage}')">
+                <div class="hero-overlay">
+                    <div class="hero-content">
+                        <h1>${dest.title}</h1>
+                        <p class="lead">${dest.description}</p>
+                        <div class="tags-container">
+                            ${dest.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Main Content -->
+            <div class="destination-container">
+                <div class="destination-content">
+                    <!-- Left Column: Detailed Tourist Attractions -->
+                    <div class="main-content">
+                        <!-- History Section -->
+                        ${dest.history ? `
+                            <div class="info-card">
+                                <h2>History of ${dest.title}</h2>
+                                <p>${dest.history}</p>
+                            </div>
+                        ` : ''}
+                        
+                        <!-- Main Tourist Attractions -->
+                        <div class="info-card">
+                            <h2>Tourist Attractions in ${dest.title}</h2>
+                            
+                            ${dest.attractions ? `
+                                <!-- Main Attractions -->
+                                ${dest.attractions.mainAttractions ? `
+                                    <h3>Main Attractions</h3>
+                                    ${dest.attractions.mainAttractions.map(attraction => `
+                                        <div class="attraction-item" style="margin-bottom: 30px;">
+                                            <h4 style="color: #4A2810; margin-bottom: 10px;">${attraction.title}</h4>
+                                            <p><strong>Highlight:</strong> ${attraction.highlight}</p>
+                                            <p>${attraction.description}</p>
+                                        </div>
+                                    `).join('')}
+                                ` : ''}
+                                
+                                <!-- Wildlife -->
+                                ${dest.attractions.wildlife ? `
+                                    <h3>Wildlife</h3>
+                                    ${dest.attractions.wildlife.map(item => `<p>${item}</p>`).join('')}
+                                ` : ''}
+                                
+                                <!-- Activities -->
+                                ${dest.attractions.activities ? `
+                                    <h3>Tourist Activities</h3>
+                                    <p>Nature lovers have plenty of opportunities to explore and experience the virgin ${dest.title.split(' ')[0]}. Here are some of the remarkable safari activities worth considering a must-do:</p>
+                                    <ul style="padding-left: 20px; margin-top: 15px;">
+                                        ${dest.attractions.activities.map(activity => `<li style="margin-bottom: 10px;">${activity}</li>`).join('')}
+                                    </ul>
+                                ` : ''}
+                            ` : `
+                                <p>${dest.title} offers incredible wildlife viewing and natural beauty. The park is known for its diverse ecosystems and abundant wildlife.</p>
+                            `}
+                        </div>
+                        
+                        <!-- Location Section -->
+                        ${dest.location ? `
+                            <div class="info-card">
+                                <h2>Location</h2>
+                                <p>${dest.location}</p>
+                            </div>
+                        ` : ''}
+                        
+                        <!-- Best Time to Visit -->
+                        ${dest.bestTime ? `
+                            <div class="info-card">
+                                <h2>What is the best time to visit?</h2>
+                                <p>${dest.bestTime}</p>
+                            </div>
+                        ` : ''}
+                        
+                        <!-- Accommodation -->
+                        ${dest.accommodation ? `
+                            <div class="info-card">
+                                <h2>Where to stay (Accommodation)</h2>
+                                <p>${dest.accommodation}</p>
+                            </div>
+                        ` : ''}
+                        
+                        <!-- Getting There -->
+                        ${dest.gettingThere ? `
+                            <div class="info-card">
+                                <h2>Getting to ${dest.title}</h2>
+                                <p>${dest.gettingThere}</p>
+                            </div>
+                        ` : ''}
+                    </div>
+                    
+                    <!-- Right Column: Sidebar with Explore Destinations -->
+                    <div class="sidebar">
+                        <!-- Quick Facts -->
+                        <div class="sidebar-card">
+                            <h3>Quick Facts</h3>
+                            ${dest.quickFacts ? `
+                                ${dest.quickFacts.size ? `<p><strong>Size:</strong> ${dest.quickFacts.size}</p>` : ''}
+                                ${dest.quickFacts.established ? `<p><strong>Established:</strong> ${dest.quickFacts.established}</p>` : ''}
+                                ${dest.quickFacts.altitude ? `<p><strong>Altitude:</strong> ${dest.quickFacts.altitude}</p>` : ''}
+                                ${dest.quickFacts.rainfall ? `<p><strong>Rainfall:</strong> ${dest.quickFacts.rainfall}</p>` : ''}
+                                ${dest.quickFacts.temperature ? `<p><strong>Temperature:</strong> ${dest.quickFacts.temperature}</p>` : ''}
+                                ${dest.quickFacts.biodiversity ? `<p><strong>Biodiversity:</strong> ${dest.quickFacts.biodiversity}</p>` : ''}
+                            ` : `
+                                <p><strong>Size:</strong> Varies by destination</p>
+                                <p><strong>Established:</strong> Protected area</p>
+                                <p><strong>Altitude:</strong> Varies</p>
+                                <p><strong>Rainfall:</strong> Seasonal variations</p>
+                                <p><strong>Temperature:</strong> 20-30°C</p>
+                            `}
+                        </div>
+                        
+                        <!-- Explore Destinations (Country Navigation) -->
+                        <div class="sidebar-card">
+                            <h3>Explore Destinations</h3>
+                            <div class="destination-links" style="margin-top: 15px;">
+                                <a href="destination-detail.html?dest=uganda-overview" class="dest-link" style="display: block; padding: 10px 15px; margin-bottom: 8px; background: white; border-left: 4px solid #4A2810; text-decoration: none; color: #333; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                                    <i class="fas fa-map-marker-alt" style="color: #4A2810; margin-right: 10px;"></i> UGANDA
+                                </a>
+                                <a href="destination-detail.html?dest=rwanda-overview" class="dest-link" style="display: block; padding: 10px 15px; margin-bottom: 8px; background: white; border-left: 4px solid #4A2810; text-decoration: none; color: #333; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                                    <i class="fas fa-map-marker-alt" style="color: #4A2810; margin-right: 10px;"></i> RWANDA
+                                </a>
+                                <a href="destination-detail.html?dest=congo-overview" class="dest-link" style="display: block; padding: 10px 15px; margin-bottom: 8px; background: white; border-left: 4px solid #4A2810; text-decoration: none; color: #333; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                                    <i class="fas fa-map-marker-alt" style="color: #4A2810; margin-right: 10px;"></i> CONGO
+                                </a>
+                                <a href="destination-detail.html?dest=kenya-overview" class="dest-link" style="display: block; padding: 10px 15px; margin-bottom: 8px; background: white; border-left: 4px solid #4A2810; text-decoration: none; color: #333; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                                    <i class="fas fa-map-marker-alt" style="color: #4A2810; margin-right: 10px;"></i> KENYA
+                                </a>
+                                <a href="destination-detail.html?dest=tanzania-overview" class="dest-link" style="display: block; padding: 10px 15px; margin-bottom: 8px; background: white; border-left: 4px solid #4A2810; text-decoration: none; color: #333; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                                    <i class="fas fa-map-marker-alt" style="color: #4A2810; margin-right: 10px;"></i> TANZANIA
+                                </a>
+                                <a href="destination-detail.html?dest=east-africa-overview" class="dest-link" style="display: block; padding: 10px 15px; margin-bottom: 8px; background: white; border-left: 4px solid #4A2810; text-decoration: none; color: #333; font-weight: 600; border-radius: 4px; transition: all 0.3s;">
+                                    <i class="fas fa-map-marker-alt" style="color: #4A2810; margin-right: 10px;"></i> EAST AFRICA
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Plan Your Visit -->
+                        <div class="sidebar-card">
+                            <h3>Plan Your Visit</h3>
+                            <p>Ready to experience ${dest.title}?</p>
+                            <p>Contact our safari experts to plan your perfect trip.</p>
+                            <div class="action-buttons">
+                                <a href="contact.html?destination=${encodeURIComponent(dest.title)}" class="btn-primary">Contact for Details</a>
+                                <a href="tel:+256778106920" class="btn-secondary">
+                                    <i class="fas fa-phone"></i> Call Now
+                                </a>
+                            </div>
+                        </div>
+                        
+                        <!-- Share Destination -->
+                        <div class="sidebar-card">
+                            <h3>Share Destination</h3>
+                            <div class="share-buttons">
+                                <button onclick="shareDestination()" class="btn-secondary">
+                                    <i class="fas fa-share-alt"></i> Share Now
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Insert the content
+        const container = document.getElementById('destination-detail');
+        if (container) {
+            container.innerHTML = html;
+        }
+        
+        // Update back button
+        const backButton = document.querySelector('.back-button');
+        if (backButton && dest.country) {
+            backButton.href = `${dest.country}.html`;
+            backButton.innerHTML = `<i class="fas fa-arrow-left"></i> Back to ${dest.country} Destinations`;
+        }
+    }
+    
+    function createDefaultDestination(slug) {
+        // Create basic destination information
+        const title = slug.split('-').map(word => 
+            word.charAt(0).toUpperCase() + word.slice(1)
+        ).join(' ');
+        
+        return {
+            title: title,
+            description: `${title} is one of East Africa's premier tourist destinations, offering incredible wildlife, stunning landscapes, and unique cultural experiences.`,
+            heroImage: 'https://images.unsplash.com/photo-1551632811-561732d1e306?ixlib=rb-4.0.3&auto=format&fit=crop&w=1170&q=80',
+            country: 'Uganda',
+            tags: getTagsFromSlug(slug),
+            
+            attractions: {
+                mainAttractions: [
+                    {
+                        title: 'Main Attraction',
+                        description: `The ${title} offers spectacular natural beauty and wildlife viewing opportunities.`,
+                        highlight: 'Unique natural features and wildlife'
+                    }
+                ],
+                wildlife: [
+                    `The ${title} is home to diverse wildlife species in their natural habitat.`
+                ],
+                activities: [
+                    'Game drives and wildlife viewing',
+                    'Nature walks and hiking',
+                    'Bird watching',
+                    'Photography opportunities'
+                ]
+            }
+        };
+    }
+    
+    function getTagsFromSlug(slug) {
+        if (slug.includes('national-park') || slug.includes('park')) {
+            return ['National Park', 'Wildlife', 'Uganda'];
+        } else if (slug.includes('lake')) {
+            return ['Lake', 'Water Activities', 'Uganda'];
+        } else if (slug.includes('falls') || slug.includes('waterfall')) {
+            return ['Waterfall', 'Nature', 'Uganda'];
+        } else {
+            return ['Destination', 'East Africa'];
+        }
+    }
+    
+    function updateBackLink(country) {
+        const backLink = document.getElementById('back-link');
+        if (backLink && country) {
+            backLink.href = `${country}.html`;
+        }
+    }
+});
+
+// Share function for social media
+function shareDestination() {
+    const title = document.title;
+    const url = window.location.href;
+    
+    if (navigator.share) {
+        navigator.share({
+            title: title,
+            text: 'Check out this destination on Mahogany Travel Expeditions',
+            url: url
+        });
+    } else {
+        // Fallback for desktop
+        const shareUrl = `https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(url)}`;
+        window.open(shareUrl, '_blank', 'width=600,height=400');
+    }
+}
+</script>

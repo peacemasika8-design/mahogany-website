@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mahogany Travel Expeditions - Reviewss</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        /* additional styling for review form */
+        .review-form-section {
+            background: #f8f9fa;
+            border-radius: 16px;
+            padding: 2rem;
+            margin-top: 3rem;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+        }
+        .review-form-section h3 {
+            color: #2c3e66;
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+            border-left: 5px solid #f15b2b;
+            padding-left: 1rem;
+        }
+        .rating-stars i {
+            font-size: 1.8rem;
+            cursor: pointer;
+            transition: color 0.2s;
+            margin-right: 5px;
+        }
+        .rating-stars i:hover,
+        .rating-stars i.active {
+            color: #ffc107;
+        }
+        .preview-img {
+            max-width: 80px;
+            max-height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-top: 10px;
+            border: 2px solid #f15b2b;
+            padding: 2px;
+        }
+        .btn-submit-review {
+            background: linear-gradient(135deg, #f15b2b 0%, #f59e0b 100%);
+            border: none;
+            padding: 12px 28px;
+            font-weight: 600;
+            border-radius: 40px;
+            transition: 0.3s;
+        }
+        .btn-submit-review:hover {
+            transform: scale(1.02);
+            box-shadow: 0 5px 15px rgba(241,91,43,0.3);
+        }
+        .alert-message {
+            transition: 0.3s;
+        }
+        .Reviews-item .client-photo-updated {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin: 0 auto;
+        }
+    </style>
+<link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+                <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0"><i class=""></i></h1>
+                <img src="img/BRIGHT LOGO.jpg" alt="Logo"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Safaris</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                            <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                            <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                            <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                            <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                            <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                            <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                            <a href="Tanzania.html" class="dropdown-item">Tanzania</a>
+                            <a href="DRC.html" class="dropdown-item">DRC</a>
+                            <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                            <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="services.html" class="dropdown-item">Services</a>
+                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                            <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="reviews.html" class="dropdown-item active">Reviews</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+            </div>
+        </nav>
+    </div>
+    <!-- Navbar & Hero End -->
+
+    <!-- Header Start -->
+    <div class="container-fluid bg-breadcrumb">
+        <div class="container text-center py-5" style="max-width: 900px;">
+            <h3 class="text-white display-3 mb-4">Our Reviews</h3>
+            <ol class="breadcrumb justify-content-center mb-0">
+                <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+                <li class="breadcrumb-item"><a href="#">Pages</a></li>
+                <li class="breadcrumb-item active text-white">Reviews</li>
+            </ol>    
+        </div>
+    </div>
+    <!-- Header End -->
+
+    <!-- Reviews Start -->
+    <div class="container-fluid Reviews py-5">
+        <div class="container py-5">
+            <div class="mx-auto text-center mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Reviews</h5>
+                <h1 class="mb-0"> Our Clients Say !!!</h1>
+            </div>
+            <div class="Reviews-carousel owl-carousel">
+                <div class="Reviews-item text-center rounded pb-4">
+                    <div class="Reviews-comment bg-light rounded p-4">
+                        <p class="text-center mb-5">“Celebrating our marriage anniversary in Queen Elizabeth National Park with Mahogany Travel Expeditions and Safaris was nothing short of a dream come true. From the moment we set off, everything was filled with love, care, and breathtaking beauty. Our guide made the experience deeply personal — every sunset, every wildlife encounter, and every quiet moment together felt special.”</p>
+                    </div>
+                    <div class="Reviews-img p-1">
+                        <img src="img/Flavia.jpeg" class="img-fluid rounded-circle" alt="Image">
+                    </div>
+                    <div style="margin-top: -35px;">
+                        <h5 class="mb-0">Flavia Mirembe</h5>
+                        <p class="mb-0">Uganda</p>
+                        <div class="d-flex justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="Reviews-item text-center rounded pb-4">
+                    <div class="Reviews-comment bg-light rounded p-4">
+                        <p class="text-center mb-5">“Booking with Mahogany Travel Expeditions was the best decision I made for my vacation. The guides were knowledgeable and passionate, sharing fascinating stories and local insights. Every activity was well-organized, and the accommodations exceeded my expectations.”</p>
+                    </div>
+                    <div class="Reviews-img p-1">
+                        <img src="img/Italy.jpeg" class="img-fluid rounded-circle" alt="Image">
+                    </div>
+                    <div style="margin-top: -35px;">
+                        <h5 class="mb-0">Elizaveta Terentieva</h5>
+                        <p class="mb-0">Italy</p>
+                        <div class="d-flex justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="Reviews-item text-center rounded pb-4">
+                    <div class="Reviews-comment bg-light rounded p-4">
+                        <p class="text-center mb-5">“I highly recommend Mahogany Travel Expeditions to anyone looking for a personalized and memorable travel experience. Their attention to detail and commitment to customer satisfaction truly set them apart. I can’t wait to book my next adventure with them!”</p>
+                    </div>
+                    <div class="Reviews-img p-1">
+                        <img src="img/Timothy.jpeg" class="img-fluid rounded-circle" alt="Image">
+                    </div>
+                    <div style="margin-top: -35px;">
+                        <h5 class="mb-0">Timothy</h5>
+                        <p class="mb-0">Uganda</p>
+                        <div class="d-flex justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="Reviews-item text-center rounded pb-4">
+                    <div class="Reviews-comment bg-light rounded p-4">
+                        <p class="text-center mb-5">“From start to finish, the service was outstanding. The online booking process was easy, and the support team was always available to answer my questions. The tour itself was incredible, and I made memories that will last a lifetime.”</p>
+                    </div>
+                    <div class="Reviews-img p-1">
+                        <img src="img/suzan.jpeg" class="img-fluid rounded-circle" alt="Image">
+                    </div>
+                    <div style="margin-top: -35px;">
+                        <h5 class="mb-0">Suzan</h5>
+                        <p class="mb-0">UK</p>
+                        <div class="d-flex justify-content-center">
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                            <i class="fas fa-star text-primary"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- REVIEW FORM - After the reviews -->
+            <div class="review-form-section">
+                <h3><i class="fas fa-pen-alt me-2"></i> Share Your Safari Experience</h3>
+                <div id="formAlert" class="alert alert-success alert-message d-none"></div>
+                <form id="clientReviewForm">
+                    <div class="row g-4">
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Full Name *</label>
+                            <input type="text" class="form-control" id="reviewerName" placeholder="e.g., John K. Musinguzi" required>
+                        </div>
+                        <div class="col-md-6">
+                            <label class="form-label fw-semibold">Country / City *</label>
+                            <input type="text" class="form-control" id="reviewerCountry" placeholder="e.g., Uganda, Kenya, USA" required>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Your Review *</label>
+                            <textarea class="form-control" id="reviewText" rows="3" placeholder="Tell us about your amazing journey with Mahogany Travel Expeditions..." required></textarea>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Rating</label>
+                            <div class="rating-stars" id="starRatingWidget">
+                                <i class="fas fa-star" data-value="1"></i>
+                                <i class="fas fa-star" data-value="2"></i>
+                                <i class="fas fa-star" data-value="3"></i>
+                                <i class="fas fa-star" data-value="4"></i>
+                                <i class="fas fa-star" data-value="5"></i>
+                            </div>
+                            <input type="hidden" id="ratingValue" value="5">
+                            <small class="text-muted">Click on stars to rate (5 = excellent)</small>
+                        </div>
+                        <div class="col-12">
+                            <label class="form-label fw-semibold">Upload Profile Photo (Optional)</label>
+                            <input type="file" class="form-control" id="clientPhoto" accept="image/jpeg, image/png, image/jpg">
+                            <div id="photoPreviewContainer"></div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button type="submit" class="btn btn-primary btn-submit-review px-5 py-2"><i class="fas fa-share-alt me-2"></i> Submit Your Review</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <!-- Reviews End -->
+    
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+                        <a href=""><i class="fas fa-home me-2"></i> Kasese, Municipality, Uganda</a>
+                        <a href="mailto:info@mahoganytravelexpeditions.com"><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                        <a href="tel:+256778106920"><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                        <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                        <div class="d-inline-flex align-items-center" style="height: 45px;">
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                            <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Popular Safaris</h4>
+                        <a href="ugandasafaris.html"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                        <a href="kenyasafaris.html"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                        <a href="tanzaniasafaris.html"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                        <a href="rwandasafaris.html"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                        <a href="drcsafaris.html"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                        <a href="eastafricasafaris.html"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Top Destinations</h4>
+                        <a href="uganda.html"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                        <a href="kenya.html"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                        <a href="tanzania.html"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                        <a href="rwanda.html"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                        <a href="drc.html"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                        <a href="eastafrica.html"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="booking.html"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                        <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                        <a href="privacy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="sitemap.html"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html">Mahogany Travel Expeditions</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="index.html" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+    
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Custom JavaScript for Reviews - Maintaining Original Carousel Functionality -->
+    <script>
+        // Storage key for user-submitted reviews
+        const STORAGE_KEY = "mahogany_user_reviews";
+        let userReviews = [];
+        
+        // Load user reviews from localStorage
+        function loadUserReviews() {
+            const stored = localStorage.getItem(STORAGE_KEY);
+            if (stored) {
+                try {
+                    userReviews = JSON.parse(stored);
+                } catch(e) { 
+                    userReviews = []; 
+                }
+            } else {
+                userReviews = [];
+            }
+        }
+        
+        // Save user reviews to localStorage
+        function saveUserReviews() {
+            localStorage.setItem(STORAGE_KEY, JSON.stringify(userReviews));
+        }
+        
+        // Function to add a new review to the carousel
+        function addReviewToCarousel(review) {
+            const carousel = $('.Reviews-carousel');
+            
+            // Create star HTML based on rating
+            let starsHtml = '';
+            for(let i = 1; i <= 5; i++) {
+                if(i <= review.rating) {
+                    starsHtml += '<i class="fas fa-star text-primary"></i>';
+                } else {
+                    starsHtml += '<i class="fas fa-star" style="color: #ddd;"></i>';
+                }
+            }
+            
+            // Create new Reviews item HTML
+            const photoSrc = review.photo ? review.photo : 'https://ui-avatars.com/api/?background=f15b2b&color=fff&name=' + encodeURIComponent(review.name);
+            
+            const newItem = `
+                <div class="Reviews-item text-center rounded pb-4">
+                    <div class="Reviews-comment bg-light rounded p-4">
+                        <p class="text-center mb-5">“${escapeHtml(review.text)}”</p>
+                    </div>
+                    <div class="Reviews-img p-1">
+                        <img src="${photoSrc}" class="img-fluid rounded-circle" alt="${escapeHtml(review.name)}" onerror="this.src='https://ui-avatars.com/api/?background=f15b2b&color=fff&name=${encodeURIComponent(review.name)}'">
+                    </div>
+                    <div style="margin-top: -35px;">
+                        <h5 class="mb-0">${escapeHtml(review.name)}</h5>
+                        <p class="mb-0">${escapeHtml(review.country)}</p>
+                        <div class="d-flex justify-content-center">
+                            ${starsHtml}
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // Add to carousel
+            carousel.trigger('add.owl.carousel', [$(newItem)]);
+            carousel.trigger('refresh.owl.carousel');
+            
+            // Move to the new item
+            const itemCount = carousel.find('.Reviews-item').length;
+            carousel.trigger('to.owl.carousel', [itemCount - 1, 300]);
+        }
+        
+        // Escape HTML to prevent XSS
+        function escapeHtml(str) {
+            if(!str) return '';
+            return str.replace(/[&<>]/g, function(m) {
+                if(m === '&') return '&amp;';
+                if(m === '<') return '&lt;';
+                if(m === '>') return '&gt;';
+                return m;
+            });
+        }
+        
+        // Show alert message
+        function showAlert(message, type) {
+            const alertBox = document.getElementById('formAlert');
+            alertBox.className = `alert alert-${type} alert-message`;
+            alertBox.innerHTML = `<i class="fas fa-${type === 'success' ? 'check-circle' : 'exclamation-circle'} me-2"></i> ${message}`;
+            alertBox.classList.remove('d-none');
+            setTimeout(() => {
+                alertBox.classList.add('d-none');
+            }, 5000);
+        }
+        
+        // Initialize star rating functionality
+        function initStarRating() {
+            const stars = document.querySelectorAll('#starRatingWidget i');
+            const ratingHidden = document.getElementById('ratingValue');
+            
+            stars.forEach(star => {
+                star.addEventListener('click', function() {
+                    const value = parseInt(this.getAttribute('data-value'));
+                    ratingHidden.value = value;
+                    stars.forEach(s => {
+                        const starVal = parseInt(s.getAttribute('data-value'));
+                        if(starVal <= value) {
+                            s.style.color = '#ffc107';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseenter', function() {
+                    const hoverVal = parseInt(this.getAttribute('data-value'));
+                    stars.forEach(s => {
+                        const sVal = parseInt(s.getAttribute('data-value'));
+                        if(sVal <= hoverVal) {
+                            s.style.color = '#ffc107';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+                
+                star.addEventListener('mouseleave', function() {
+                    const currentRating = parseInt(ratingHidden.value);
+                    stars.forEach(s => {
+                        const sVal = parseInt(s.getAttribute('data-value'));
+                        if(sVal <= currentRating) {
+                            s.style.color = '#ffc107';
+                        } else {
+                            s.style.color = '#ddd';
+                        }
+                    });
+                });
+            });
+        }
+        
+        // Handle photo preview
+        function initPhotoPreview() {
+            const fileInput = document.getElementById('clientPhoto');
+            const previewDiv = document.getElementById('photoPreviewContainer');
+            
+            fileInput.addEventListener('change', function(e) {
+                const file = e.target.files[0];
+                if(file && (file.type === 'image/jpeg' || file.type === 'image/png' || file.type === 'image/jpg')) {
+                    const reader = new FileReader();
+                    reader.onload = function(ev) {
+                        previewDiv.innerHTML = `<img src="${ev.target.result}" class="preview-img" alt="preview">`;
+                    };
+                    reader.readAsDataURL(file);
+                } else if(file) {
+                    previewDiv.innerHTML = '<small class="text-danger">Invalid image type. Please use JPG or PNG.</small>';
+                    fileInput.value = '';
+                } else {
+                    previewDiv.innerHTML = '';
+                }
+            });
+        }
+        
+        // Handle form submission
+        function initFormSubmission() {
+            const form = document.getElementById('clientReviewForm');
+            
+            form.addEventListener('submit', function(e) {
+                e.preventDefault();
+                
+                const name = document.getElementById('reviewerName').value.trim();
+                const country = document.getElementById('reviewerCountry').value.trim();
+                const reviewText = document.getElementById('reviewText').value.trim();
+                const rating = parseInt(document.getElementById('ratingValue').value);
+                const photoFile = document.getElementById('clientPhoto').files[0];
+                
+                if(!name || !country || !reviewText) {
+                    showAlert('Please fill in your name, country, and review message.', 'danger');
+                    return;
+                }
+                
+                const processReview = (photoDataUrl = null) => {
+                    const newReview = {
+                        id: 'user_' + Date.now() + '_' + Math.floor(Math.random() * 10000),
+                        name: name,
+                        country: country,
+                        text: reviewText,
+                        rating: rating,
+                        photo: photoDataUrl,
+                        timestamp: Date.now()
+                    };
+                    
+                    userReviews.push(newReview);
+                    saveUserReviews();
+                    addReviewToCarousel(newReview);
+                    
+                    // Reset form
+                    form.reset();
+                    document.getElementById('ratingValue').value = 5;
+                    document.getElementById('photoPreviewContainer').innerHTML = '';
+                    
+                    // Reset stars
+                    const stars = document.querySelectorAll('#starRatingWidget i');
+                    stars.forEach(s => { s.style.color = '#ffc107'; });
+                    
+                    showAlert('Thank you! Your Reviews has been added successfully.', 'success');
+                };
+                
+                if(photoFile) {
+                    const reader = new FileReader();
+                    reader.onload = function(e) {
+                        processReview(e.target.result);
+                    };
+                    reader.onerror = function() {
+                        processReview(null);
+                    };
+                    reader.readAsDataURL(photoFile);
+                } else {
+                    processReview(null);
+                }
+            });
+        }
+        
+        // Load existing user reviews on page load
+        function loadExistingUserReviews() {
+            loadUserReviews();
+            
+            if(userReviews.length > 0) {
+                // Add each existing user review to carousel
+                userReviews.forEach(review => {
+                    addReviewToCarousel(review);
+                });
+            }
+        }
+        
+        // Wait for DOM and Owl Carousel to be ready
+        $(document).ready(function() {
+            // Small delay to ensure Owl Carousel is initialized by main.js
+            setTimeout(function() {
+                loadExistingUserReviews();
+            }, 500);
+        });
+        
+        // Initialize form functionality when page loads
+        window.addEventListener('load', function() {
+            initStarRating();
+            initPhotoPreview();
+            initFormSubmission();
+            
+            // Hide spinner
+            const spinner = document.getElementById('spinner');
+            if(spinner) {
+                setTimeout(() => {
+                    spinner.classList.remove('show');
+                    spinner.style.display = 'none';
+                }, 500);
+            }
+        });
+    </script>
+<script src="global.js"></script>
+</body>
+
+</html>

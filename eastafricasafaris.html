@@ -1,0 +1,1217 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Mahogany Travel Expeditions - East Africa Safaris</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="" name="keywords">
+    <meta content="" name="description">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            line-height: 1.5;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            text-align: center;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+        
+        header h1 {
+            color:#4A2810;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #666;
+            font-size: 16px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(270px, 1fr));
+            gap: 25px;
+            margin-bottom: 40px;
+        }
+        
+        .package-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+            transition: transform 0.3s ease;
+        }
+        
+        .package-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.12);
+        }
+        
+        .package-image-container {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .package-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .package-card:hover .package-image {
+            transform: scale(1.05);
+        }
+        
+        .package-content {
+            padding: 20px;
+        }
+        
+        .package-title {
+            font-size: 18px;
+            font-weight: 600;
+            color: #222;
+            margin-bottom: 15px;
+            line-height: 1.4;
+            min-height: 50px;
+        }
+        
+        .view-package-btn {
+            display: inline-block;
+            background-color: #4A2810;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            font-weight: 600;
+            font-size: 15px;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s ease;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .view-package-btn:hover {
+            background-color: #5C6B3E;
+        }
+        
+        .pagination-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            margin-top: 40px;
+            padding-top: 30px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        .pagination {
+            display: flex;
+            list-style: none;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .page-item {
+            display: inline-block;
+        }
+        
+        .page-link {
+            display: inline-block;
+            padding: 8px 14px;
+            background-color: white;
+            color: #333;
+            text-decoration: none;
+            border-radius: 4px;
+            border: 1px solid #ddd;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .page-link:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .page-link.active {
+            background-color: #4A2810;
+            color: white;
+            border-color: #4A2810;
+        }
+        
+        .page-link.next-page {
+            background-color: #4A2810;
+            color: white;
+            padding: 8px 20px;
+            border: none;
+        }
+        
+        .page-link.next-page:hover {
+            background-color: #5C6B3E;
+        }
+        
+        .ellipsis {
+            padding: 8px 5px;
+            font-weight: bold;
+            color: #666;
+        }
+        
+        .pages-info {
+            margin-left: 20px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .page-content {
+            display: none;
+        }
+        
+        .page-content.active {
+            display: block;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 50px;
+            padding: 20px;
+            color: #666;
+            font-size: 14px;
+            border-top: 1px solid #e0e0e0;
+        }
+        
+        @media (max-width: 768px) {
+            .packages-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 20px;
+            }
+            
+            .pagination-container {
+                flex-wrap: wrap;
+                gap: 15px;
+            }
+            
+            .pages-info, .see-next-page {
+                margin-left: 0;
+                margin-top: 10px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .packages-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .pagination {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+        }
+        
+        /* Additional styles for East Africa content */
+        .highlight {
+            color: #5C6B3E;
+            font-weight: 600;
+        }
+        
+        .intro-box {
+            background-color: #f0f7f0;
+            border-left: 4px solid #4A2810;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        
+        .park-section {
+            margin: 20px 0;
+            padding: 15px;
+            background-color: #f9f9f9;
+            border-radius: 5px;
+        }
+        
+        .columns {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .column {
+            flex: 1;
+            min-width: 300px;
+            padding: 15px;
+            background-color: #f8f9fa;
+            border-radius: 5px;
+        }
+        
+        .itinerary {
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+            margin: 20px 0;
+        }
+        
+        .day-box {
+            padding: 12px 15px;
+            background-color: #f0f7f0;
+            border-radius: 5px;
+            border-left: 3px solid #4A2810;
+        }
+        
+        .footer-note {
+            background-color: #e8f5e9;
+            padding: 15px;
+            border-radius: 5px;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .country-badge {
+            display: inline-block;
+            padding: 4px 10px;
+            background-color: #e3f2fd;
+            color: #1565c0;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        
+        .region-section {
+            background: linear-gradient(to right, #e8f5e9, #f1f8e9);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+    </style>
+<link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <!-- Topbar Start -->
+    <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+               <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar & Hero Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="" class="navbar-brand p-0">
+                <h1 class="m-0"><i class=""></i></h1>
+                <img src="img/BRIGHT LOGO.jpg" alt="Logo"> 
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Safaris</a>
+                        <div class="dropdown-menu m-0">
+                             <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                                <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                                <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                                <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                                <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                                <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                                
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                            <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                            <a href="Tanzania.html" class="dropdown-item">Tanzania</a>
+                            <a href="DRC.html" class="dropdown-item">DRC</a>
+                            <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                            <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                        </div>
+                    </div>
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="services.html" class="dropdown-item">Services</a>
+                       
+                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                            <a href="gallery.html" class="dropdown-item">Our Gallery</a>
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="reviews.html" class="dropdown-item">Reviews</a>
+                        </div>
+                    </div>
+                    <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+            </div>
+        </nav>
+
+        <!-- Carousel Start -->
+        <div class="carousel-header">
+            <div id="carouselId" class="carousel slide" data-bs-ride="carousel">
+                <ol class="carousel-indicators">
+                    <li data-bs-target="#carouselId" data-bs-slide-to="0" class="active"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="1"></li>
+                    <li data-bs-target="#carouselId" data-bs-slide-to="2"></li>
+                </ol>
+                <div class="carousel-inner" role="listbox">
+                    <div class="carousel-item active">
+                        <img src="img/rwenzori 19.jpg" class="img-fluid" alt="Great Migration">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Explore East Africa</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">The Ultimate Safari Experience!</h1>
+                                <p class="mb-5 fs-5">Experience the Great Migration, gorilla trekking, and diverse wildlife across multiple countries with Mahogany Travel Expeditions.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#packages">View Packages</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/rwenzori 10.jpg" class="img-fluid" alt="Mount Kilimanjaro">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Multi-Country Safaris</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Discover Africa's Crown Jewels</h1>
+                                <p class="mb-5 fs-5">From Serengeti to Masai Mara, Ngorongoro to Bwindi, experience the best of East Africa in one unforgettable journey.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#packages">Explore Safaris</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <img src="img/kidepo.jpeg" class="img-fluid" alt="Gorilla Trekking">
+                        <div class="carousel-caption">
+                            <div class="p-3" style="max-width: 900px;">
+                                <h4 class="text-white text-uppercase fw-bold mb-4" style="letter-spacing: 3px;">Cultural Diversity</h4>
+                                <h1 class="display-2 text-capitalize text-white mb-4">Experience Rich Cultures & Traditions</h1>
+                                <p class="mb-5 fs-5">Meet the Maasai, Batwa, Karamojong and other indigenous communities across East Africa's diverse nations.</p>
+                                <div class="d-flex align-items-center justify-content-center">
+                                    <a class="btn-hover-bg btn btn-primary rounded-pill text-white py-3 px-5" href="#packages">View Tours</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselId" data-bs-slide="prev">
+                    <span class="carousel-control-prev-icon btn bg-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Previous</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselId" data-bs-slide="next">
+                    <span class="carousel-control-next-icon btn bg-primary" aria-hidden="false"></span>
+                    <span class="visually-hidden">Next</span>
+                </button>
+            </div>
+        </div>
+        <!-- Carousel End -->
+    </div>
+
+    <div class="container" id="packages">
+        <header>
+            <h1>East Africa Safari Packages</h1>
+            <p>Discover the best of East Africa's wildlife, landscapes, and cultures with our multi-country safari packages. From the Great Migration to gorilla trekking, beach retreats to mountain climbing.</p>
+        </header>
+        
+        <!-- Page 1 Content - Great Migration, Wildlife -->
+        <div id="page-1" class="page-content active">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #4A2810;">Great Migration, Wildlife & Mountain climbing Safaris</h2>
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/serengeti.webp" alt="Great Migration" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">10 Days Great Migration Safari (Kenya & Tanzania)</h3>
+                        <span class="country-badge">Kenya</span>
+                        <span class="country-badge">Tanzania</span>
+                        <a href="great-migration-kenya-tanzania.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+
+                
+                <!-- Package 2-->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/bigfive.jpeg" alt="Big Five Safari" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">12 Days East Africa Big Five Safari</h3>
+                        <span class="country-badge">Kenya</span>
+                        <span class="country-badge">Tanzania</span>
+                        <span class="country-badge">Uganda</span>
+                        <a href="east-africa-big-five.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+            
+                
+
+                
+                <!-- Package 3-->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/amboseli and tsavo.jpeg" alt="Amboseli Safari" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Amboseli & Tsavo Safari</h3>
+                        <span class="country-badge">Kenya</span>
+                        <a href="amboseli-tsavo.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                  <!-- Package 4 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/machame.jpeg" alt="Kilimanjaro Machame" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">8 Days Kilimanjaro (Machame Route)</h3>
+                        <span class="country-badge">Tanzania</span>
+                        <a href="kilimanjaro-machame.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 5-->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mountrwenzori.jpeg" alt="Rwenzori Mountains" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">9 Days Rwenzori Mountains Climbing</h3>
+                        <span class="country-badge">Uganda</span>
+                        <a href="rwenzori-climbing.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 6 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mtkenya.jpeg" alt="Mount Kenya" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Mount Kenya Climbing (Sirimon Route)</h3>
+                        <span class="country-badge">Kenya</span>
+                        <a href="mount-kenya-climbing.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                
+                
+                <!-- Package 7-->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mount meru.jpeg" alt="Mount Meru" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">4 Days Mount Meru Climbing</h3>
+                        <span class="country-badge">Tanzania</span>
+                        <a href="mount-meru.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 8 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/elgon.jpeg" alt="Elgon Mountain" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">6 Days Mount Elgon Hiking Safari</h3>
+                        <span class="country-badge">Uganda</span>
+                        <a href="mount-elgon.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+              
+                
+              
+            </div>
+        </div>
+        
+      
+       
+        
+        <!-- Page 2 Content - Beach & Bush Combination -->
+        <div id="page-2" class="page-content">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #4A2810;">Beach & Bush Combination</h2>
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/zanzibar.jpeg" alt="Zanzibar Safari" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">12 Days Serengeti & Zanzibar Beach Safari</h3>
+                        <span class="country-badge">Tanzania</span>
+                        <a href="serengeti-zanzibar.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 2 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mombasamasai.jpeg" alt="Mombasa Beach" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">10 Days Masai Mara & Mombasa Beach</h3>
+                        <span class="country-badge">Kenya</span>
+                        <a href="masai-mara-mombasa.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/victoriago.jpeg" alt="Lake Victoria" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">8 Days Gorilla & Lake Victoria Retreat</h3>
+                        <span class="country-badge">Uganda</span>
+                        <a href="gorilla-lake-victoria.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+              
+                
+                
+                
+                <!-- Package 7 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/mombasa.jpeg" alt="Honeymoon Safari" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">10 Days Honeymoon Safari & Beach</h3>
+                        <span class="country-badge">Kenya</span>
+                        <span class="country-badge">Tanzania</span>
+                        <a href="honeymoon-safari-beach.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+               
+            </div>
+        </div>
+        
+        <!-- Page 3 Content - Cultural & Community Tours -->
+        <div id="page-3" class="page-content">
+            <h2 style="text-align: center; margin-bottom: 30px; color: #4A2810;">Cultural & Luxury Tours</h2>
+            <div class="packages-grid">
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/masai.jpeg" alt="Maasai Culture" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">8 Days Maasai Cultural Experience (Kenya & Tanzania)</h3>
+                        <span class="country-badge">Kenya</span>
+                        <span class="country-badge">Tanzania</span>
+                        <a href="maasai-cultural.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+               
+                
+                <!-- Package 3 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/batwa.jpeg" alt="Batwa Experience" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">5 Days Batwa Pygmy Cultural Experience</h3>
+                        <span class="country-badge">Uganda</span>
+                        <span class="country-badge">Rwanda</span>
+                        <a href="batwa-experience.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+                <!-- Package 1 -->
+                <div class="package-card">
+                    <div class="package-image-container">    
+                        <img src="img/EAluxury.jpeg" alt="Luxury Safari" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">14 Days East Africa Luxury Safari</h3>
+                        <span class="country-badge">Kenya</span>
+                        <span class="country-badge">Tanzania</span>
+                        <span class="country-badge">Rwanda</span>
+                        <a href="east-africa-luxury.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+              
+                
+              
+               
+             
+                
+                <!-- Package 7 -->
+                <div class="package-card">
+                    <div class="package-image-container">
+                        <img src="img/honey moon.jpeg" alt="Honeymoon Luxury" class="package-image">
+                    </div>
+                    <div class="package-content">
+                        <h3 class="package-title">12 Days Luxury Honeymoon Safari</h3>
+                        <span class="country-badge">Kenya</span>
+                        <span class="country-badge">Tanzania</span>
+                        <a href="luxury-honeymoon.html" class="view-package-btn">View Package</a>
+                    </div>
+                </div>
+                
+              
+                
+               
+             
+                
+               
+            </div>
+        </div>
+        
+       
+        <!-- Pagination -->
+        <div class="pagination-container">
+            <ul class="pagination">
+                <li class="page-item">
+                    <a href="#" class="page-link active" data-page="1">1</a>
+                </li>
+                <li class="page-item">
+                    <a href="#" class="page-link" data-page="2">2</a>
+                </li>
+                <li class="page-item">
+                    <a href="#" class="page-link" data-page="3">3</a>
+                </li>
+               
+               
+                <li class="page-item">
+                    <a href="#" class="page-link next-page" id="next-page-btn">See Next Page</a>
+                </li>
+            </ul>
+            <div class="pages-info">Page 1 of 12</div>
+        </div>
+        
+        <!-- East Africa Content Section -->
+        <section>
+            <h2>Introduction</h2>
+            <div class="intro-box">
+                <p>Our comprehensive East Africa safari packages cover <span class="highlight">Kenya, Tanzania, Uganda, Rwanda, and the Democratic Republic of Congo</span>. Experience the ultimate African adventure across multiple countries with BrightTour Guides.</p>
+            </div>
+            
+            <p>East Africa is one of the most spectacular safari destinations on Earth, offering unparalleled wildlife viewing, diverse landscapes, and rich cultural experiences. From the Great Migration in the Serengeti-Mara ecosystem to mountain gorilla trekking in the Virunga Mountains, from climbing Kilimanjaro to relaxing on Zanzibar's beaches, East Africa has something for every traveler.</p>
+            
+            <p>The region's political stability, excellent tourism infrastructure, and English-speaking populations make it an ideal destination for multi-country safaris. With BrightTour Guides, you can seamlessly experience the best of East Africa in one unforgettable journey.</p>
+        </section>
+        
+        <div class="region-section">
+            <h2 style="text-align: center; margin-bottom: 20px;">Why Choose East Africa Multi-Country Safaris?</h2>
+            <div class="columns">
+                <div class="column">
+                    <h3>✓ Diverse Wildlife Experiences</h3>
+                    <p>Combine the Big Five in Kenya/Tanzania with primates in Uganda/Rwanda</p>
+                </div>
+                <div class="column">
+                    <h3>✓ Cost Effective</h3>
+                    <p>Maximize your travel investment by visiting multiple countries in one trip</p>
+                </div>
+                <div class="column">
+                    <h3>✓ Cultural Variety</h3>
+                    <p>Experience different cultures, traditions, and histories across borders</p>
+                </div>
+            </div>
+        </div>
+        
+        <section>
+            <h2>East Africa's Premier Safari Destinations</h2>
+            
+            <div class="park-section">
+                <h3>Kenya - The Birthplace of Safari</h3>
+                <p>Kenya offers classic safari experiences in the Masai Mara, Amboseli (with Kilimanjaro views), Tsavo, Samburu, and Lake Nakuru. The annual Great Migration sees over 1.5 million wildebeest and zebras cross from Tanzania's Serengeti to Kenya's Masai Mara between July and October. Kenya also boasts beautiful Indian Ocean beaches and rich Maasai culture.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Tanzania - The Safari Heartland</h3>
+                <p>Tanzania is home to the Serengeti (site of the Great Migration), Ngorongoro Crater (the world's largest intact caldera), Tarangire (famous for elephants), and Selous (Africa's largest game reserve). Mount Kilimanjaro, Africa's highest peak, and the spice islands of Zanzibar add to Tanzania's diverse attractions.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Uganda - The Pearl of Africa</h3>
+                <p>Uganda offers exceptional primate experiences including mountain gorilla trekking in Bwindi Impenetrable Forest and chimpanzee tracking in Kibale Forest. The mighty Nile River at Murchison Falls, tree-climbing lions in Queen Elizabeth National Park, and the snow-capped Rwenzori Mountains make Uganda uniquely diverse.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Rwanda - Land of a Thousand Hills</h3>
+                <p>Rwanda provides accessible mountain gorilla trekking in Volcanoes National Park, chimpanzee encounters in Nyungwe Forest, and Big Five safaris in Akagera National Park. Its clean, organized cities and remarkable recovery from the 1994 genocide make Rwanda an inspiring destination.</p>
+            </div>
+            
+            <div class="park-section">
+                <h3>Democratic Republic of Congo - The Adventure Frontier</h3>
+                <p>DRC offers adventurous experiences including gorilla trekking in Virunga National Park (Africa's oldest national park), hiking active volcanoes like Nyiragongo with its lava lake, and tracking lowland gorillas in Kahuzi-Biega. DRC provides raw, authentic African experiences for adventurous travelers.</p>
+            </div>
+        </section>
+        
+        <div class="columns">
+            <div class="column">
+                <h3>Key Wildlife Experiences</h3>
+                <ul>
+                    <li><strong>The Great Migration:</strong> Witness millions of wildebeest and zebras crossing between Serengeti and Masai Mara (July-October)</li>
+                    <li><strong>Mountain Gorilla Trekking:</strong> Encounter endangered gorillas in Uganda, Rwanda, or DRC (year-round)</li>
+                    <li><strong>Big Five Viewing:</strong> See lion, leopard, elephant, buffalo, and rhino in multiple parks</li>
+                    <li><strong>Primate Diversity:</strong> Track chimpanzees, golden monkeys, colobus monkeys, and more</li>
+                    <li><strong>Bird Watching:</strong> East Africa boasts over 1,400 bird species, including many endemics</li>
+                </ul>
+            </div>
+            
+            <div class="column">
+                <h3>Travel Practicalities</h3>
+                <ul>
+                    <li><strong>Visa Requirements:</strong> East Africa Tourist Visa available for Kenya, Uganda, and Rwanda. Tanzania and DRC require separate visas.</li>
+                    <li><strong>Best Time to Visit:</strong> Dry seasons (June-October and December-February) for wildlife viewing</li>
+                    <li><strong>Health Requirements:</strong> Yellow fever vaccination mandatory. Malaria prophylaxis recommended.</li>
+                    <li><strong>Currency:</strong> USD widely accepted. Local currencies: Kenyan Shilling, Tanzanian Shilling, Ugandan Shilling, Rwandan Franc, Congolese Franc.</li>
+                    <li><strong>Transport:</strong> Road transfers between parks, domestic flights available for longer distances.</li>
+                </ul>
+            </div>
+        </div>
+        
+        <section>
+            <h2>Sample Itinerary: 14-Day East Africa Highlights</h2>
+            <div class="itinerary">
+                <div class="day-box">
+                    <strong>Days 1-3:</strong> Arrive Nairobi, Kenya. Masai Mara game drives, witness the Great Migration.
+                </div>
+                <div class="day-box">
+                    <strong>Days 4-5:</strong> Fly to Kilimanjaro, Tanzania. Tarangire National Park elephant viewing.
+                </div>
+                <div class="day-box">
+                    <strong>Days 6-7:</strong> Ngorongoro Crater descent, Serengeti game drives.
+                </div>
+                <div class="day-box">
+                    <strong>Day 8:</strong> Fly to Kigali, Rwanda. City tour including Genocide Memorial.
+                </div>
+                <div class="day-box">
+                    <strong>Days 9-10:</strong> Gorilla trekking in Volcanoes National Park, Rwanda.
+                </div>
+                <div class="day-box">
+                    <strong>Day 11:</strong> Cross to Uganda. Lake Bunyonyi relaxation.
+                </div>
+                <div class="day-box">
+                    <strong>Days 12-13:</strong> Bwindi Impenetrable Forest gorilla trekking, Uganda.
+                </div>
+                <div class="day-box">
+                    <strong>Day 14:</strong> Return to Kigali for international departure.
+                </div>
+            </div>
+        </section>
+        
+        <section>
+            <h2>Conservation and Responsible Tourism</h2>
+            <p>East Africa is a global leader in wildlife conservation and community-based tourism. Revenue from safari tourism directly funds:</p>
+            
+            <div class="columns">
+                <div class="column">
+                    <h4>✓ Anti-Poaching Efforts</h4>
+                    <p>Park fees support ranger patrols and wildlife protection</p>
+                </div>
+                <div class="column">
+                    <h4>✓ Community Development</h4>
+                    <p>Revenue sharing supports local schools, clinics, and infrastructure</p>
+                </div>
+                <div class="column">
+                    <h4>✓ Habitat Protection</h4>
+                    <p>Tourism creates economic value for preserving natural habitats</p>
+                </div>
+            </div>
+            
+            <p>By traveling with BrightTour Guides, you support ethical tourism practices that benefit local communities and conservation initiatives across East Africa.</p>
+        </section>
+        
+        <section>
+            <h2>Conclusion</h2>
+            <p>An East Africa multi-country safari offers the ultimate African adventure, combining the continent's most iconic wildlife experiences with diverse cultures and landscapes. Whether you choose to focus on the Great Migration, primate encounters, or a combination of both, East Africa delivers unforgettable memories.</p>
+            
+            <p>With excellent infrastructure, English-speaking guides, and decades of safari experience, East Africa is perfectly suited for multi-country journeys. Let BrightTour Guides handle the logistics while you immerse yourself in the wonders of Africa's most spectacular region.</p>
+        </section>
+        
+        <div class="footer-note">
+            <p>For more information and customized multi-country safari packages, contact our travel specialists. Gorilla trekking permits and peak season accommodations should be booked well in advance due to high demand.</p>
+        </div>
+    </div>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+                        <a href=""><i class="fas fa-home me-2"></i> Kasese, Municipality, Uganda</a>
+                        <a href=""><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                        <a href=""><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                        <a href="" class="mb-3"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                        <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Popular Safaris</h4>
+                        <a href="ugandasafaris.html"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                        <a href="Kenya Safaris.html"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                        <a href="Tanzania Safaris.html"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                        <a href="DRC Safaris.html"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                        <a href="Rwanda Safaris.html"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                        <a href="EAst Africa Safaris.html" class="active"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Top Destinations</h4>
+                        <a href="Uganda.html"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                        <a href="Kenya.html"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                        <a href="Tanzania.html"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                        <a href="DRC.html"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                        <a href="Rwanda.html"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                        <a href="East Africa.html"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="booking.html"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                        <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                   
+                        <a href="privacy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="sitemap.html"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html">Mahogany Travel Expeditions</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <script>
+    // Pagination functionality
+    document.addEventListener('DOMContentLoaded', function() {
+        const pageLinks = document.querySelectorAll('.page-link');
+        const nextPageBtn = document.getElementById('next-page-btn');
+        const pageContents = document.querySelectorAll('.page-content');
+        const pagesInfo = document.querySelector('.pages-info');
+        
+        // Set initial active page
+        let currentPage = 1;
+        updateActivePage(currentPage);
+        
+        // Add click event to all page links
+        pageLinks.forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                if (this.classList.contains('next-page')) {
+                    // Next page button
+                    if (currentPage < 12) {
+                        currentPage++;
+                        updateActivePage(currentPage);
+                    }
+                } else if (this.dataset.page) {
+                    // Numbered page button
+                    currentPage = parseInt(this.dataset.page);
+                    updateActivePage(currentPage);
+                }
+            });
+        });
+        
+        // Function to update active page
+        function updateActivePage(pageNum) {
+            // Update page content visibility
+            pageContents.forEach(content => {
+                content.classList.remove('active');
+            });
+            
+            const activePageContent = document.getElementById(`page-${pageNum}`);
+            if (activePageContent) {
+                activePageContent.classList.add('active');
+            } else {
+                // If page doesn't have specific content, show page 1
+                document.getElementById('page-1').classList.add('active');
+            }
+            
+            // Update pagination links
+            pageLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.dataset.page && parseInt(link.dataset.page) === pageNum) {
+                    link.classList.add('active');
+                }
+            });
+            
+            // Update page info
+            pagesInfo.textContent = `Page ${pageNum} of 12`;
+            
+            // Update next page button text
+            if (pageNum < 12) {
+                nextPageBtn.textContent = 'See Next Page';
+            } else {
+                nextPageBtn.textContent = 'Last Page';
+            }
+            
+            // Scroll to top of packages section
+            window.scrollTo({
+                top: document.querySelector('.packages-grid').offsetTop - 20,
+                behavior: 'smooth'
+            });
+        }
+        
+        // View Package button functionality - SIMPLIFIED VERSION
+        const viewPackageButtons = document.querySelectorAll('.view-package-btn');
+        viewPackageButtons.forEach(button => {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Get the URL from the href attribute
+                const packageUrl = this.getAttribute('href');
+                
+                if (!packageUrl || packageUrl === '#') {
+                    // If no URL is set, show a message
+                    alert('Package details page is coming soon!');
+                    return;
+                }
+                
+                // Visual feedback
+                const originalText = this.textContent;
+                this.textContent = 'Loading...';
+                this.style.backgroundColor = '#5C6B3E';
+                this.disabled = true;
+                
+                // Check if the page exists before navigating
+                fetch(packageUrl)
+                    .then(response => {
+                        if (response.ok) {
+                            // Page exists, navigate to it
+                            window.location.href = packageUrl;
+                        } else {
+                            // Page doesn't exist, show fallback modal
+                            showPackageModal(this);
+                            
+                            // Restore button state
+                            this.textContent = originalText;
+                            this.style.backgroundColor = '';
+                            this.disabled = false;
+                        }
+                    })
+                    .catch(error => {
+                        console.error('Error checking package page:', error);
+                        // Navigate anyway (for local development without server)
+                        window.location.href = packageUrl;
+                        
+                        // Fallback: restore button if navigation fails
+                        setTimeout(() => {
+                            this.textContent = originalText;
+                            this.style.backgroundColor = '';
+                            this.disabled = false;
+                        }, 2000);
+                    });
+            });
+        });
+        
+        // Function to show package details in a modal (fallback)
+        function showPackageModal(button) {
+            const packageCard = button.closest('.package-card');
+            const packageTitle = packageCard.querySelector('.package-title').textContent;
+            const countryBadges = Array.from(packageCard.querySelectorAll('.country-badge')).map(badge => badge.textContent).join(', ');
+            
+            // Remove existing modal if any
+            const existingModal = document.getElementById('package-modal');
+            if (existingModal) {
+                document.body.removeChild(existingModal);
+            }
+            
+            // Create modal
+            const modal = document.createElement('div');
+            modal.id = 'package-modal';
+            modal.style.cssText = `
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0,0,0,0.7);
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                z-index: 9999;
+                padding: 20px;
+            `;
+            
+            modal.innerHTML = `
+                <div style="
+                    background: white;
+                    padding: 30px;
+                    border-radius: 10px;
+                    max-width: 600px;
+                    width: 100%;
+                    max-height: 80vh;
+                    overflow-y: auto;
+                    box-shadow: 0 5px 20px rgba(0,0,0,0.3);
+                    position: relative;
+                ">
+                    <button id="close-modal" style="
+                        position: absolute;
+                        top: 15px;
+                        right: 15px;
+                        background: #ff4444;
+                        color: white;
+                        border: none;
+                        border-radius: 50%;
+                        width: 30px;
+                        height: 30px;
+                        cursor: pointer;
+                        font-size: 18px;
+                        line-height: 1;
+                    ">×</button>
+                    
+                    <h2 style="color: #4A2810; margin-top: 0;">${packageTitle}</h2>
+                    <p style="color: #666; font-style: italic; margin-bottom: 15px;">Countries: ${countryBadges}</p>
+                    <p style="color: #666; font-style: italic;">Package details page is under construction</p>
+                    
+                    <div style="margin: 20px 0; padding: 15px; background: #f8f9fa; border-radius: 5px;">
+                        <h3 style="color: #333;">Package Information</h3>
+                        <p>This multi-country East Africa safari package will be available soon. In the meantime, you can contact us for more details and custom itinerary planning.</p>
+                    </div>
+                    
+                    <div style="display: flex; gap: 10px; margin-top: 20px; flex-wrap: wrap;">
+                        <a href="contact.html" style="
+                            padding: 12px 24px;
+                            background: #4A2810;
+                            color: white;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                            font-weight: bold;
+                            text-decoration: none;
+                            text-align: center;
+                            display: inline-block;
+                        ">Contact Us for Details</a>
+                        
+                        <button onclick="window.print()" style="
+                            padding: 12px 24px;
+                            background: #ff9800;
+                            color: white;
+                            border: none;
+                            border-radius: 5px;
+                            cursor: pointer;
+                        ">Print Info</button>
+                    </div>
+                </div>
+            `;
+            
+            document.body.appendChild(modal);
+            
+            // Close modal functionality
+            const closeModal = () => {
+                document.body.removeChild(modal);
+            };
+            
+            modal.querySelector('#close-modal').addEventListener('click', closeModal);
+            modal.addEventListener('click', (e) => {
+                if (e.target === modal) closeModal();
+            });
+            
+            // Escape key to close
+            const handleEscape = (e) => {
+                if (e.key === 'Escape') closeModal();
+            };
+            document.addEventListener('keydown', handleEscape);
+        }
+        
+        // Keyboard navigation for pagination
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'ArrowRight' && currentPage < 12) {
+                currentPage++;
+                updateActivePage(currentPage);
+            } else if (e.key === 'ArrowLeft' && currentPage > 1) {
+                currentPage--;
+                updateActivePage(currentPage);
+            }
+        });
+    });
+    </script>
+<script src="global.js"></script>
+</body>
+</html>
