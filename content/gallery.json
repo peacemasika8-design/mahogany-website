@@ -1,0 +1,25 @@
+{
+  "images": [
+    {
+      "src": "img/nile 6.jpg",
+      "alt": "Nile River Landscape",
+      "category": "landscapes",
+      "title": "Nile River",
+      "subtitle": "Murchison Falls National Park"
+    },
+    {
+      "src": "img/bwindi 2.jpg",
+      "alt": "Bwindi Impenetrable Forest",
+      "category": "wildlife",
+      "title": "Bwindi Forest",
+      "subtitle": "Mountain Gorilla Habitat"
+    },
+    {
+      "src": "img/rwenzori 3.jpg",
+      "alt": "Rwenzori Mountains",
+      "category": "mountains",
+      "title": "Rwenzori Mountains",
+      "subtitle": "Mountains of the Moon"
+    }
+  ]
+}

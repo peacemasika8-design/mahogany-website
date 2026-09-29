@@ -15,3 +15,23 @@ collections:
       - { label: "Title", name: "title", widget: "string" }
       - { label: "Publish Date", name: "date", widget: "datetime" }
       - { label: "Body", name: "body", widget: "markdown" }
+
+
+
+  - name: "gallery"
+    label: "Gallery"
+    files:
+      - label: "Gallery Images"
+        name: "gallery"
+        file: "content/gallery.json"
+        fields:
+          - label: "Images"
+            name: "images"
+            widget: "list"
+            summary: "{{fields.title}} — {{fields.category}}"
+            fields:
+              - { label: "Image", name: "src", widget: "image" }
+              - { label: "Alt Text", name: "alt", widget: "string" }
+              - { label: "Category", name: "category", widget: "select", options: ["landscapes", "wildlife", "mountains", "adventure"] }
+              - { label: "Title", name: "title", widget: "string" }
+              - { label: "Subtitle", name: "subtitle", widget: "string", required: false }
