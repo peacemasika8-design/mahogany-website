@@ -1,25 +1,340 @@
-{
-  "images": [
-    {
-      "src": "img/nile 6.jpg",
-      "alt": "Nile River Landscape",
-      "category": "landscapes",
-      "title": "Nile River",
-      "subtitle": "Murchison Falls National Park"
-    },
-    {
-      "src": "img/bwindi 2.jpg",
-      "alt": "Bwindi Impenetrable Forest",
-      "category": "wildlife",
-      "title": "Bwindi Forest",
-      "subtitle": "Mountain Gorilla Habitat"
-    },
-    {
-      "src": "img/rwenzori 3.jpg",
-      "alt": "Rwenzori Mountains",
-      "category": "mountains",
-      "title": "Rwenzori Mountains",
-      "subtitle": "Mountains of the Moon"
-    }
-  ]
+﻿{
+    "images":  [
+                   {
+                       "src":  "img/nile 6.jpg",
+                       "alt":  "Nile River Landscape",
+                       "category":  "landscapes",
+                       "title":  "Nile River",
+                       "subtitle":  "Murchison Falls National Park"
+                   },
+                   {
+                       "src":  "img/nile 7.jpg",
+                       "alt":  "Nile River Scenery",
+                       "category":  "landscapes",
+                       "title":  "Nile River Scenery",
+                       "subtitle":  "Western Uganda"
+                   },
+                   {
+                       "src":  "img/bwindi 2.jpg",
+                       "alt":  "Bwindi Impenetrable Forest",
+                       "category":  "wildlife",
+                       "title":  "Bwindi Forest",
+                       "subtitle":  "Mountain Gorilla Habitat"
+                   },
+                   {
+                       "src":  "img/bwindi 9.jpg",
+                       "alt":  "Bwindi Forest Wildlife",
+                       "category":  "wildlife",
+                       "title":  "Bwindi Forest",
+                       "subtitle":  "UNESCO World Heritage Site"
+                   },
+                   {
+                       "src":  "img/bwindi 11.jpg",
+                       "alt":  "Bwindi Forest Canopy",
+                       "category":  "wildlife",
+                       "title":  "Forest Canopy",
+                       "subtitle":  "Bwindi Impenetrable Forest"
+                   },
+                   {
+                       "src":  "img/rwenzori 3.jpg",
+                       "alt":  "Rwenzori Mountains",
+                       "category":  "mountains",
+                       "title":  "Rwenzori Mountains",
+                       "subtitle":  "Mountains of the Moon"
+                   },
+                   {
+                       "src":  "img/rwenzori 8.jpg",
+                       "alt":  "Rwenzori Peaks",
+                       "category":  "mountains",
+                       "title":  "Rwenzori Peaks",
+                       "subtitle":  "Snow-capped Mountains"
+                   },
+                   {
+                       "src":  "img/sipi 1.jpg",
+                       "alt":  "Sipi Falls",
+                       "category":  "adventure",
+                       "title":  "Sipi Falls",
+                       "subtitle":  "Eastern Uganda"
+                   },
+                   {
+                       "src":  "img/nile 15.jpg",
+                       "alt":  "Nile River Sunset",
+                       "category":  "landscapes",
+                       "title":  "River Sunset",
+                       "subtitle":  "Nile River at Dusk"
+                   },
+                   {
+                       "src":  "img/nile 10.jpg",
+                       "alt":  "Nile River View",
+                       "category":  "landscapes",
+                       "title":  "River View",
+                       "subtitle":  "Nile River Panorama"
+                   },
+                   {
+                       "src":  "img/nile 1.jpg",
+                       "alt":  "Nile River Sunset",
+                       "category":  "landscapes",
+                       "title":  "River Sunset",
+                       "subtitle":  "Nile River at Dusk"
+                   },
+                   {
+                       "src":  "img/nile 17.jpg",
+                       "alt":  "Nile River Scenery",
+                       "category":  "landscapes",
+                       "title":  "Nile River Scenery",
+                       "subtitle":  "Western Uganda"
+                   },
+                   {
+                       "src":  "img/rwenzori 17.jpg",
+                       "alt":  "Rwenzori Peaks",
+                       "category":  "adventure",
+                       "title":  "Mountain Trek",
+                       "subtitle":  "Rwenzori Mountains"
+                   },
+                   {
+                       "src":  "img/nile 9.jpg",
+                       "alt":  "Nile River View",
+                       "category":  "landscapes",
+                       "title":  "River View",
+                       "subtitle":  "Nile River Panorama"
+                   },
+                   {
+                       "src":  "img/ENJOY.jpg",
+                       "alt":  "African Sunset",
+                       "category":  "landscapes",
+                       "title":  "Savanna Sunset",
+                       "subtitle":  "Queen Elizabeth National Park"
+                   },
+                   {
+                       "src":  "img/nile 2.jpg",
+                       "alt":  "White Water Rafting",
+                       "category":  "adventure",
+                       "title":  "River Adventure",
+                       "subtitle":  "White Water Rafting"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3298.JPG",
+                       "alt":  "Nile River Landscape",
+                       "category":  "landscapes",
+                       "title":  "Nile River Landscape",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3361.JPG",
+                       "alt":  "Nile River Scenery",
+                       "category":  "landscapes",
+                       "title":  "Nile River Scenery",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3364.JPG",
+                       "alt":  "Bwindi Impenetrable Forest",
+                       "category":  "wildlife",
+                       "title":  "Bwindi Impenetrable Forest",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3398.JPG",
+                       "alt":  "Bwindi Forest Wildlife",
+                       "category":  "wildlife",
+                       "title":  "Bwindi Forest Wildlife",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3384.JPG",
+                       "alt":  "Bwindi Forest Canopy",
+                       "category":  "wildlife",
+                       "title":  "Bwindi Forest Canopy",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3401.JPG",
+                       "alt":  "Rwenzori Mountains",
+                       "category":  "mountains",
+                       "title":  "Rwenzori Mountains",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3404.JPG",
+                       "alt":  "Rwenzori Peaks",
+                       "category":  "mountains",
+                       "title":  "Rwenzori Peaks",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3416.JPG",
+                       "alt":  "Sipi Falls",
+                       "category":  "adventure",
+                       "title":  "Sipi Falls",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3421.JPG",
+                       "alt":  "Nile River Sunset",
+                       "category":  "landscapes",
+                       "title":  "Nile River Sunset",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3452.JPG",
+                       "alt":  "Nile River View",
+                       "category":  "landscapes",
+                       "title":  "Nile River View",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3511.JPG",
+                       "alt":  "Nile River Sunset",
+                       "category":  "landscapes",
+                       "title":  "Nile River Sunset",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3524.JPG",
+                       "alt":  "Nile River Scenery",
+                       "category":  "landscapes",
+                       "title":  "Nile River Scenery",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3539.JPG",
+                       "alt":  "Rwenzori Peaks",
+                       "category":  "adventure",
+                       "title":  "Rwenzori Peaks",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3556.JPG",
+                       "alt":  "Nile River View",
+                       "category":  "landscapes",
+                       "title":  "Nile River View",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3572.JPG",
+                       "alt":  "African Sunset",
+                       "category":  "landscapes",
+                       "title":  "African Sunset",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3581.JPG",
+                       "alt":  "White Water Rafting",
+                       "category":  "adventure",
+                       "title":  "White Water Rafting",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3589.JPG",
+                       "alt":  "Nile River Landscape",
+                       "category":  "landscapes",
+                       "title":  "Nile River Landscape",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3642.JPG",
+                       "alt":  "Nile River Scenery",
+                       "category":  "landscapes",
+                       "title":  "Nile River Scenery",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3676.JPG",
+                       "alt":  "Bwindi Impenetrable Forest",
+                       "category":  "wildlife",
+                       "title":  "Bwindi Impenetrable Forest",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3700.JPG",
+                       "alt":  "Bwindi Forest Wildlife",
+                       "category":  "wildlife",
+                       "title":  "Bwindi Forest Wildlife",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3707.JPG",
+                       "alt":  "Bwindi Forest Canopy",
+                       "category":  "wildlife",
+                       "title":  "Bwindi Forest Canopy",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3716.JPG",
+                       "alt":  "Rwenzori Mountains",
+                       "category":  "mountains",
+                       "title":  "Rwenzori Mountains",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3730.JPG",
+                       "alt":  "Rwenzori Peaks",
+                       "category":  "mountains",
+                       "title":  "Rwenzori Peaks",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3734.JPG",
+                       "alt":  "Sipi Falls",
+                       "category":  "adventure",
+                       "title":  "Sipi Falls",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3739.JPG",
+                       "alt":  "Nile River Sunset",
+                       "category":  "landscapes",
+                       "title":  "Nile River Sunset",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3774.JPG",
+                       "alt":  "Nile River View",
+                       "category":  "landscapes",
+                       "title":  "Nile River View",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3783.JPG",
+                       "alt":  "Nile River Sunset",
+                       "category":  "landscapes",
+                       "title":  "Nile River Sunset",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3827.JPG",
+                       "alt":  "Nile River Scenery",
+                       "category":  "landscapes",
+                       "title":  "Nile River Scenery",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3855.JPG",
+                       "alt":  "Rwenzori Peaks",
+                       "category":  "adventure",
+                       "title":  "Rwenzori Peaks",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3882.JPG",
+                       "alt":  "Nile River View",
+                       "category":  "landscapes",
+                       "title":  "Nile River View",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3895.JPG",
+                       "alt":  "African Sunset",
+                       "category":  "landscapes",
+                       "title":  "African Sunset",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   },
+                   {
+                       "src":  "img/gallery/0S2A3901.JPG",
+                       "alt":  "White Water Rafting",
+                       "category":  "adventure",
+                       "title":  "White Water Rafting",
+                       "subtitle":  "Mahogany Travel Expeditions"
+                   }
+               ]
 }

@@ -1,0 +1,1130 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>Gallery | Mahogany Travel Expeditions</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta name="keywords" content="Mahogany Travel Expeditions gallery, Uganda safari photos, East Africa travel images, wildlife photography, mountain trekking photos, cultural tour pictures">
+    <meta name="description" content="Explore our visual journey through East Africa. Browse stunning photography from our safaris, treks, and cultural tours across Uganda, Kenya, Tanzania, Rwanda and DRC.">
+    
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Jost:wght@500;600&family=Roboto&display=swap" rel="stylesheet"> 
+
+    <!-- Icon Font Stylesheet -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css"/>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.4.1/font/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Libraries Stylesheet -->
+    <link href="lib/owlcarousel/assets/owl.carousel.min.css" rel="stylesheet">
+    <link href="lib/lightbox/css/lightbox.min.css" rel="stylesheet">
+
+    <!-- Customized Bootstrap Stylesheet -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Template Stylesheet -->
+    <link href="css/style.css" rel="stylesheet">
+    
+    <style>
+        .gallery-item {
+            position: relative;
+            overflow: hidden;
+            border-radius: 8px;
+            margin-bottom: 25px;
+            transition: transform 0.3s ease;
+        }
+        
+        .gallery-item:hover {
+            transform: translateY(-5px);
+        }
+        
+        .gallery-item img {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .gallery-item:hover img {
+            transform: scale(1.05);
+        }
+        
+        .gallery-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%);
+            padding: 20px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            color: white;
+        }
+        
+        .gallery-item:hover .gallery-overlay {
+            opacity: 1;
+        }
+        
+        .lightbox-icon {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .gallery-item:hover .lightbox-icon {
+            opacity: 1;
+        }
+        
+        .lightbox-icon i {
+            color: #113f29;
+            font-size: 20px;
+        }
+        
+        .page-header {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('img/gallery-header.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-item img {
+                height: 250px;
+            }
+            
+            .gallery-overlay {
+                padding: 15px;
+            }
+        }
+    </style>
+<link rel="stylesheet" href="global.css">
+</head>
+
+<body>
+    <!-- Spinner Start -->
+    <div id="spinner" class="show bg-white position-fixed translate-middle w-100 vh-100 top-50 start-50 d-flex align-items-center justify-content-center">
+        <div class="spinner-border text-primary" style="width: 3rem; height: 3rem;" role="status">
+            <span class="sr-only">Loading...</span>
+        </div>
+    </div>
+    <!-- Spinner End -->
+
+    <!-- Topbar Start -->
+    <div class="container-fluid mahogany-bg px-5 d-none d-lg-block">
+        <div class="row gx-0">
+            <div class="col-lg-8 text-center text-lg-start mb-2 mb-lg-0">
+               <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Topbar End -->
+
+    <!-- Navbar Start -->
+    <div class="container-fluid position-relative p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <img src="img/BRIGHT LOGO.jpg" alt="Mahogany Travel Expeditions Logo" style="height: 60px;">
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav ms-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">Home</a>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Safaris</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="ugandasafaris.html" class="dropdown-item">Uganda Safaris</a>
+                            <a href="kenyasafaris.html" class="dropdown-item">Kenya Safaris</a>
+                            <a href="tanzaniasafaris.html" class="dropdown-item">Tanzania Safaris</a>
+                            <a href="drcsafaris.html" class="dropdown-item">DRC Safaris</a>
+                            <a href="rwandasafaris.html" class="dropdown-item">Rwanda Safaris</a>
+                            <a href="eastafricasafaris.html" class="dropdown-item">East Africa Safaris</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle" data-bs-toggle="dropdown">Destinations</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="Uganda.html" class="dropdown-item">Uganda</a>
+                            <a href="Kenya.html" class="dropdown-item">Kenya</a>
+                            <a href="Tanzania.html" class="dropdown-item">Tanzania</a>
+                            <a href="DRC.html" class="dropdown-item">DRC</a>
+                            <a href="Rwanda.html" class="dropdown-item">Rwanda</a>
+                            <a href="East Africa.html" class="dropdown-item">East Africa</a>
+                        </div>
+                    </div>
+                    
+                    <div class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle active" data-bs-toggle="dropdown">Pages</a>
+                        <div class="dropdown-menu m-0">
+                            <a href="services.html" class="dropdown-item">Services</a>
+                            <a href="blog.html" class="dropdown-item">Blog</a>
+                            <a href="booking.html" class="dropdown-item">Travel Booking</a>
+                            <a href="gallery.html" class="dropdown-item active">Our Gallery</a>
+                            <a href="about.html" class="dropdown-item">About Us</a>
+                            <a href="reviews.html" class="dropdown-item">Reviews</a>
+                        </div>
+                    </div>
+                 <a href="blog.html" class="nav-item nav-link">Blog</a>
+<a href="contact.html" class="nav-item nav-link">Contact</a>
+                </div>
+                <a href="booking.html" class="btn btn-primary rounded-pill py-2 px-4 ms-lg-4">Book Now</a>
+            </div>
+        </nav>
+
+        <!-- Page Header Start -->
+        <div class="container-fluid page-header py-5 mb-5">
+            <div class="container py-5">
+                <h1 class="display-3 text-white mb-3 animated slideInDown">Our Gallery</h1>
+                <nav aria-label="breadcrumb animated slideInDown">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item"><a href="index.html" class="text-white">Home</a></li>
+                        <li class="breadcrumb-item text-white active" aria-current="page">Gallery</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+        <!-- Page Header End -->
+    </div>
+
+    <!-- Gallery Intro Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="text-center mx-auto mb-5" style="max-width: 900px;">
+                <h5 class="section-title px-3">Visual Journey</h5>
+                <h1 class="mb-4">Experience East Africa Through Our Lens</h1>
+                <p class="mb-4">Browse through our collection of stunning photographs captured during our safaris, treks, and cultural tours across Uganda and East Africa. Each image represents a unique moment of discovery, adventure, and natural beauty that awaits you.</p>
+            </div>
+        </div>
+    </div>
+    <!-- Gallery Intro End -->
+
+    <!-- Combined Gallery Grid Start -->
+    <div class="container-fluid pb-5">
+        <div class="container">
+            <div class="row g-4" id="gallery-grid" data-cms-managed="false">
+                <!-- All images in original order, combined from all three grids -->
+                
+                <!-- Images from first grid (img/ folder) -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/nile 6.jpg" alt="Nile River Landscape" class="img-fluid">
+                    <a href="img/nile 6.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Nile River</h6>
+                        <p class="text-white small mb-0">Murchison Falls National Park</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/nile 7.jpg" alt="Nile River Scenery" class="img-fluid">
+                    <a href="img/nile 7.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Scenery">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Nile River Scenery</h6>
+                        <p class="text-white small mb-0">Western Uganda</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/bwindi 2.jpg" alt="Bwindi Impenetrable Forest" class="img-fluid">
+                    <a href="img/bwindi 2.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Impenetrable Forest">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Bwindi Forest</h6>
+                        <p class="text-white small mb-0">Mountain Gorilla Habitat</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/bwindi 9.jpg" alt="Bwindi Forest Wildlife" class="img-fluid">
+                    <a href="img/bwindi 9.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Forest">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Bwindi Forest</h6>
+                        <p class="text-white small mb-0">UNESCO World Heritage Site</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/bwindi 11.jpg" alt="Bwindi Forest Canopy" class="img-fluid">
+                    <a href="img/bwindi 11.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Forest Canopy">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Forest Canopy</h6>
+                        <p class="text-white small mb-0">Bwindi Impenetrable Forest</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mountains">
+                    <img src="img/rwenzori 3.jpg" alt="Rwenzori Mountains" class="img-fluid">
+                    <a href="img/rwenzori 3.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountains">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Rwenzori Mountains</h6>
+                        <p class="text-white small mb-0">Mountains of the Moon</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mountains">
+                    <img src="img/rwenzori 8.jpg" alt="Rwenzori Peaks" class="img-fluid">
+                    <a href="img/rwenzori 8.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountain Peaks">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Rwenzori Peaks</h6>
+                        <p class="text-white small mb-0">Snow-capped Mountains</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/sipi 1.jpg" alt="Sipi Falls" class="img-fluid">
+                    <a href="img/sipi 1.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Sipi Falls">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Sipi Falls</h6>
+                        <p class="text-white small mb-0">Eastern Uganda</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/nile 15.jpg" alt="Nile River Sunset" class="img-fluid">
+                    <a href="img/nile 15.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">River Sunset</h6>
+                        <p class="text-white small mb-0">Nile River at Dusk</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/nile 10.jpg" alt="Nile River View" class="img-fluid">
+                    <a href="img/nile 10.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River View">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">River View</h6>
+                        <p class="text-white small mb-0">Nile River Panorama</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/nile 1.jpg" alt="Nile River Sunset" class="img-fluid">
+                    <a href="img/nile 1.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">River Sunset</h6>
+                        <p class="text-white small mb-0">Nile River at Dusk</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/nile 17.jpg" alt="Nile River Scenery" class="img-fluid">
+                    <a href="img/nile 17.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Scenery">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Nile River Scenery</h6>
+                        <p class="text-white small mb-0">Western Uganda</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/rwenzori 17.jpg" alt="Rwenzori Peaks" class="img-fluid">
+                    <a href="img/rwenzori 17.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountain Peaks">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Mountain Trek</h6>
+                        <p class="text-white small mb-0">Rwenzori Mountains</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/nile 9.jpg" alt="Nile River View" class="img-fluid">
+                    <a href="img/nile 9.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River View">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">River View</h6>
+                        <p class="text-white small mb-0">Nile River Panorama</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/ENJOY.jpg" alt="African Sunset" class="img-fluid">
+                    <a href="img/ENJOY.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="African Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">Savanna Sunset</h6>
+                        <p class="text-white small mb-0">Queen Elizabeth National Park</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/nile 2.jpg" alt="White Water Rafting" class="img-fluid">
+                    <a href="img/nile 2.jpg" class="lightbox-icon" data-lightbox="gallery" data-title="White Water Rafting">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                    <div class="gallery-overlay">
+                        <h6 class="text-white mb-1">River Adventure</h6>
+                        <p class="text-white small mb-0">White Water Rafting</p>
+                    </div>
+                </div>
+
+                <!-- Images from second grid (img/gallery/ first set) -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3298.JPG" alt="Nile River Landscape" class="img-fluid">
+                    <a href="img/gallery/0S2A3298.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3361.JPG" alt="Nile River Scenery" class="img-fluid">
+                    <a href="img/gallery/0S2A3361.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Scenery">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/gallery/0S2A3364.JPG" alt="Bwindi Impenetrable Forest" class="img-fluid">
+                    <a href="img/gallery/0S2A3364.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Impenetrable Forest">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/gallery/0S2A3398.JPG" alt="Bwindi Forest Wildlife" class="img-fluid">
+                    <a href="img/gallery/0S2A3398.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Forest">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/gallery/0S2A3384.JPG" alt="Bwindi Forest Canopy" class="img-fluid">
+                    <a href="img/gallery/0S2A3384.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Forest Canopy">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mountains">
+                    <img src="img/gallery/0S2A3401.JPG" alt="Rwenzori Mountains" class="img-fluid">
+                    <a href="img/gallery/0S2A3401.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountains">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mountains">
+                    <img src="img/gallery/0S2A3404.JPG" alt="Rwenzori Peaks" class="img-fluid">
+                    <a href="img/gallery/0S2A3404.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountain Peaks">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/gallery/0S2A3416.JPG" alt="Sipi Falls" class="img-fluid">
+                    <a href="img/gallery/0S2A3416.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Sipi Falls">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3421.JPG" alt="Nile River Sunset" class="img-fluid">
+                    <a href="img/gallery/0S2A3421.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3452.JPG" alt="Nile River View" class="img-fluid">
+                    <a href="img/gallery/0S2A3452.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River View">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3511.JPG" alt="Nile River Sunset" class="img-fluid">
+                    <a href="img/gallery/0S2A3511.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3524.JPG" alt="Nile River Scenery" class="img-fluid">
+                    <a href="img/gallery/0S2A3524.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Scenery">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/gallery/0S2A3539.JPG" alt="Rwenzori Peaks" class="img-fluid">
+                    <a href="img/gallery/0S2A3539.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountain Peaks">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3556.JPG" alt="Nile River View" class="img-fluid">
+                    <a href="img/gallery/0S2A3556.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River View">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3572.JPG" alt="African Sunset" class="img-fluid">
+                    <a href="img/gallery/0S2A3572.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="African Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/gallery/0S2A3581.JPG" alt="White Water Rafting" class="img-fluid">
+                    <a href="img/gallery/0S2A3581.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="White Water Rafting">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+
+                <!-- Images from third grid (img/gallery/ second set) -->
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3589.JPG" alt="Nile River Landscape" class="img-fluid">
+                    <a href="img/gallery/0S2A3589.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3642.JPG" alt="Nile River Scenery" class="img-fluid">
+                    <a href="img/gallery/0S2A3642.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Scenery">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/gallery/0S2A3676.JPG" alt="Bwindi Impenetrable Forest" class="img-fluid">
+                    <a href="img/gallery/0S2A3676.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Impenetrable Forest">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/gallery/0S2A3700.JPG" alt="Bwindi Forest Wildlife" class="img-fluid">
+                    <a href="img/gallery/0S2A3700.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Forest">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="wildlife">
+                    <img src="img/gallery/0S2A3707.JPG" alt="Bwindi Forest Canopy" class="img-fluid">
+                    <a href="img/gallery/0S2A3707.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Bwindi Forest Canopy">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mountains">
+                    <img src="img/gallery/0S2A3716.JPG" alt="Rwenzori Mountains" class="img-fluid">
+                    <a href="img/gallery/0S2A3716.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountains">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="mountains">
+                    <img src="img/gallery/0S2A3730.JPG" alt="Rwenzori Peaks" class="img-fluid">
+                    <a href="img/gallery/0S2A3730.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountain Peaks">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/gallery/0S2A3734.JPG" alt="Sipi Falls" class="img-fluid">
+                    <a href="img/gallery/0S2A3734.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Sipi Falls">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3739.JPG" alt="Nile River Sunset" class="img-fluid">
+                    <a href="img/gallery/0S2A3739.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3774.JPG" alt="Nile River View" class="img-fluid">
+                    <a href="img/gallery/0S2A3774.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River View">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3783.JPG" alt="Nile River Sunset" class="img-fluid">
+                    <a href="img/gallery/0S2A3783.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3827.JPG" alt="Nile River Scenery" class="img-fluid">
+                    <a href="img/gallery/0S2A3827.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River Scenery">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/gallery/0S2A3855.JPG" alt="Rwenzori Peaks" class="img-fluid">
+                    <a href="img/gallery/0S2A3855.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Rwenzori Mountain Peaks">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3882.JPG" alt="Nile River View" class="img-fluid">
+                    <a href="img/gallery/0S2A3882.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="Nile River View">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="landscapes">
+                    <img src="img/gallery/0S2A3895.JPG" alt="African Sunset" class="img-fluid">
+                    <a href="img/gallery/0S2A3895.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="African Sunset">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+                
+                <div class="col-lg-4 col-md-6 gallery-item" data-category="adventure">
+                    <img src="img/gallery/0S2A3901.JPG" alt="White Water Rafting" class="img-fluid">
+                    <a href="img/gallery/0S2A3901.JPG" class="lightbox-icon" data-lightbox="gallery" data-title="White Water Rafting">
+                        <i class="fas fa-search-plus"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Combined Gallery Grid End -->
+
+    <!-- CTA Start -->
+    <div class="container-fluid py-5">
+        <div class="container py-5">
+            <div class="bg-primary rounded p-5 text-center">
+                <h1 class="text-white mb-4">Ready for Your Own Adventure?</h1>
+                <p class="text-white mb-4">Let us help you create memories that will last a lifetime. Book your East African safari today.</p>
+                <a href="booking.html" class="btn btn-light rounded-pill py-3 px-5">Book Your Safari Now</a>
+            </div>
+        </div>
+    </div>
+    <!-- CTA End -->
+<!-- Partners Section Start -->
+<div class="partners-section">
+    <div class="container">
+        <div class="section-header">
+            <h5 class="section-title">Our Partners</h5>
+            <h2>Trusted By Leading Organizations</h2>
+            <p>We proudly collaborate with these esteemed partners to deliver exceptional safari experiences</p>
+        </div>
+        
+        <div class="partners-grid">
+            <!-- Partner 1 - USAGA -->
+            <div class="partner-card">
+                <a href="https://ugasaf.org/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/USAGA.png" alt="USAGA">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 2 - UTB -->
+            <div class="partner-card">
+                <a href="https://utb.go.ug/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/UTB.jpeg" alt="UTB">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 3 - EXPLORE UGANDA -->
+            <div class="partner-card">
+                <a href="https://exploreuganda.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/exploreuganda.png" alt="Explore Uganda">
+                    </div>
+                    
+                </a>
+            </div>
+            
+            <!-- Partner 4 - SAFARI DEAL -->
+            <div class="partner-card">
+                <a href="https://safarideal.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/SAFARIDEAL.jpeg" alt="Safari Deal">
+                    </div>
+                   
+                </a>
+            </div>
+            
+            <!-- Partner 5 - Travel Agents10 -->
+            <div class="partner-card">
+                <a href="https://www.travelagents10.com/" target="_blank" rel="noopener noreferrer">
+                    <div class="partner-logo">
+                        <img src="img/travelagents.png" alt="Travel Agents10">
+                    </div>
+                    
+                </a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+/* Partners Section Styles */
+.partners-section {
+    padding: 80px 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+    position: relative;
+    overflow: hidden;
+}
+
+.partners-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg,#4A2810, #e6b325,#4A2810);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Section Header */
+.section-header {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title {
+    display: inline-block;
+    background: rgba(44, 92, 44, 0.1);
+    color:#4A2810;
+    font-size: 14px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    padding: 8px 20px;
+    border-radius: 30px;
+    margin-bottom: 15px;
+}
+
+.section-header h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 36px;
+    font-weight: 700;
+    color:#4A2810;
+    margin-bottom: 15px;
+}
+
+.section-header p {
+    font-family: 'Open Sans', sans-serif;
+    font-size: 16px;
+    color: #666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+/* Partners Grid */
+.partners-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 30px;
+    align-items: center;
+}
+
+/* Partner Card - Professional Design */
+.partner-card {
+    background: white;
+    border-radius: 16px;
+    padding: 30px 20px;
+    text-align: center;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    border: 1px solid rgba(0,0,0,0.05);
+    position: relative;
+}
+
+.partner-card::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg,#4A2810, #e6b325);
+    transition: width 0.3s ease;
+    border-radius: 3px;
+}
+
+.partner-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+    border-color: rgba(44, 92, 44, 0.1);
+}
+
+.partner-card:hover::after {
+    width: 60px;
+}
+
+.partner-card a {
+    text-decoration: none;
+    display: block;
+}
+
+/* Partner Logo - Full Color, No Grayscale */
+.partner-logo {
+    width: 130px;
+    height: 130px;
+    margin: 0 auto 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #ffffff;
+    border-radius: 16px;
+    padding: 15px;
+    transition: all 0.3s ease;
+}
+
+.partner-card:hover .partner-logo {
+    transform: scale(1.02);
+}
+
+.partner-logo img {
+    max-width: 100%;
+    max-height: 90px;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+    /* REMOVED grayscale and opacity filters - FULL COLOR */
+    transition: transform 0.3s ease;
+}
+
+.partner-card:hover .partner-logo img {
+    transform: scale(1.05);
+}
+
+/* Partner Name - Professional Styling */
+.partner-name {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 14px;
+    font-weight: 700;
+    color: #333;
+    margin-top: 15px;
+    letter-spacing: 0.5px;
+    transition: color 0.3s ease;
+    position: relative;
+    display: inline-block;
+}
+
+.partner-card:hover .partner-name {
+    color:#4A2810;
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .partners-section {
+        padding: 60px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 25px;
+    }
+    
+    .section-header h2 {
+        font-size: 32px;
+    }
+    
+    .partner-logo {
+        width: 110px;
+        height: 110px;
+    }
+    
+    .partner-logo img {
+        max-height: 75px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partners-section {
+        padding: 50px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+    
+    .partner-card {
+        padding: 25px 15px;
+    }
+    
+    .partner-logo {
+        width: 100px;
+        height: 100px;
+    }
+    
+    .partner-logo img {
+        max-height: 65px;
+    }
+    
+    .section-header h2 {
+        font-size: 28px;
+    }
+    
+    .section-header p {
+        font-size: 14px;
+    }
+    
+    .partner-name {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .partners-section {
+        padding: 40px 0;
+    }
+    
+    .partners-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+    
+    .partner-card {
+        padding: 20px 12px;
+    }
+    
+    .partner-logo {
+        width: 85px;
+        height: 85px;
+        padding: 12px;
+    }
+    
+    .partner-logo img {
+        max-height: 55px;
+    }
+    
+    .partner-name {
+        font-size: 11px;
+        margin-top: 10px;
+    }
+    
+    .section-header h2 {
+        font-size: 24px;
+    }
+    
+    .section-title {
+        font-size: 12px;
+    }
+}
+
+/* For very large screens */
+@media (min-width: 1400px) {
+    .container {
+        max-width: 1320px;
+    }
+    
+    .partners-grid {
+        gap: 40px;
+    }
+    
+    .partner-logo {
+        width: 150px;
+        height: 150px;
+    }
+    
+    .partner-logo img {
+        max-height: 100px;
+    }
+}
+</style>
+
+    <!-- Footer Start -->
+    <div class="container-fluid footer py-5">
+        <div class="container py-5">
+            <div class="row g-5">
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Get In Touch</h4>
+                        <a href=""><i class="fas fa-home me-2"></i> Kasese Municipality, Uganda</a>
+                        <a href="mailto:gencybright1998@gmail.com"><i class="fas fa-envelope me-2"></i> info@mahoganytravelexpeditions.com</a>
+                        <a href="tel:+256778106920"><i class="fas fa-phone me-2"></i> +256 778 106920</a>
+                        <a href="tel:+256707644004" class="mb-3"><i class="fas fa-print me-2"></i> +256 707 644004</a>
+                       <div class="d-inline-flex align-items-center" style="height: 45px;">
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="http://tiktok.com/@brightsafarilife"><i class="fab fa-tiktok fw-normal"></i></a>
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.facebook.com/share/1Aikh5zrWT/"><i class="fab fa-facebook-f fw-normal"></i></a>
+                   
+                    <a class="btn btn-sm btn-outline-light btn-sm-square rounded-circle me-2" href="https://www.instagram.com/mahoganytravelexpeditions?igsh=MWltN3cxN25temdicg=="><i class="fab fa-instagram fw-normal"></i></a>
+                </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Popular Safaris</h4>
+                        <a href="ugandasafaris.html"><i class="fas fa-angle-right me-2"></i> Uganda Safaris</a>
+                        <a href="kenyasafaris.html"><i class="fas fa-angle-right me-2"></i> Kenya Safaris</a>
+                        <a href="tanzaniasafaris.html"><i class="fas fa-angle-right me-2"></i> Tanzania Safaris</a>
+                        <a href="rwandasafaris.html"><i class="fas fa-angle-right me-2"></i> Rwanda Safaris</a>
+                        <a href="drcsafaris.html"><i class="fas fa-angle-right me-2"></i> DRC Safaris</a>
+                        <a href="eastafricasafaris.html"><i class="fas fa-angle-right me-2"></i> East Africa Safaris</a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Top Destinations</h4>
+                        <a href="uganda.html"><i class="fas fa-angle-right me-2"></i> Uganda</a>
+                        <a href="kenya.html"><i class="fas fa-angle-right me-2"></i> Kenya</a>
+                        <a href="tanzania.html"><i class="fas fa-angle-right me-2"></i> Tanzania</a>
+                        <a href="rwanda.html"><i class="fas fa-angle-right me-2"></i> Rwanda</a>
+                        <a href="drc.html"><i class="fas fa-angle-right me-2"></i> DRC</a>
+                        <a href="eastafrica.html"><i class="fas fa-angle-right me-2"></i> East Africa</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-6 col-xl-3">
+                    <div class="footer-item d-flex flex-column">
+                        <h4 class="mb-4 text-white">Support</h4>
+                        <a href="contact.html"><i class="fas fa-angle-right me-2"></i> Contact</a>
+                        <a href="booking.html"><i class="fas fa-angle-right me-2"></i> Booking</a>
+                        <a href="gallery.html"><i class="fas fa-angle-right me-2"></i> Gallery</a>
+                        <a href="blog.html"><i class="fas fa-angle-right me-2"></i> Blog</a>
+                        <a href="privacy.html"><i class="fas fa-angle-right me-2"></i> Privacy Policy</a>
+                        <a href="sitemap.html"><i class="fas fa-angle-right me-2"></i> Sitemap</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Footer End -->
+    
+    <!-- Copyright Start -->
+    <div class="container-fluid copyright text-body py-4">
+        <div class="container">
+            <div class="row g-4 align-items-center">
+                <div class="col-md-6 text-center text-md-end mb-md-0">
+                    <i class="fas fa-copyright me-2"></i><a class="text-white" href="index.html">Mahogany Travel Expeditions</a>, All rights reserved.
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Copyright End -->
+
+    <!-- Back to Top -->
+    <a href="#" class="btn btn-primary btn-primary-outline-0 btn-md-square back-to-top"><i class="fa fa-arrow-up"></i></a>   
+
+    <!-- JavaScript Libraries -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.4/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="lib/easing/easing.min.js"></script>
+    <script src="lib/waypoints/waypoints.min.js"></script>
+    <script src="lib/owlcarousel/owl.carousel.min.js"></script>
+    <script src="lib/lightbox/js/lightbox.min.js"></script>
+
+    <!-- Template Javascript -->
+    <script src="js/main.js"></script>
+    
+    <script>
+        // Lightbox initialization only (filters removed as requested)
+        document.addEventListener('DOMContentLoaded', function() {
+            lightbox.option({
+                'resizeDuration': 200,
+                'wrapAround': true,
+                'albumLabel': "Image %1 of %2",
+                'fadeDuration': 300
+            });
+        });
+    </script>
+<script src="global.js"></script>
+
+
+<!-- ============================================ -->
+<!-- CMS PILOT: Dynamic gallery from content/gallery.json -->
+<!-- Remove this script entirely to revert to static HTML -->
+<!-- ============================================ -->
+<script>
+(async () => {
+  try {
+    const res = await fetch('/content/gallery.json?t=' + Date.now());
+    const data = await res.json();
+
+    if (!data || !data.images || data.images.length === 0) return;
+
+    const grid = document.getElementById('gallery-grid');
+    if (!grid) return;
+
+    // Replace the static HTML with dynamic content from JSON
+    grid.innerHTML = data.images.map(img => `
+      <div class="col-lg-4 col-md-6 gallery-item" data-category="${img.category || ''}">
+        <img src="${img.src}" alt="${img.alt || ''}" class="img-fluid">
+        <a href="${img.src}" class="lightbox-icon" data-lightbox="gallery" data-title="${img.title || img.alt || ''}">
+          <i class="fas fa-search-plus"></i>
+        </a>
+        ${img.title ? `
+          <div class="gallery-overlay">
+            <h6 class="text-white mb-1">${img.title}</h6>
+            ${img.subtitle ? `<p class="text-white small mb-0">${img.subtitle}</p>` : ''}
+          </div>
+        ` : ''}
+      </div>
+    `).join('');
+
+    // Re-initialize lightbox for the dynamically added images
+    if (window.lightbox) {
+      window.lightbox.init();
+    }
+
+    // Set a flag so we know the CMS is managing this
+    grid.setAttribute('data-cms-managed', 'true');
+
+    console.log('✅ CMS gallery loaded:', data.images.length, 'images');
+  } catch (err) {
+    console.warn('⚠️ CMS gallery failed, using static HTML:', err);
+    // Nothing changes — static HTML remains visible
+  }
+})();
+</script>
+
+</body>
+
+</html>
