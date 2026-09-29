@@ -219,7 +219,7 @@
     <!-- Combined Gallery Grid Start -->
     <div class="container-fluid pb-5">
         <div class="container">
-            <div class="row g-4" id="gallery-grid">
+            <div class="row g-4" id="gallery-grid" data-cms-managed="false">
                 <!-- All images in original order, combined from all three grids -->
                 
                 <!-- Images from first grid (img/ folder) -->
@@ -1076,6 +1076,55 @@
         });
     </script>
 <script src="global.js"></script>
+
+
+<!-- ============================================ -->
+<!-- CMS PILOT: Dynamic gallery from content/gallery.json -->
+<!-- Remove this script entirely to revert to static HTML -->
+<!-- ============================================ -->
+<script>
+(async () => {
+  try {
+    const res = await fetch('/content/gallery.json?t=' + Date.now());
+    const data = await res.json();
+
+    if (!data || !data.images || data.images.length === 0) return;
+
+    const grid = document.getElementById('gallery-grid');
+    if (!grid) return;
+
+    // Replace the static HTML with dynamic content from JSON
+    grid.innerHTML = data.images.map(img => `
+      <div class="col-lg-4 col-md-6 gallery-item" data-category="${img.category || ''}">
+        <img src="${img.src}" alt="${img.alt || ''}" class="img-fluid">
+        <a href="${img.src}" class="lightbox-icon" data-lightbox="gallery" data-title="${img.title || img.alt || ''}">
+          <i class="fas fa-search-plus"></i>
+        </a>
+        ${img.title ? `
+          <div class="gallery-overlay">
+            <h6 class="text-white mb-1">${img.title}</h6>
+            ${img.subtitle ? `<p class="text-white small mb-0">${img.subtitle}</p>` : ''}
+          </div>
+        ` : ''}
+      </div>
+    `).join('');
+
+    // Re-initialize lightbox for the dynamically added images
+    if (window.lightbox) {
+      window.lightbox.init();
+    }
+
+    // Set a flag so we know the CMS is managing this
+    grid.setAttribute('data-cms-managed', 'true');
+
+    console.log('✅ CMS gallery loaded:', data.images.length, 'images');
+  } catch (err) {
+    console.warn('⚠️ CMS gallery failed, using static HTML:', err);
+    // Nothing changes — static HTML remains visible
+  }
+})();
+</script>
+
 </body>
 
 </html>
